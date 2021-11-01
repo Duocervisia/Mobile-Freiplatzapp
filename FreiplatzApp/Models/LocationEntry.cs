@@ -9,7 +9,12 @@ namespace FreiplatzApp.Models
         public string Description { get; set; }
         public int MinAge { get; set; }
         public int MaxAge { get; set; }
-        public string
-
+        public Enums.Paragraphs[] Paragraphs { get; set; }
+        public int Space { get; set; }
+        //Todo: Replace with something useful
+        public string Location { get; set; }
+        public string TelephoneNumber { get; set; }
+        public string Website { get; set; }
+        public string EMail { get; set; }
     }
 }
