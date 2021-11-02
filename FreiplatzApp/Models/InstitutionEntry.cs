@@ -12,3 +12,4 @@ namespace FreiplatzApp.Models
         public LocationEntry[] Locations { get; set; }
     }
 }
+
