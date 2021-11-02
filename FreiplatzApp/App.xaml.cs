@@ -13,7 +13,7 @@ namespace FreiplatzApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<PostalCodeStore>();
             MainPage = new AppShell();
         }
 
