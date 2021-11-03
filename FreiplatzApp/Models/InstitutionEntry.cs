@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FreiplatzApp.Models
 {
-    class InstitutionEntry
+    public class InstitutionEntry
     {
         public string Name { get; set; }
         public string Description { get; set; }

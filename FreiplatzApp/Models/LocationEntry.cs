@@ -16,5 +16,6 @@ namespace FreiplatzApp.Models
         public string TelephoneNumber { get; set; }
         public string Website { get; set; }
         public string EMail { get; set; }
+        public InstitutionEntry Institution { get; set; }
     }
 }
