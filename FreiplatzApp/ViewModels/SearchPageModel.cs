@@ -14,7 +14,7 @@ namespace FreiplatzApp.ViewModels
 
         public SearchPageModel()
         {
-
+            DataStore.init();
         }
     }
 }

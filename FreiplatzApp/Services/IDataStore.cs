@@ -6,6 +6,7 @@ namespace FreiplatzApp.Services
 {
     public interface IDataStore<T>
     {
+        void init();
         Task<bool> AddItemAsync(T item);
         Task<bool> UpdateItemAsync(T item);
         Task<bool> DeleteItemAsync(string id);

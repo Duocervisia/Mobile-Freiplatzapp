@@ -14,6 +14,12 @@ namespace FreiplatzApp.Services
 
         public PostalCodeStore()
         {
+            
+        }
+        public void init()
+        {
+
+            // https://docs.microsoft.com/en-us/answers/questions/315756/import-and-read-xml-and-csv-file-data-in-xamarin-f.html
             using (var stream = File.Open("../Assets/plz_berlin.xlsx", FileMode.Open, FileAccess.Read))
             {
                 //// Auto-detect format, supports:
