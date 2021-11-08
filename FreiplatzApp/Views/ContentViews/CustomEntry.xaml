@@ -6,8 +6,8 @@
   <ContentView.Content>
         <Grid>
             <!-- Kinda stolen from: https://dev.to/jefrypozo/creating-an-outlined-entry-in-xamarin-forms-48af -->
-            <Frame HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" Margin="5"  />
-            <Entry PlaceholderColor="Gray" Placeholder="{Binding Placeholder}" BackgroundColor="Transparent" Margin="10,0" Text="{Binding Text, Mode=TwoWay}"></Entry>
+            <Frame HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" />
+            <Entry PlaceholderColor="Gray" Placeholder="{Binding Placeholder}" Margin="5,0" BackgroundColor="Transparent" Text="{Binding Text, Mode=TwoWay}"></Entry>
         </Grid>
     </ContentView.Content>
 </ContentView>

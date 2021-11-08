@@ -13,32 +13,7 @@ namespace FreiplatzApp.ViewModels
 {
     class SearchPageModel : ViewModelBase
     {
-        // public IDataStore<PostalEntry> DataStorePostalEntries => DependencyService.Get<IDataStore<PostalEntry>>();
         private PostalCodeStore postalCodeStore = PostalCodeStore.GetInstance();
-        private string _searchText;
-        public string SearchText
-        {
-            get { return _searchText; }
-            set
-            {
-                SetProperty(ref _searchText, value);
-                SearchBarTextChanged();
-            }
-        }
-        
-        public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
-        private PostalEntry _selectedItemSearchBar;
-        public PostalEntry SelectedItemSearchBar{
-            get { return _selectedItemSearchBar; }
-            set
-            {
-                if (_selectedItemSearchBar != value)
-                {
-                    _selectedItemSearchBar = value;
-                    SearchText = _selectedItemSearchBar.Code.ToString();
-                }
-            }
-        }
         public Command SearchBarTextChangedCommand { get; set; }
 
         public SearchPageModel()
@@ -47,26 +22,77 @@ namespace FreiplatzApp.ViewModels
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
         }
 
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                if (_searchText != value)
+                {
+                    SetProperty(ref _searchText, value);
+                    if (!ignoreNextSearchTextChanged)
+                    {
+                        _ = SearchBarTextChanged();
+                    }
+                    else
+                    {
+                        ignoreNextSearchTextChanged = false;
+                    }
+                }
+            }
+        }
+
+        public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
+        private bool ignoreNextSearchTextChanged = false;
+        private PostalEntry _selectedItemSearchBar;
+        public PostalEntry SelectedItemSearchBar {
+            get { return _selectedItemSearchBar; }
+            set
+            {
+                if (_selectedItemSearchBar != value)
+                {
+                    SetProperty(ref _selectedItemSearchBar, value);
+                    if (value != null)
+                    {
+                        ignoreNextSearchTextChanged = true;
+                        SearchText = SearchText == "" || int.TryParse(SearchText, out _) ? _selectedItemSearchBar.Code.ToString() : _selectedItemSearchBar.District;
+                        checkPostalListVisibility();
+                    }
+                }
+            }
+        }
+
+        private bool _postalListVisibility = false;
+        public bool PostalListVisibility
+        {
+            get { return _postalListVisibility; }
+            set { SetProperty(ref _postalListVisibility, value); }
+        }
+
         async Task SearchBarTextChanged()
         {
-            Debug.WriteLine("beforeAll");
-
             try
             {
+                SelectedItemSearchBar = null;
                 ItemsSourceSearchBar.Clear();
-                Debug.WriteLine("before Items Await");
+
                 var items = await postalCodeStore.GetItemsAsyncSearch(SearchText);
-                Debug.WriteLine("after Items Await");
 
                 foreach (var item in items)
                 {
                     ItemsSourceSearchBar.Add(item);
                 }
+
+                checkPostalListVisibility();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
             }
+        }
+        private void checkPostalListVisibility(){
+            PostalListVisibility = ItemsSourceSearchBar.Count == 0 || SelectedItemSearchBar != null ? false : true;
         }
     }
 }

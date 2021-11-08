@@ -9,10 +9,10 @@
         <vm:SearchPageModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid BackgroundColor="white" ColumnSpacing="10" RowSpacing="10">
+        <Grid BackgroundColor="white" ColumnSpacing="10" RowSpacing="0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="9*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -21,16 +21,19 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.ColumnSpan="6" BackgroundColor="{StaticResource Primary}"></Rectangle>
-            <contentViews:CustomEntry Grid.ColumnSpan="4" Placeholder="Postleitzahl oder Bezirk" Text="{Binding SearchText, Mode=TwoWay}"/>
+            <Rectangle Grid.ColumnSpan="8" BackgroundColor="{StaticResource Primary}"></Rectangle>
+            <contentViews:CustomEntry Grid.ColumnSpan="5" Placeholder="Postleitzahl oder Bezirk" Text="{Binding SearchText, Mode=TwoWay}" Margin="10"/>
+            <Button Grid.Column="6" Grid.ColumnSpan="2" Text="Suche"></Button>
             <!--<Frame Grid.ColumnSpan="4" HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" Margin="5"  />
             <Entry Grid.ColumnSpan="4" PlaceholderColor="white" TextColor="White" Placeholder="Postleitzahl oder Bezirk" BackgroundColor="#ffffff" Margin="10" Text="{Binding SearchText, Mode=TwoWay}">
             </Entry>-->
-            <ListView Grid.ColumnSpan="6" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}">
+            <ListView HasUnevenRows="True" SeparatorColor="White" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}" BackgroundColor="{StaticResource PrimaryOverlay}" IsVisible="{Binding PostalListVisibility}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Code}" Detail="{Binding District}">
+                        <TextCell TextColor="white" DetailColor="#75b6e7" Text="{Binding Code}" Detail="{Binding District}">
                         </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
