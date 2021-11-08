@@ -1,0 +1,1422 @@
+[
+    {
+      "PLZ": 10115,
+      "Stadtteil": "Mitte"
+    },
+    {
+      "PLZ": 10117,
+      "Stadtteil": "Mitte"
+    },
+    {
+      "PLZ": 10119,
+      "Stadtteil": "Mitte"
+    },
+    {
+      "PLZ": 10119,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10178,
+      "Stadtteil": "Mitte"
+    },
+    {
+      "PLZ": 10179,
+      "Stadtteil": "Mitte"
+    },
+    {
+      "PLZ": 10243,
+      "Stadtteil": "Friedrichshain"
+    },
+    {
+      "PLZ": 10245,
+      "Stadtteil": "Friedrichshain"
+    },
+    {
+      "PLZ": 10247,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10247,
+      "Stadtteil": "Friedrichshain"
+    },
+    {
+      "PLZ": 10249,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10249,
+      "Stadtteil": "Friedrichshain"
+    },
+    {
+      "PLZ": 10315,
+      "Stadtteil": "Friedrichsfelde"
+    },
+    {
+      "PLZ": 10315,
+      "Stadtteil": "Lichtenberg"
+    },
+    {
+      "PLZ": 10317,
+      "Stadtteil": "Friedrichsfelde"
+    },
+    {
+      "PLZ": 10317,
+      "Stadtteil": "Lichtenberg"
+    },
+    {
+      "PLZ": 10317,
+      "Stadtteil": "Rummelsburg"
+    },
+    {
+      "PLZ": 10318,
+      "Stadtteil": "Karlshorst"
+    },
+    {
+      "PLZ": 10319,
+      "Stadtteil": "Friedrichsfelde"
+    },
+    {
+      "PLZ": 10365,
+      "Stadtteil": "Lichtenberg"
+    },
+    {
+      "PLZ": 10367,
+      "Stadtteil": "Lichtenberg"
+    },
+    {
+      "PLZ": 10367,
+      "Stadtteil": "Fennpfuhl"
+    },
+    {
+      "PLZ": 10369,
+      "Stadtteil": "Lichtenberg"
+    },
+    {
+      "PLZ": 10369,
+      "Stadtteil": "Fennpfuhl"
+    },
+    {
+      "PLZ": 10405,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10407,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10409,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10435,
+      "Stadtteil": "Mitte"
+    },
+    {
+      "PLZ": 10435,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10437,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10439,
+      "Stadtteil": "Prenzlauer Berg"
+    },
+    {
+      "PLZ": 10439,
+      "Stadtteil": "Pankow"
+    },
+    {
+      "PLZ": 10551,
+      "Stadtteil": "Moabit"
+    },
+    {
+      "PLZ": 10553,
+      "Stadtteil": "Moabit"
+    },
+    {
+      "PLZ": 10555,
+      "Stadtteil": "Moabit"
+    },
+    {
+      "PLZ": 10555,
+      "Stadtteil": "Hansaviertel"
+    },
+    {
+      "PLZ": 10557,
+      "Stadtteil": "Moabit"
+    },
+    {
+      "PLZ": 10557,
+      "Stadtteil": "Hansaviertel"
+    },
+    {
+      "PLZ": 10557,
+      "Stadtteil": "Tiergarten"
+    },
+    {
+      "PLZ": 10559,
+      "Stadtteil": "Moabit"
+    },
+    {
+      "PLZ": 10585,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10587,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10589,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10589,
+      "Stadtteil": "Charlottenburg-Nord"
+    },
+    {
+      "PLZ": 10623,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10625,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10627,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10629,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10707,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10707,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10709,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10709,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10709,
+      "Stadtteil": "Halensee"
+    },
+    {
+      "PLZ": 10711,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10711,
+      "Stadtteil": "Halensee"
+    },
+    {
+      "PLZ": 10711,
+      "Stadtteil": "Grunewald"
+    },
+    {
+      "PLZ": 10713,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10713,
+      "Stadtteil": "Halensee"
+    },
+    {
+      "PLZ": 10715,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10717,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10719,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10719,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10777,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10777,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10779,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10779,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10781,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10783,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10785,
+      "Stadtteil": "Tiergarten"
+    },
+    {
+      "PLZ": 10785,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10785,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10787,
+      "Stadtteil": "Tiergarten"
+    },
+    {
+      "PLZ": 10787,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10787,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10789,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 10789,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10789,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10823,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10825,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 10825,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10827,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10827,
+      "Stadtteil": "Friedenau"
+    },
+    {
+      "PLZ": 10829,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10961,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10963,
+      "Stadtteil": "Tiergarten"
+    },
+    {
+      "PLZ": 10963,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10965,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 10965,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10965,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 10965,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 10967,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10967,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 10969,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10997,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 10999,
+      "Stadtteil": "Kreuzberg"
+    },
+    {
+      "PLZ": 12043,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12045,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12047,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12049,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12051,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12053,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12055,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12057,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12059,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12099,
+      "Stadtteil": "Neukölln"
+    },
+    {
+      "PLZ": 12099,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 12099,
+      "Stadtteil": "Mariendorf"
+    },
+    {
+      "PLZ": 12099,
+      "Stadtteil": "Britz"
+    },
+    {
+      "PLZ": 12101,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 12101,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 12103,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 12103,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 12103,
+      "Stadtteil": "Mariendorf"
+    },
+    {
+      "PLZ": 12105,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 12105,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 12105,
+      "Stadtteil": "Mariendorf"
+    },
+    {
+      "PLZ": 12107,
+      "Stadtteil": "Mariendorf"
+    },
+    {
+      "PLZ": 12107,
+      "Stadtteil": "Marienfelde"
+    },
+    {
+      "PLZ": 12107,
+      "Stadtteil": "Lichtenrade"
+    },
+    {
+      "PLZ": 12107,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12109,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 12109,
+      "Stadtteil": "Mariendorf"
+    },
+    {
+      "PLZ": 12157,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 12157,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12159,
+      "Stadtteil": "Schöneberg"
+    },
+    {
+      "PLZ": 12159,
+      "Stadtteil": "Friedenau"
+    },
+    {
+      "PLZ": 12161,
+      "Stadtteil": "Friedenau"
+    },
+    {
+      "PLZ": 12161,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12163,
+      "Stadtteil": "Friedenau"
+    },
+    {
+      "PLZ": 12163,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12165,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12167,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12169,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12203,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 12205,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 12207,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 12209,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 12247,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 12247,
+      "Stadtteil": "Lankwitz"
+    },
+    {
+      "PLZ": 12249,
+      "Stadtteil": "Marienfelde"
+    },
+    {
+      "PLZ": 12249,
+      "Stadtteil": "Lankwitz"
+    },
+    {
+      "PLZ": 12277,
+      "Stadtteil": "Mariendorf"
+    },
+    {
+      "PLZ": 12277,
+      "Stadtteil": "Marienfelde"
+    },
+    {
+      "PLZ": 12279,
+      "Stadtteil": "Tempelhof"
+    },
+    {
+      "PLZ": 12279,
+      "Stadtteil": "Marienfelde"
+    },
+    {
+      "PLZ": 12305,
+      "Stadtteil": "Lichtenrade"
+    },
+    {
+      "PLZ": 12305,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12307,
+      "Stadtteil": "Marienfelde"
+    },
+    {
+      "PLZ": 12307,
+      "Stadtteil": "Lichtenrade"
+    },
+    {
+      "PLZ": 12309,
+      "Stadtteil": "Lichtenrade"
+    },
+    {
+      "PLZ": 12347,
+      "Stadtteil": "Britz"
+    },
+    {
+      "PLZ": 12349,
+      "Stadtteil": "Britz"
+    },
+    {
+      "PLZ": 12349,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12351,
+      "Stadtteil": "Britz"
+    },
+    {
+      "PLZ": 12351,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12351,
+      "Stadtteil": "Gropiusstadt"
+    },
+    {
+      "PLZ": 12351,
+      "Stadtteil": "Rudow"
+    },
+    {
+      "PLZ": 12353,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12353,
+      "Stadtteil": "Gropiusstadt"
+    },
+    {
+      "PLZ": 12353,
+      "Stadtteil": "Rudow"
+    },
+    {
+      "PLZ": 12355,
+      "Stadtteil": "Rudow"
+    },
+    {
+      "PLZ": 12357,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12357,
+      "Stadtteil": "Gropiusstadt"
+    },
+    {
+      "PLZ": 12357,
+      "Stadtteil": "Rudow"
+    },
+    {
+      "PLZ": 12359,
+      "Stadtteil": "Britz"
+    },
+    {
+      "PLZ": 12359,
+      "Stadtteil": "Buckow"
+    },
+    {
+      "PLZ": 12359,
+      "Stadtteil": "Rudow"
+    },
+    {
+      "PLZ": 12435,
+      "Stadtteil": "Alt-Treptow"
+    },
+    {
+      "PLZ": 12435,
+      "Stadtteil": "Plänterwald"
+    },
+    {
+      "PLZ": 12437,
+      "Stadtteil": "Plänterwald"
+    },
+    {
+      "PLZ": 12437,
+      "Stadtteil": "Niederschöneweide"
+    },
+    {
+      "PLZ": 12437,
+      "Stadtteil": "Baumschulenweg"
+    },
+    {
+      "PLZ": 12437,
+      "Stadtteil": "Johannisthal"
+    },
+    {
+      "PLZ": 12439,
+      "Stadtteil": "Niederschöneweide"
+    },
+    {
+      "PLZ": 12459,
+      "Stadtteil": "Oberschöneweide"
+    },
+    {
+      "PLZ": 12459,
+      "Stadtteil": "Köpenick"
+    },
+    {
+      "PLZ": 12487,
+      "Stadtteil": "Baumschulenweg"
+    },
+    {
+      "PLZ": 12487,
+      "Stadtteil": "Johannisthal"
+    },
+    {
+      "PLZ": 12487,
+      "Stadtteil": "Adlershof"
+    },
+    {
+      "PLZ": 12489,
+      "Stadtteil": "Johannisthal"
+    },
+    {
+      "PLZ": 12489,
+      "Stadtteil": "Adlershof"
+    },
+    {
+      "PLZ": 12524,
+      "Stadtteil": "Altglienicke"
+    },
+    {
+      "PLZ": 12526,
+      "Stadtteil": "Bohnsdorf"
+    },
+    {
+      "PLZ": 12527,
+      "Stadtteil": "Grünau"
+    },
+    {
+      "PLZ": 12527,
+      "Stadtteil": "Schmöckwitz"
+    },
+    {
+      "PLZ": 12555,
+      "Stadtteil": "Köpenick"
+    },
+    {
+      "PLZ": 12557,
+      "Stadtteil": "Köpenick"
+    },
+    {
+      "PLZ": 12559,
+      "Stadtteil": "Köpenick"
+    },
+    {
+      "PLZ": 12559,
+      "Stadtteil": "Müggelheim"
+    },
+    {
+      "PLZ": 12587,
+      "Stadtteil": "Köpenick"
+    },
+    {
+      "PLZ": 12587,
+      "Stadtteil": "Friedrichshagen"
+    },
+    {
+      "PLZ": 12589,
+      "Stadtteil": "Rahnsdorf"
+    },
+    {
+      "PLZ": 12619,
+      "Stadtteil": "Kaulsdorf"
+    },
+    {
+      "PLZ": 12619,
+      "Stadtteil": "Hellersdorf"
+    },
+    {
+      "PLZ": 12621,
+      "Stadtteil": "Kaulsdorf"
+    },
+    {
+      "PLZ": 12621,
+      "Stadtteil": "Hellersdorf"
+    },
+    {
+      "PLZ": 12623,
+      "Stadtteil": "Kaulsdorf"
+    },
+    {
+      "PLZ": 12623,
+      "Stadtteil": "Mahlsdorf"
+    },
+    {
+      "PLZ": 12627,
+      "Stadtteil": "Hellersdorf"
+    },
+    {
+      "PLZ": 12629,
+      "Stadtteil": "Hellersdorf"
+    },
+    {
+      "PLZ": 12679,
+      "Stadtteil": "Marzahn"
+    },
+    {
+      "PLZ": 12681,
+      "Stadtteil": "Marzahn"
+    },
+    {
+      "PLZ": 12683,
+      "Stadtteil": "Biesdorf"
+    },
+    {
+      "PLZ": 12685,
+      "Stadtteil": "Marzahn"
+    },
+    {
+      "PLZ": 12687,
+      "Stadtteil": "Marzahn"
+    },
+    {
+      "PLZ": 12689,
+      "Stadtteil": "Marzahn"
+    },
+    {
+      "PLZ": 13051,
+      "Stadtteil": "Malchow"
+    },
+    {
+      "PLZ": 13051,
+      "Stadtteil": "Alt-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13051,
+      "Stadtteil": "Wartenberg"
+    },
+    {
+      "PLZ": 13051,
+      "Stadtteil": "Neu-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13051,
+      "Stadtteil": "Blankenburg"
+    },
+    {
+      "PLZ": 13051,
+      "Stadtteil": "Stadtrandsiedlung Malchow"
+    },
+    {
+      "PLZ": 13053,
+      "Stadtteil": "Alt-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13053,
+      "Stadtteil": "Neu-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13055,
+      "Stadtteil": "Alt-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13057,
+      "Stadtteil": "Neu-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13057,
+      "Stadtteil": "Falkenberg"
+    },
+    {
+      "PLZ": 13059,
+      "Stadtteil": "Wartenberg"
+    },
+    {
+      "PLZ": 13059,
+      "Stadtteil": "Neu-Hohenschönhausen"
+    },
+    {
+      "PLZ": 13086,
+      "Stadtteil": "Weißensee"
+    },
+    {
+      "PLZ": 13088,
+      "Stadtteil": "Stadtrandsiedlung Malchow"
+    },
+    {
+      "PLZ": 13088,
+      "Stadtteil": "Weißensee"
+    },
+    {
+      "PLZ": 13088,
+      "Stadtteil": "Heinersdorf"
+    },
+    {
+      "PLZ": 13089,
+      "Stadtteil": "Heinersdorf"
+    },
+    {
+      "PLZ": 13125,
+      "Stadtteil": "Karow"
+    },
+    {
+      "PLZ": 13125,
+      "Stadtteil": "Buch"
+    },
+    {
+      "PLZ": 13127,
+      "Stadtteil": "Französisch Buchholz"
+    },
+    {
+      "PLZ": 13127,
+      "Stadtteil": "Blankenfelde"
+    },
+    {
+      "PLZ": 13129,
+      "Stadtteil": "Blankenburg"
+    },
+    {
+      "PLZ": 13129,
+      "Stadtteil": "Stadtrandsiedlung Malchow"
+    },
+    {
+      "PLZ": 13129,
+      "Stadtteil": "Heinersdorf"
+    },
+    {
+      "PLZ": 13129,
+      "Stadtteil": "Französisch Buchholz"
+    },
+    {
+      "PLZ": 13156,
+      "Stadtteil": "Französisch Buchholz"
+    },
+    {
+      "PLZ": 13156,
+      "Stadtteil": "Niederschönhausen"
+    },
+    {
+      "PLZ": 13156,
+      "Stadtteil": "Rosenthal"
+    },
+    {
+      "PLZ": 13158,
+      "Stadtteil": "Niederschönhausen"
+    },
+    {
+      "PLZ": 13158,
+      "Stadtteil": "Rosenthal"
+    },
+    {
+      "PLZ": 13158,
+      "Stadtteil": "Wilhelmsruh"
+    },
+    {
+      "PLZ": 13159,
+      "Stadtteil": "Blankenfelde"
+    },
+    {
+      "PLZ": 13187,
+      "Stadtteil": "Pankow"
+    },
+    {
+      "PLZ": 13189,
+      "Stadtteil": "Pankow"
+    },
+    {
+      "PLZ": 13347,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13347,
+      "Stadtteil": "Gesundbrunnen"
+    },
+    {
+      "PLZ": 13349,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13351,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13353,
+      "Stadtteil": "Charlottenburg-Nord"
+    },
+    {
+      "PLZ": 13353,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13353,
+      "Stadtteil": "Gesundbrunnen"
+    },
+    {
+      "PLZ": 13355,
+      "Stadtteil": "Gesundbrunnen"
+    },
+    {
+      "PLZ": 13357,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13357,
+      "Stadtteil": "Gesundbrunnen"
+    },
+    {
+      "PLZ": 13359,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13359,
+      "Stadtteil": "Gesundbrunnen"
+    },
+    {
+      "PLZ": 13403,
+      "Stadtteil": "Reinickendorf"
+    },
+    {
+      "PLZ": 13403,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13403,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13405,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13405,
+      "Stadtteil": "Reinickendorf"
+    },
+    {
+      "PLZ": 13405,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13407,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13407,
+      "Stadtteil": "Reinickendorf"
+    },
+    {
+      "PLZ": 13407,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13409,
+      "Stadtteil": "Wedding"
+    },
+    {
+      "PLZ": 13409,
+      "Stadtteil": "Gesundbrunnen"
+    },
+    {
+      "PLZ": 13409,
+      "Stadtteil": "Reinickendorf"
+    },
+    {
+      "PLZ": 13435,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13435,
+      "Stadtteil": "Märkisches Viertel"
+    },
+    {
+      "PLZ": 13437,
+      "Stadtteil": "Reinickendorf"
+    },
+    {
+      "PLZ": 13437,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13439,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13439,
+      "Stadtteil": "Märkisches Viertel"
+    },
+    {
+      "PLZ": 13465,
+      "Stadtteil": "Frohnau"
+    },
+    {
+      "PLZ": 13465,
+      "Stadtteil": "Hermsdorf"
+    },
+    {
+      "PLZ": 13467,
+      "Stadtteil": "Hermsdorf"
+    },
+    {
+      "PLZ": 13469,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13469,
+      "Stadtteil": "Waidmannslust"
+    },
+    {
+      "PLZ": 13469,
+      "Stadtteil": "Lübars"
+    },
+    {
+      "PLZ": 13503,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13503,
+      "Stadtteil": "Heiligensee"
+    },
+    {
+      "PLZ": 13505,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13505,
+      "Stadtteil": "Heiligensee"
+    },
+    {
+      "PLZ": 13505,
+      "Stadtteil": "Konradshöhe"
+    },
+    {
+      "PLZ": 13507,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13509,
+      "Stadtteil": "Reinickendorf"
+    },
+    {
+      "PLZ": 13509,
+      "Stadtteil": "Wittenau"
+    },
+    {
+      "PLZ": 13509,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13509,
+      "Stadtteil": "Borsigwalde"
+    },
+    {
+      "PLZ": 13581,
+      "Stadtteil": "Staaken"
+    },
+    {
+      "PLZ": 13581,
+      "Stadtteil": "Wilhelmstadt"
+    },
+    {
+      "PLZ": 13581,
+      "Stadtteil": "Spandau"
+    },
+    {
+      "PLZ": 13583,
+      "Stadtteil": "Spandau"
+    },
+    {
+      "PLZ": 13583,
+      "Stadtteil": "Falkenhagener Feld"
+    },
+    {
+      "PLZ": 13585,
+      "Stadtteil": "Spandau"
+    },
+    {
+      "PLZ": 13585,
+      "Stadtteil": "Falkenhagener Feld"
+    },
+    {
+      "PLZ": 13585,
+      "Stadtteil": "Hakenfelde"
+    },
+    {
+      "PLZ": 13587,
+      "Stadtteil": "Spandau"
+    },
+    {
+      "PLZ": 13587,
+      "Stadtteil": "Hakenfelde"
+    },
+    {
+      "PLZ": 13589,
+      "Stadtteil": "Falkenhagener Feld"
+    },
+    {
+      "PLZ": 13589,
+      "Stadtteil": "Hakenfelde"
+    },
+    {
+      "PLZ": 13591,
+      "Stadtteil": "Staaken"
+    },
+    {
+      "PLZ": 13591,
+      "Stadtteil": "Falkenhagener Feld"
+    },
+    {
+      "PLZ": 13593,
+      "Stadtteil": "Staaken"
+    },
+    {
+      "PLZ": 13593,
+      "Stadtteil": "Wilhelmstadt"
+    },
+    {
+      "PLZ": 13595,
+      "Stadtteil": "Wilhelmstadt"
+    },
+    {
+      "PLZ": 13597,
+      "Stadtteil": "Wilhelmstadt"
+    },
+    {
+      "PLZ": 13597,
+      "Stadtteil": "Spandau"
+    },
+    {
+      "PLZ": 13599,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13599,
+      "Stadtteil": "Haselhorst"
+    },
+    {
+      "PLZ": 13599,
+      "Stadtteil": "Siemensstadt"
+    },
+    {
+      "PLZ": 13627,
+      "Stadtteil": "Charlottenburg-Nord"
+    },
+    {
+      "PLZ": 13627,
+      "Stadtteil": "Siemensstadt"
+    },
+    {
+      "PLZ": 13629,
+      "Stadtteil": "Charlottenburg-Nord"
+    },
+    {
+      "PLZ": 13629,
+      "Stadtteil": "Tegel"
+    },
+    {
+      "PLZ": 13629,
+      "Stadtteil": "Siemensstadt"
+    },
+    {
+      "PLZ": 14050,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 14050,
+      "Stadtteil": "Westend"
+    },
+    {
+      "PLZ": 14052,
+      "Stadtteil": "Spandau"
+    },
+    {
+      "PLZ": 14052,
+      "Stadtteil": "Westend"
+    },
+    {
+      "PLZ": 14053,
+      "Stadtteil": "Westend"
+    },
+    {
+      "PLZ": 14055,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 14055,
+      "Stadtteil": "Grunewald"
+    },
+    {
+      "PLZ": 14055,
+      "Stadtteil": "Westend"
+    },
+    {
+      "PLZ": 14057,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 14057,
+      "Stadtteil": "Westend"
+    },
+    {
+      "PLZ": 14059,
+      "Stadtteil": "Charlottenburg"
+    },
+    {
+      "PLZ": 14059,
+      "Stadtteil": "Westend"
+    },
+    {
+      "PLZ": 14089,
+      "Stadtteil": "Gatow"
+    },
+    {
+      "PLZ": 14089,
+      "Stadtteil": "Kladow"
+    },
+    {
+      "PLZ": 14109,
+      "Stadtteil": "Wannsee"
+    },
+    {
+      "PLZ": 14109,
+      "Stadtteil": "Nikolassee"
+    },
+    {
+      "PLZ": 14129,
+      "Stadtteil": "Nikolassee"
+    },
+    {
+      "PLZ": 14129,
+      "Stadtteil": "Zehlendorf"
+    },
+    {
+      "PLZ": 14163,
+      "Stadtteil": "Nikolassee"
+    },
+    {
+      "PLZ": 14163,
+      "Stadtteil": "Zehlendorf"
+    },
+    {
+      "PLZ": 14165,
+      "Stadtteil": "Zehlendorf"
+    },
+    {
+      "PLZ": 14167,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 14167,
+      "Stadtteil": "Zehlendorf"
+    },
+    {
+      "PLZ": 14169,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 14169,
+      "Stadtteil": "Zehlendorf"
+    },
+    {
+      "PLZ": 14169,
+      "Stadtteil": "Dahlem"
+    },
+    {
+      "PLZ": 14193,
+      "Stadtteil": "Grunewald"
+    },
+    {
+      "PLZ": 14193,
+      "Stadtteil": "Nikolassee"
+    },
+    {
+      "PLZ": 14193,
+      "Stadtteil": "Dahlem"
+    },
+    {
+      "PLZ": 14193,
+      "Stadtteil": "Schmargendorf"
+    },
+    {
+      "PLZ": 14195,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 14195,
+      "Stadtteil": "Grunewald"
+    },
+    {
+      "PLZ": 14195,
+      "Stadtteil": "Steglitz"
+    },
+    {
+      "PLZ": 14195,
+      "Stadtteil": "Lichterfelde"
+    },
+    {
+      "PLZ": 14195,
+      "Stadtteil": "Dahlem"
+    },
+    {
+      "PLZ": 14195,
+      "Stadtteil": "Schmargendorf"
+    },
+    {
+      "PLZ": 14197,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 14197,
+      "Stadtteil": "Friedenau"
+    },
+    {
+      "PLZ": 14199,
+      "Stadtteil": "Wilmersdorf"
+    },
+    {
+      "PLZ": 14199,
+      "Stadtteil": "Grunewald"
+    },
+    {
+      "PLZ": 14199,
+      "Stadtteil": "Schmargendorf"
+    }
+  ]

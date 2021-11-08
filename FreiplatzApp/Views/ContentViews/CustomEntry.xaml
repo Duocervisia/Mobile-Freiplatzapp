@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FreiplatzApp.Views.ContentViews.CustomEntry">
+             x:Class="FreiplatzApp.Views.ContentViews.CustomEntry"
+             x:Name="this">
   <ContentView.Content>
         <Grid>
             <!-- Kinda stolen from: https://dev.to/jefrypozo/creating-an-outlined-entry-in-xamarin-forms-48af -->
             <Frame HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" Margin="5"  />
-            <Entry PlaceholderColor="white" Placeholder="{Binding Placeholder}" BackgroundColor="Transparent" Margin="10,0" Text="{Binding Text, Mode=TwoWay}"></Entry>
+            <Entry PlaceholderColor="Gray" Placeholder="{Binding Placeholder}" BackgroundColor="Transparent" Margin="10,0" Text="{Binding Text, Mode=TwoWay}"></Entry>
         </Grid>
     </ContentView.Content>
 </ContentView>

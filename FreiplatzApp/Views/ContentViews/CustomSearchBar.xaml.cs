@@ -4,18 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FreiplatzApp.Models;
+using FreiplatzApp.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace FreiplatzApp.Views.ContentViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CustomEntry : ContentView
+    public partial class CustomSearchBar : ContentView
     {
-        public CustomEntry()
+        //public IDataStore<PostalEntry> DataStorePostalEntries => DependencyService.Get<IDataStore<PostalEntry>>();
+
+        public CustomSearchBar()
         {
             InitializeComponent();
-            Content.BindingContext = this;
+            BindingContext = this;
         }
 
         public static readonly BindableProperty PlaceholderProperty =
@@ -28,7 +32,7 @@ namespace FreiplatzApp.Views.ContentViews
         }
 
         public static readonly BindableProperty TextProperty =
-        BindableProperty.Create(nameof(Text), typeof(string), typeof(CustomEntry), null, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(Text), typeof(string), typeof(CustomEntry), null);
 
         public string Text
         {

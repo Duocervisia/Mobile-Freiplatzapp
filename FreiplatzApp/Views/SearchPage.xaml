@@ -23,7 +23,18 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Rectangle Grid.ColumnSpan="6" BackgroundColor="{StaticResource Primary}"></Rectangle>
-            <contentViews:CustomEntry Grid.ColumnSpan="4" Placeholder="Postleitzahl oder Bezirk"/>
+            <contentViews:CustomEntry Grid.ColumnSpan="4" Placeholder="Postleitzahl oder Bezirk" Text="{Binding SearchText, Mode=TwoWay}"/>
+            <!--<Frame Grid.ColumnSpan="4" HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" Margin="5"  />
+            <Entry Grid.ColumnSpan="4" PlaceholderColor="white" TextColor="White" Placeholder="Postleitzahl oder Bezirk" BackgroundColor="#ffffff" Margin="10" Text="{Binding SearchText, Mode=TwoWay}">
+            </Entry>-->
+            <ListView Grid.ColumnSpan="6" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Code}" Detail="{Binding District}">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="green"
                  Orientation="Horizontal"
                  HorizontalOptions="Center">

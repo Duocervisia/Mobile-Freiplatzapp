@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FreiplatzApp.Models;
+using FreiplatzApp.Services;
 
 namespace FreiplatzApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchPage : ContentPage
     {
+
         public SearchPage()
         {
             InitializeComponent();

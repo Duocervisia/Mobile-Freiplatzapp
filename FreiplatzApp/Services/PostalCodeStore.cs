@@ -3,46 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
+using Newtonsoft.Json;
 using ExcelDataReader;
-
+using Xamarin.Essentials;
 using FreiplatzApp.Models;
 namespace FreiplatzApp.Services
 {
     class PostalCodeStore : IDataStore<PostalEntry>
     {
-        readonly List<PostalEntry> postalEntries;
+        //single instance used everywhere.
+        private static PostalCodeStore _instance;
 
-        public PostalCodeStore()
+        //private constructor so only the GetInstance() method can create an instance of this object.
+        private PostalCodeStore()
         {
-            
+
         }
-        public void init()
+
+        //get single instance
+        public static PostalCodeStore GetInstance()
+        {
+            if (_instance != null) return _instance;
+            return _instance = new PostalCodeStore();
+        }
+
+        public List<PostalEntry> postalEntries;
+
+        public async void init()
         {
 
-            // https://docs.microsoft.com/en-us/answers/questions/315756/import-and-read-xml-and-csv-file-data-in-xamarin-f.html
-            using (var stream = File.Open("../Assets/plz_berlin.xlsx", FileMode.Open, FileAccess.Read))
+            using (var stream = await FileSystem.OpenAppPackageFileAsync("Files/plz_berlin.json"))
             {
-                //// Auto-detect format, supports:
-                ////  - Binary Excel files (2.0-2003 format; *.xls)
-                ////  - OpenXml Excel files (2007 format; *.xlsx, *.xlsb)
-                //using (var reader = ExcelReaderFactory.CreateReader(stream))
-                //{
-                //    // Choose one of either 1 or 2:
+                using (var reader = new StreamReader(stream))
+                {
+                    string fileContents = await reader.ReadToEndAsync();
+                    postalEntries = JsonConvert.DeserializeObject<List<PostalEntry>>(fileContents);
 
-                //    // 1. Use the reader methods
-                //    do
-                //    {
-                //        while (reader.Read())
-                //        {
-                //            // reader.GetDouble(0);
-                //        }
-                //    } while (reader.NextResult());
-
-                //    // 2. Use the AsDataSet extension method
-                //    var result = reader.AsDataSet();
-
-                //    // The result of each spreadsheet is in result.Tables
-                //}
+                }
             }
         }
 
@@ -78,6 +75,13 @@ namespace FreiplatzApp.Services
         public async Task<IEnumerable<PostalEntry>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(postalEntries);
+        }
+        public async Task<IEnumerable<PostalEntry>> GetItemsAsyncSearch(string searchText = null)
+        {
+            if (string.IsNullOrEmpty(searchText))
+                return await Task.FromResult(postalEntries);
+            searchText = searchText.ToLower();
+            return await Task.FromResult(postalEntries.Where(p => p.District.ToLower().Contains(searchText) || p.Code.ToString().Contains(searchText)));
         }
     }
 }
