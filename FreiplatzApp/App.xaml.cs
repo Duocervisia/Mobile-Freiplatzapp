@@ -13,8 +13,7 @@ namespace FreiplatzApp
         {
             InitializeComponent();
             PostalCodeStore.GetInstance().init();
-
-        MainPage = new AppShell();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

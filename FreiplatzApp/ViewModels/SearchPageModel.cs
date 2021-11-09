@@ -14,12 +14,16 @@ namespace FreiplatzApp.ViewModels
     class SearchPageModel : ViewModelBase
     {
         private PostalCodeStore postalCodeStore = PostalCodeStore.GetInstance();
+        private LocationStore locationStore = LocationStore.GetInstance();
+
         public Command SearchBarTextChangedCommand { get; set; }
+        public Command SearchButtonPressedCommand { get; set; }
 
         public SearchPageModel()
         {
             ItemsSourceSearchBar = new ObservableCollection<PostalEntry>();
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
+            SearchButtonPressedCommand = new Command(() => SearchButtonPressed());
         }
 
         private string _searchText;
@@ -42,6 +46,8 @@ namespace FreiplatzApp.ViewModels
                 }
             }
         }
+
+       
 
         public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
         private bool ignoreNextSearchTextChanged = false;
@@ -91,6 +97,14 @@ namespace FreiplatzApp.ViewModels
                 Debug.WriteLine(ex);
             }
         }
+
+        private void SearchButtonPressed()
+        {
+            Debug.WriteLine("sdfsdfdsf");
+        }
+
+
+
         private void checkPostalListVisibility(){
             PostalListVisibility = ItemsSourceSearchBar.Count == 0 || SelectedItemSearchBar != null ? false : true;
         }

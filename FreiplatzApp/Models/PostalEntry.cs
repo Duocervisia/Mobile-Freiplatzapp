@@ -5,14 +5,13 @@ using Newtonsoft.Json;
 
 namespace FreiplatzApp.Models
 {
-    class PostalEntry
+    public class PostalEntry : ModelBase
     {
         public PostalEntry()
         {
             State = "Berlin";
         }
 
-        public string Id { get; set; }
 
         private int _code;
 
