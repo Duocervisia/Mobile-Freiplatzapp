@@ -12,8 +12,6 @@ namespace FreiplatzApp.Services
 {
     class PostalCodeStore : StoreBase<PostalCodeStore, PostalEntry>
     {
-
-
         public async void init()
         {
 

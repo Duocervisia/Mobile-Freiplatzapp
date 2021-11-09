@@ -38,14 +38,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--<ListView HasUnevenRows="True" SeparatorColor="White" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}" BackgroundColor="{StaticResource PrimaryOverlay}" IsVisible="{Binding PostalListVisibility}">
+            <ListView  SeparatorColor="White" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding ItemsSourceFoundLocations}" BackgroundColor="{StaticResource PrimaryOverlay}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell TextColor="white" DetailColor="#75b6e7" Text="{Binding Code}" Detail="{Binding District}">
-                        </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
             <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="green"
                  Orientation="Horizontal"
                  HorizontalOptions="Center">

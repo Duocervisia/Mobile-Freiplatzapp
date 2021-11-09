@@ -9,7 +9,7 @@ namespace FreiplatzApp.Services
 {
     abstract class StoreBase<DerivedClass, Model> where DerivedClass : new() where Model : ModelBase
     {
-        public List<Model> entries;
+        public List<Model> entries = new List<Model>();
 
         //single instance used everywhere.
         public static DerivedClass _instance;

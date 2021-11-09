@@ -22,6 +22,8 @@ namespace FreiplatzApp.ViewModels
         public SearchPageModel()
         {
             ItemsSourceSearchBar = new ObservableCollection<PostalEntry>();
+            ItemsSourceFoundLocations = new ObservableCollection<LocationEntry>();
+
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
             SearchButtonPressedCommand = new Command(() => SearchButtonPressed());
         }
@@ -50,6 +52,7 @@ namespace FreiplatzApp.ViewModels
        
 
         public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
+        public ObservableCollection<LocationEntry> ItemsSourceFoundLocations { get; set; }
         private bool ignoreNextSearchTextChanged = false;
         private PostalEntry _selectedItemSearchBar;
         public PostalEntry SelectedItemSearchBar {
@@ -89,6 +92,7 @@ namespace FreiplatzApp.ViewModels
                 {
                     ItemsSourceSearchBar.Add(item);
                 }
+                ItemsSourceFoundLocations.Add(locationStore.entries[3]);
 
                 checkPostalListVisibility();
             }
