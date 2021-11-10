@@ -31,7 +31,9 @@
 
     <TabBar>
         <ShellContent Title="Suche" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:SearchPage}" />
-        <ShellContent Title="Suche" Icon="icon_about.png" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Favoriten" Icon="icon_about.png" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Favoriten" Icon="icon_about.png" ContentTemplate="{DataTemplate local:SearchPage}" />
+
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:SearchPage}" />
     </TabBar>
 

@@ -27,5 +27,12 @@ namespace FreiplatzApp.Models
 
         public string District { get; set; }
         public string State { get; set; }
+
+        public bool IsInSearch(string searchText)
+        {
+            if (District.ToLower().Contains(searchText) || Code.ToString().Contains(searchText))
+                return true;
+            return false;
+        }
     }
 }

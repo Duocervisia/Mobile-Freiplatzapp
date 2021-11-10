@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using FreiplatzApp.Models;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FreiplatzApp.Services
 {
@@ -10,7 +11,7 @@ namespace FreiplatzApp.Services
     {
 
         public void init() {
-            for (int i = 0; i< 100; i++)
+            for (int i = 0; i< 500; i++)
             {
                 _ = AddItemAsync(getRandomEntry());
             }
@@ -25,7 +26,7 @@ namespace FreiplatzApp.Services
             locationEntry.MaxAge = random.Next(11, 18);
             locationEntry.Paragraphs.Add(Enums.Paragraphs.HEIMERZIEHUNG);
             locationEntry.Space = random.Next(1, 6);
-            locationEntry.postalCode = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)].Code;
+            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
             locationEntry.TelephoneNumber = "01548408468";
             locationEntry.Website = RandomString(30);
             locationEntry.EMail = RandomString(15);
@@ -39,6 +40,14 @@ namespace FreiplatzApp.Services
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public async Task<IEnumerable<LocationEntry>> GetItemsAsyncSearch(string searchText = null)
+        {
+            if (string.IsNullOrEmpty(searchText))
+                return await Task.FromResult(entries);
+            searchText = searchText.ToLower();
+            return await Task.FromResult(entries.Where(p => p.IsInSearch(searchText)));
         }
     }
 }

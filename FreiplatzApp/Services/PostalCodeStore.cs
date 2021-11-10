@@ -31,41 +31,7 @@ namespace FreiplatzApp.Services
             if (string.IsNullOrEmpty(searchText))
                 return await Task.FromResult(entries);
             searchText = searchText.ToLower();
-            return await Task.FromResult(entries.Where(p => p.District.ToLower().Contains(searchText) || p.Code.ToString().Contains(searchText)));
+            return await Task.FromResult(entries.Where(p => p.IsInSearch(searchText)));
         }
-
-        //public async Task<bool> AddItemAsync(PostalEntry postalEntry)
-        //{
-        //    postalEntries.Add(postalEntry);
-
-        //    return await Task.FromResult(true);
-        //}
-
-        //public async Task<bool> UpdateItemAsync(PostalEntry postalEntry)
-        //{
-        //    var oldPostalEntry = postalEntries.Where((PostalEntry arg) => arg.Code == postalEntry.Code).FirstOrDefault();
-        //    postalEntries.Remove(oldPostalEntry);
-        //    postalEntries.Add(postalEntry);
-
-        //    return await Task.FromResult(true);
-        //}
-
-        //public async Task<bool> DeleteItemAsync(string id)
-        //{
-        //    var oldPostalEntry = postalEntries.Where((PostalEntry arg) => arg.Id == id).FirstOrDefault();
-        //    postalEntries.Remove(oldPostalEntry);
-
-        //    return await Task.FromResult(true);
-        //}
-
-        //public async Task<PostalEntry> GetItemAsync(string id)
-        //{
-        //    return await Task.FromResult(postalEntries.FirstOrDefault(s => s.Id == id));
-        //}
-
-        //public async Task<IEnumerable<PostalEntry>> GetItemsAsync(bool forceRefresh = false)
-        //{
-        //    return await Task.FromResult(postalEntries);
-        //}
     }
 }

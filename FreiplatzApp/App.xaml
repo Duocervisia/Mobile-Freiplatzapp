@@ -40,6 +40,21 @@
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="PlaceholderColor" Value="White"></Setter>
             </Style>
+            
+            <!--Label Styles-->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            <Style TargetType="Label" Class="Small">
+                <Setter Property="FontSize" Value="10"></Setter>
+            </Style>
+            <Style TargetType="Label" Class="Medium">
+                <Setter Property="FontSize" Value="15"></Setter>
+            </Style>
+            <Style TargetType="Label" Class="Big">
+                <Setter Property="FontSize" Value="20"></Setter>
+            </Style>
+
 
         </ResourceDictionary>        
     </Application.Resources>

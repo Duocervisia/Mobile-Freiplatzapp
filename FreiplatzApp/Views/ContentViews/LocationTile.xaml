@@ -6,23 +6,43 @@
 >
 
     <ContentView.Content>
-        <Grid BackgroundColor="white" ColumnSpacing="10" RowSpacing="0">
+        <Grid ColumnSpacing="0" RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="70" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.ColumnSpan="8" BackgroundColor="{StaticResource Primary}"></Rectangle>
-            <Label Text="{Binding Location.Name}"></Label>
+            <Frame BackgroundColor="{StaticResource Primary}" Grid.ColumnSpan="2" Grid.RowSpan="5" CornerRadius="5">
+            </Frame>
+            <Label StyleClass="Big" Margin="5,5,5,0">
+                <Label.Text>
+                    <Binding Path="Location.Name" StringFormat="Einrichtungsname: {0}" />
+                </Label.Text>
+            </Label>
+            <Label Grid.Row="1"  StyleClass="Medium" Margin="5,0,5,10">
+                <Label.Text>
+                    <Binding Path="Location.Name" StringFormat="Träger: {0}" />
+                </Label.Text>
+            </Label>
+            <Label Grid.Row="2"  StyleClass="Medium" Margin="5,0">
+                <Label.Text>
+                    <Binding Path="Location.Space" StringFormat="Freie Plätze: {0}" />
+                </Label.Text>
+            </Label>
+            <Label Grid.Row="3"  StyleClass="Medium" Margin="5,0,5,5">
+                <Label.Text>
+                    <MultiBinding StringFormat="Altersspanne: {0} - {1}">
+                        <Binding Path="Location.MinAge" />
+                        <Binding Path="Location.MaxAge" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
         </Grid>
     </ContentView.Content>
 </ContentView>

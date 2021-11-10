@@ -18,6 +18,9 @@ namespace FreiplatzApp.ViewModels
 
         public Command SearchBarTextChangedCommand { get; set; }
         public Command SearchButtonPressedCommand { get; set; }
+        public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
+        public ObservableCollection<LocationEntry> ItemsSourceFoundLocations { get; set; }
+        private bool ignoreNextSearchTextChanged = false;
 
         public SearchPageModel()
         {
@@ -25,7 +28,7 @@ namespace FreiplatzApp.ViewModels
             ItemsSourceFoundLocations = new ObservableCollection<LocationEntry>();
 
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
-            SearchButtonPressedCommand = new Command(() => SearchButtonPressed());
+            SearchButtonPressedCommand = new Command(async () => await SearchButtonPressed());
         }
 
         private string _searchText;
@@ -49,11 +52,6 @@ namespace FreiplatzApp.ViewModels
             }
         }
 
-       
-
-        public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
-        public ObservableCollection<LocationEntry> ItemsSourceFoundLocations { get; set; }
-        private bool ignoreNextSearchTextChanged = false;
         private PostalEntry _selectedItemSearchBar;
         public PostalEntry SelectedItemSearchBar {
             get { return _selectedItemSearchBar; }
@@ -92,7 +90,6 @@ namespace FreiplatzApp.ViewModels
                 {
                     ItemsSourceSearchBar.Add(item);
                 }
-                ItemsSourceFoundLocations.Add(locationStore.entries[3]);
 
                 checkPostalListVisibility();
             }
@@ -102,9 +99,25 @@ namespace FreiplatzApp.ViewModels
             }
         }
 
-        private void SearchButtonPressed()
+        async Task SearchButtonPressed()
         {
-            Debug.WriteLine("sdfsdfdsf");
+            try
+            {
+                ItemsSourceFoundLocations.Clear();
+
+                var items = await locationStore.GetItemsAsyncSearch(SearchText);
+
+                foreach (var item in items)
+                {
+                    ItemsSourceFoundLocations.Add(item);
+                }
+
+                PostalListVisibility = false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
 

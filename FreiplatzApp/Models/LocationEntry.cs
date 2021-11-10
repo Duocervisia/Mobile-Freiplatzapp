@@ -18,10 +18,15 @@ namespace FreiplatzApp.Models
         public int Space { get; set; }
         //Todo: Replace with something useful
         public string Location { get; set; }
-        public int postalCode { get; set; }
+        public PostalEntry PostalEntry { get; set; }
         public string TelephoneNumber { get; set; }
         public string Website { get; set; }
         public string EMail { get; set; }
         public InstitutionEntry Institution { get; set; }
+
+        public bool IsInSearch(string searchText)
+        {
+            return PostalEntry.IsInSearch(searchText);
+        }
     }
 }
