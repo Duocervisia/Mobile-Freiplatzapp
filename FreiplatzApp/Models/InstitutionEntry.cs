@@ -9,7 +9,7 @@ namespace FreiplatzApp.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
-        public LocationEntry[] Locations { get; set; }
+        public List<LocationEntry> Locations { get; set; }
     }
 }
 

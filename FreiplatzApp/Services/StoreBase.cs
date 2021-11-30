@@ -54,5 +54,19 @@ namespace FreiplatzApp.Services
         {
             return await Task.FromResult(entries);
         }
+        protected Guid GenerateSeededGuid()
+        {
+            var guid = new byte[16];
+            random.NextBytes(guid);
+            return new Guid(guid);
+        }
+        protected string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        protected Random random = new Random(1);
     }
 }
