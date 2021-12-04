@@ -43,6 +43,7 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
+            <Button Grid.Column="1" Text="{Binding FavText}" Clicked="fav_Clicked" />
         </Grid>
     </ContentView.Content>
 </ContentView>

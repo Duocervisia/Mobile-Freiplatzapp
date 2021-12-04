@@ -1,8 +1,11 @@
-﻿using FreiplatzApp.Services;
-using FreiplatzApp.Views;
+﻿
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
+
+using FreiplatzApp.Helper;
+using FreiplatzApp.Models;
 
 namespace FreiplatzApp
 {
@@ -12,7 +15,7 @@ namespace FreiplatzApp
         public App()
         {
             InitializeComponent();
-            PostalCodeStore.GetInstance().init();
+            Initializer.init();
             MainPage = new AppShell();
         }
 

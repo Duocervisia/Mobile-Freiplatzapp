@@ -14,7 +14,7 @@ namespace FreiplatzApp.ViewModels
     class SearchPageModel : ViewModelBase
     {
         private PostalCodeStore postalCodeStore = PostalCodeStore.GetInstance();
-        private LocationStore locationStore = LocationStore.GetInstance();
+        private InstitutionStore institutionStore = InstitutionStore.GetInstance();
 
         public Command SearchBarTextChangedCommand { get; set; }
         public Command SearchButtonPressedCommand { get; set; }
@@ -105,7 +105,7 @@ namespace FreiplatzApp.ViewModels
             {
                 ItemsSourceFoundLocations.Clear();
 
-                var items = await locationStore.GetItemsAsyncSearch(SearchText);
+                var items = await institutionStore.GetAsyncFoundLocations(SearchText);
 
                 foreach (var item in items)
                 {
