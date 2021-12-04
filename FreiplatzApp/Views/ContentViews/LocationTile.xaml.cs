@@ -16,16 +16,26 @@ namespace FreiplatzApp.Views.ContentViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LocationTile : ContentView
     {
-
         public LocationTile()
         {
             InitializeComponent();
             Content.BindingContext = this;
-            FavText = "fav";
         }
 
+
         public static readonly BindableProperty LocationProperty =
-        BindableProperty.Create(nameof(Location), typeof(LocationEntry), typeof(LocationTile));
+        BindableProperty.Create(
+            propertyName: nameof(Location),
+            returnType: typeof(LocationEntry),
+            declaringType: typeof(LocationTile),
+            propertyChanged: locationPropertyChanged);
+
+      
+        public static void locationPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            LocationTile thisLocationTile = bindable as LocationTile;
+            thisLocationTile.checkFavText();
+        }
 
         public LocationEntry Location
         {
@@ -33,31 +43,14 @@ namespace FreiplatzApp.Views.ContentViews
             set { SetValue(LocationProperty, value); }
         }
 
-        private string _favText;
+        public static readonly BindableProperty FavTextroperty =
+        BindableProperty.Create(nameof(FavText), typeof(string), typeof(LocationTile), null, BindingMode.TwoWay);
+
         public string FavText
         {
-            get { return _favText; }
-            set {
-                _favText = value;
-                OnPropertyChanged("FavText");
-            }
+            get { return (string)GetValue(FavTextroperty); }
+            set { SetValue(FavTextroperty, value); }
         }
-
-        //private string favText
-        //public string FavText
-        //{
-        //    get
-        //    {
-        //        List<string> favs = LocalStorage.favoriteLocationIds;
-        //        if (Location != null && favs.Contains(Location.Id))
-        //        {
-        //            return "fav entfernen";
-        //        }
-        //        return "fav";
-        //    }
-        //    set { SetValue(LocationProperty, value); }
-
-        //}
 
         private void fav_Clicked(object sender, EventArgs e)
         {
@@ -65,25 +58,28 @@ namespace FreiplatzApp.Views.ContentViews
             if(favs.Contains(Location.Id))
             {
                 favs.Remove(Location.Id);
-                FavText = "fav";
             }
             else
             {
                 favs.Add(Location.Id);
-                FavText = "fav entfernen";
             }
+            checkFavText(favs);
 
             LocalStorage.favoriteLocationIds = favs;
         }
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
+        public void checkFavText(List<string> favs = null)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler == null) return;
-            handler(this, new PropertyChangedEventArgs(propertyName));
+            favs = (favs == null) ? LocalStorage.favoriteLocationIds : favs;
+
+            if (favs.Contains(Location.Id))
+            {
+                FavText = "-fav";
+            }
+            else
+            {
+                FavText = "+fav";
+            }
         }
     }
 }
