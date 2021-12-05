@@ -23,14 +23,9 @@ public class Enums
     //Art des Trägers
     public enum TypeOfCarrier
     {
+        ALL,
         STATE_OWNED,
         CHRISTIAN,
         MUSLIM
-    }
-    public enum AvailableSpace
-    {
-        ALL,
-        OCCUPIED,
-        UNOCCUPIED
     }
 }

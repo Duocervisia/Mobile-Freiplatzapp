@@ -11,7 +11,6 @@ namespace FreiplatzApp.Models
         public FilterEntry(){
             MinAge = 6;
             MaxAge = 18;
-            AvailableSpace = Enums.AvailableSpace.ALL;
 
             List<ParagraphEntry> paragraphs = new List<ParagraphEntry>();
             foreach (Enums.Paragraphs e in Enum.GetValues(typeof(Enums.Paragraphs)))
@@ -82,8 +81,6 @@ namespace FreiplatzApp.Models
         }
         #endregion
 
-        public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
-        public Enums.AvailableSpace AvailableSpace { get; set; }
 
         public List<ParagraphEntry> WantedParagraphs { 
             get {
@@ -92,5 +89,34 @@ namespace FreiplatzApp.Models
         }
 
         public List<ParagraphEntry> Paragraphs { get; set; }
+
+        public string WritenSpace
+        {
+            get
+            {
+                if(_space == 0)
+                {
+                    return "egal";
+                }
+                return Convert.ToString(_space);
+            }
+        }
+        public int _space = 0;
+        public int Space
+        {
+            get { return _space; }
+            set
+            {
+                if (_maxAge == value ) return;
+                _space = value;
+
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(WritenSpace));
+            }
+        }
+
+
+        public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
+
     }
 }

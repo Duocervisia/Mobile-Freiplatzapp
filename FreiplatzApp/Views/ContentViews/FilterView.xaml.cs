@@ -43,5 +43,26 @@ namespace FreiplatzApp.Views.ContentViews
                 paragraph.Selected = true;
             }
         }
+
+        private void AdaptSpace(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+
+            if(button.Text == "+")
+            {
+                Filter.Space += 1;
+                Button minus = this.FindByName<Button>("minus");
+                minus.IsEnabled = true;
+            }
+            else
+            {
+                Filter.Space -= 1;
+
+                if (Filter.Space == 0)
+                {
+                    button.IsEnabled = false;
+                }
+            }
+        }
     }
 }

@@ -92,6 +92,7 @@ namespace FreiplatzApp.ViewModels
         {
             try
             {
+                FilterVisibility = false;
                 SelectedItemSearchBar = null;
                 ItemsSourceSearchBar.Clear();
 
@@ -114,6 +115,7 @@ namespace FreiplatzApp.ViewModels
         {
             try
             {
+                FilterVisibility = false;
                 ItemsSourceFoundLocations.Clear();
 
                 var items = await institutionStore.GetAsyncFoundLocations(filter, SearchText);

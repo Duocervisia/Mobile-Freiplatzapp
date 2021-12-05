@@ -24,6 +24,7 @@ namespace FreiplatzApp.Models
         public string TelephoneNumber { get; set; }
         public string Website { get; set; }
         public string EMail { get; set; }
+        public bool showAvailableSpace { get; set; }
         public InstitutionEntry Institution { get; set; }
 
         public bool IsInSearch(string searchText)
@@ -38,6 +39,14 @@ namespace FreiplatzApp.Models
                 {
                     return true;
                 }
+            }
+            return false;
+        }
+        public bool HasSpace(FilterEntry filter)
+        {
+            if(filter.Space == 0 || showAvailableSpace || filter.Space <= Space)
+            {
+                return true;
             }
             return false;
         }

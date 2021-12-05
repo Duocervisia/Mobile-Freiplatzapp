@@ -30,7 +30,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label StyleClass="Big" Text="Altersspanne"></Label>
+                    <Label StyleClass="Big" Text="Altersspanne" Margin="0, 10"></Label>
                     <Label StyleClass="Medium" Grid.Row="1">
                         <Label.Text>
                             <Binding Path="Filter.MinAge" StringFormat="Minimum: {0}" />
@@ -81,6 +81,32 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate >
                     </StackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- ++++++++++++++++ Age Slider +++++++++++++++++ -->
+
+            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label StyleClass="Big" Margin="0, 10" Grid.ColumnSpan="2">
+                        <Label.Text>
+                            <Binding Path="Filter.WritenSpace" StringFormat="Freie Plätze: {0}" />
+                        </Label.Text>
+                    </Label>
+                    <Button x:Name="minus" Text="-" Grid.Column="1" Margin="0" Clicked="AdaptSpace" IsEnabled="false"></Button>
+                    <Button x:Name="plus" Text="+" Grid.Column="2" Margin="0" Clicked="AdaptSpace"></Button>
+
+
                 </Grid>
             </Frame>
 
