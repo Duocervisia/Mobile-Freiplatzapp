@@ -23,4 +23,10 @@ public class Enums
         CHRISTIAN,
         MUSLIM
     }
+    public enum AvailableSpace
+    {
+        ALL,
+        OCCUPIED,
+        UNOCCUPIED
+    }
 }

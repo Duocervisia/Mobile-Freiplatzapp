@@ -26,10 +26,11 @@
             </Grid.ColumnDefinitions>
             <Rectangle Grid.ColumnSpan="8" BackgroundColor="{StaticResource Primary}"></Rectangle>
             <contentViews:CustomEntry Grid.ColumnSpan="5" Placeholder="Postleitzahl oder Bezirk" Text="{Binding SearchText, Mode=TwoWay}" Margin="10"/>
+            <Button Grid.Column="5" Grid.ColumnSpan="1" Margin="0,10" Text="F" Command="{Binding FilterButtonPressedCommand}" ></Button>
             <Button Grid.Column="6" Grid.ColumnSpan="2" Text="Suche" Command="{Binding SearchButtonPressedCommand}" ></Button>
-            <!--<Frame Grid.ColumnSpan="4" HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" Margin="5"  />
-            <Entry Grid.ColumnSpan="4" PlaceholderColor="white" TextColor="White" Placeholder="Postleitzahl oder Bezirk" BackgroundColor="#ffffff" Margin="10" Text="{Binding SearchText, Mode=TwoWay}">
-            </Entry>-->
+
+            <!-- ++++++++++++++++ Found Locations +++++++++++++++++ -->
+
             <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource PrimaryOverlay}" Padding="5">
                 <StackLayout BindableLayout.ItemsSource="{Binding ItemsSourceFoundLocations}">
                     <BindableLayout.ItemTemplate>
@@ -39,6 +40,9 @@
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </ScrollView>
+
+            <!-- ++++++++++++++++ Found Postalcodes +++++++++++++++++ -->
+
             <ListView HasUnevenRows="True" SeparatorColor="White" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}" BackgroundColor="{StaticResource PrimaryOverlay}" IsVisible="{Binding PostalListVisibility}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -47,11 +51,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="green"
-                 Orientation="Horizontal"
-                 HorizontalOptions="Center">
+            
+            <!-- ++++++++++++++++ Filter +++++++++++++++++ -->
 
-            </StackLayout>
+            <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource PrimaryOverlay}" Padding="5"  IsVisible="{Binding FilterVisibility}">
+                <contentViews:FilterView Filter="{Binding filter}" Margin="0"></contentViews:FilterView>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

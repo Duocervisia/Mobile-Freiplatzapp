@@ -18,17 +18,21 @@ namespace FreiplatzApp.ViewModels
 
         public Command SearchBarTextChangedCommand { get; set; }
         public Command SearchButtonPressedCommand { get; set; }
+        public Command FilterButtonPressedCommand { get; set; }
+        public FilterEntry filter { get; set; }
         public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
         public ObservableCollection<LocationEntry> ItemsSourceFoundLocations { get; set; }
         private bool ignoreNextSearchTextChanged = false;
 
         public SearchPageModel()
         {
+            filter = new FilterEntry();
             ItemsSourceSearchBar = new ObservableCollection<PostalEntry>();
             ItemsSourceFoundLocations = new ObservableCollection<LocationEntry>();
 
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
             SearchButtonPressedCommand = new Command(async () => await SearchButtonPressed());
+            FilterButtonPressedCommand = new Command(() => FilterButtonPressed());
         }
 
         private string _searchText;
@@ -77,6 +81,13 @@ namespace FreiplatzApp.ViewModels
             set { SetProperty(ref _postalListVisibility, value); }
         }
 
+        private bool _filterVisibility = false;
+        public bool FilterVisibility
+        {
+            get { return _filterVisibility; }
+            set { SetProperty(ref _filterVisibility, value); }
+        }
+
         async Task SearchBarTextChanged()
         {
             try
@@ -120,7 +131,10 @@ namespace FreiplatzApp.ViewModels
             }
         }
 
-
+        private void FilterButtonPressed()
+        {
+            FilterVisibility = !FilterVisibility;
+        }
 
         private void checkPostalListVisibility(){
             PostalListVisibility = ItemsSourceSearchBar.Count == 0 || SelectedItemSearchBar != null ? false : true;
