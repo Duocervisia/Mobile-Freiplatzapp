@@ -4,7 +4,7 @@
              x:Class="FreiplatzApp.Views.ContentViews.FilterView">
   <ContentView.Content>
 
-        <Grid ColumnSpacing="0" RowSpacing="0">
+        <Grid ColumnSpacing="0" RowSpacing="10">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -45,7 +45,46 @@
                     <Slider Grid.Row="4" Minimum="{Binding Filter.MinAgeSlider}" Maximum="18" IsEnabled="{Binding Filter.MaxSliderEnabled}" IsTabStop="True" TabIndex="1" Value="{Binding Filter.MaxAge, Mode=TwoWay}"></Slider>
                 </Grid>
             </Frame>
-            
+
+            <!-- ++++++++++++++++ Paragraph Slider +++++++++++++++++ -->
+
+            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label StyleClass="Big" Margin="0, 10" Text="Paragraphen"></Label>
+                    <Button Text="Alle" Grid.Column="1" Margin="0" Clicked="AllSelectedParagraphs"></Button>
+                    <Button Text="Keine" Grid.Column="2" Margin="0" Clicked="ResetSelectedParagraphs"></Button>
+                    <StackLayout BindableLayout.ItemsSource="{Binding Filter.Paragraphs}" Grid.Row="1" Grid.ColumnSpan="3">
+                        <BindableLayout.ItemTemplate >
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <CheckBox IsChecked="{Binding Selected, Mode=TwoWay}"/>
+                                    <Label StyleClass="Medium" Margin="10" Text="{Binding ParagraphName}" Grid.Column="1" />
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate >
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+
         </Grid>
     </ContentView.Content>
 </ContentView>

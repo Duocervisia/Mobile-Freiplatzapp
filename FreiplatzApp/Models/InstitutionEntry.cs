@@ -25,7 +25,8 @@ namespace FreiplatzApp.Models
 
             Locations.ForEach(entry => {
                 if (entry.IsInSearch(searchText) &&
-                   (entry.MinAge <= filter.MaxAge && entry.MaxAge >= filter.MinAge)
+                   (entry.MinAge <= filter.MaxAge && entry.MaxAge >= filter.MinAge) &&
+                    entry.HasParagraph(filter)
                 )
                 {
                     entries.Add(entry);

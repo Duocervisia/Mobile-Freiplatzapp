@@ -25,7 +25,12 @@ namespace FreiplatzApp.Services
             locationEntry.Description = RandomString(50);
             locationEntry.MinAge = random.Next(1, 10);
             locationEntry.MaxAge = random.Next(11, 18);
-            locationEntry.Paragraphs.Add(Enums.Paragraphs.HEIMERZIEHUNG);
+
+            //random paragraph
+            Array values = Enum.GetValues(typeof(Enums.Paragraphs));
+            Enums.Paragraphs randomParagraph = (Enums.Paragraphs)values.GetValue(random.Next(values.Length));
+            locationEntry.Paragraphs.Add(randomParagraph);
+
             locationEntry.Space = random.Next(1, 6);
             locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
             locationEntry.TelephoneNumber = "01548408468";

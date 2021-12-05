@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using FreiplatzApp.Models;
+
 namespace FreiplatzApp.Models
 {
     public class LocationEntry : ModelBase
@@ -27,6 +29,17 @@ namespace FreiplatzApp.Models
         public bool IsInSearch(string searchText)
         {
             return PostalEntry.IsInSearch(searchText);
+        }
+        public bool HasParagraph(FilterEntry filter)
+        {
+            foreach(ParagraphEntry entry in filter.WantedParagraphs)
+            {
+                if (entry.Contains(Paragraphs))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

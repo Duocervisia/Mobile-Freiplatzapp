@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using System.Collections.ObjectModel;
 namespace FreiplatzApp.Models
 {
-    public class FilterEntry : INotifyPropertyChanged
+    public class FilterEntry : ModelBase
     {
         public FilterEntry(){
             MinAge = 6;
             MaxAge = 18;
             AvailableSpace = Enums.AvailableSpace.ALL;
+
+            List<ParagraphEntry> paragraphs = new List<ParagraphEntry>();
+            foreach (Enums.Paragraphs e in Enum.GetValues(typeof(Enums.Paragraphs)))
+            {
+                ParagraphEntry entry = new ParagraphEntry();
+                entry.Paragraph = e;
+                paragraphs.Add(entry);
+            }
+            Paragraphs = paragraphs;
         }
 
+       
         public int _minAge;
         public int MinAge
         {
@@ -23,7 +33,7 @@ namespace FreiplatzApp.Models
                 if (_minAge == value || value > MaxAge) return;
                 _minAge = value;
                 MaxSliderEnabled = value == 18 ? false : true;
-                OnPropertyChanged(nameof(MinAge));
+                OnPropertyChanged();
                 OnPropertyChanged(nameof(MinAgeSlider));
             }
         }
@@ -38,7 +48,7 @@ namespace FreiplatzApp.Models
                 _maxAge = value;
 
                 MinSliderEnabled = value == 0 ? false : true;
-                OnPropertyChanged(nameof(MaxAge));
+                OnPropertyChanged();
                 OnPropertyChanged(nameof(MaxAgeSlider));
             }
         }
@@ -54,7 +64,7 @@ namespace FreiplatzApp.Models
             {
                 if (_minSliderEnabled == value) return;
                 _minSliderEnabled = value;
-                OnPropertyChanged(nameof(MinSliderEnabled));
+                OnPropertyChanged();
             }
         }
 
@@ -67,28 +77,20 @@ namespace FreiplatzApp.Models
             {
                 if (_maxSliderEnabled == value) return;
                 _maxSliderEnabled = value;
-                OnPropertyChanged(nameof(MaxSliderEnabled));
+                OnPropertyChanged();
             }
         }
         #endregion
 
         public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
         public Enums.AvailableSpace AvailableSpace { get; set; }
-        private List<Enums.Paragraphs> _paragraphs = new List<Enums.Paragraphs>();
-        public List<Enums.Paragraphs> Paragraphs
-        {
-            get => _paragraphs;
-            set
-            {
-                _paragraphs = value;
-            }
+
+        public List<ParagraphEntry> WantedParagraphs { 
+            get {
+                return Paragraphs.FindAll(x => x.Selected == true);
+            } 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public List<ParagraphEntry> Paragraphs { get; set; }
     }
 }

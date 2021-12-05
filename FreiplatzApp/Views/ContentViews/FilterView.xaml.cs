@@ -27,5 +27,21 @@ namespace FreiplatzApp.Views.ContentViews
             get { return (FilterEntry)GetValue(FilterProperty); }
             set { SetValue(FilterProperty, value); }
         }
+
+        private void ResetSelectedParagraphs(object sender, EventArgs e)
+        {
+            foreach(ParagraphEntry paragraph in Filter.Paragraphs)
+            {
+                paragraph.Selected = false;
+            }
+        }
+
+        private void AllSelectedParagraphs(object sender, EventArgs e)
+        {
+            foreach (ParagraphEntry paragraph in Filter.Paragraphs)
+            {
+                paragraph.Selected = true;
+            }
+        }
     }
 }
