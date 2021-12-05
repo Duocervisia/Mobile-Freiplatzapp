@@ -20,13 +20,12 @@ namespace FreiplatzApp.Views.ContentViews
         }
 
         public static readonly BindableProperty FilterProperty =
-         BindableProperty.Create(nameof(Filter), typeof(FilterEntry), typeof(FilterEntry), null, BindingMode.TwoWay);
+        BindableProperty.Create(nameof(Filter), typeof(FilterEntry), typeof(FilterEntry), null, BindingMode.TwoWay);
 
         public FilterEntry Filter
         {
             get { return (FilterEntry)GetValue(FilterProperty); }
             set { SetValue(FilterProperty, value); }
         }
-
     }
 }

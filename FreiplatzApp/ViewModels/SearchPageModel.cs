@@ -116,7 +116,7 @@ namespace FreiplatzApp.ViewModels
             {
                 ItemsSourceFoundLocations.Clear();
 
-                var items = await institutionStore.GetAsyncFoundLocations(SearchText);
+                var items = await institutionStore.GetAsyncFoundLocations(filter, SearchText);
 
                 foreach (var item in items)
                 {

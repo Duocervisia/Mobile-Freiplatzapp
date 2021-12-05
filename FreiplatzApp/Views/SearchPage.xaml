@@ -55,7 +55,7 @@
             <!-- ++++++++++++++++ Filter +++++++++++++++++ -->
 
             <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource PrimaryOverlay}" Padding="5"  IsVisible="{Binding FilterVisibility}">
-                <contentViews:FilterView Filter="{Binding filter}" Margin="0"></contentViews:FilterView>
+                <contentViews:FilterView Filter="{Binding filter, Mode=TwoWay}" Margin="0"></contentViews:FilterView>
             </ScrollView>
         </Grid>
     </ContentPage.Content>

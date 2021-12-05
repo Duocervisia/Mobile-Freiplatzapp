@@ -19,12 +19,14 @@ namespace FreiplatzApp.Models
             }
         }
 
-        public List<LocationEntry> getSearchLocations(string searchText)
+        public List<LocationEntry> getSearchLocations(string searchText, FilterEntry filter)
         {
             List<LocationEntry> entries = new List<LocationEntry>();
 
             Locations.ForEach(entry => {
-                if (entry.IsInSearch(searchText))
+                if (entry.IsInSearch(searchText) &&
+                   (entry.MinAge <= filter.MaxAge && entry.MaxAge >= filter.MinAge)
+                )
                 {
                     entries.Add(entry);
                 }

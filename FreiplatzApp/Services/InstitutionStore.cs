@@ -33,7 +33,7 @@ namespace FreiplatzApp.Services
             return institutionEntry;
         }
 
-        public async Task<List<LocationEntry>> GetAsyncFoundLocations(string searchText = null)
+        public async Task<List<LocationEntry>> GetAsyncFoundLocations(FilterEntry filter, string searchText = null)
         {
             List<LocationEntry> foundLocationEntries = new List<LocationEntry>();
             if (string.IsNullOrEmpty(searchText))
@@ -42,7 +42,7 @@ namespace FreiplatzApp.Services
             searchText = searchText.ToLower();
 
             entries.ForEach(entry => {
-                foundLocationEntries.AddRange(entry.getSearchLocations(searchText));
+                foundLocationEntries.AddRange(entry.getSearchLocations(searchText, filter));
             });
 
             return await Task.FromResult(foundLocationEntries);

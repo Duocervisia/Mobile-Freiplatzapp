@@ -3,9 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FreiplatzApp.Views.ContentViews.FilterView">
   <ContentView.Content>
-      <StackLayout>
-          <Label Text="Buh!" />
-            <Label Text="Hier kommen die Filter rein" />
-        </StackLayout>
-  </ContentView.Content>
+
+        <Grid ColumnSpacing="0" RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- ++++++++++++++++ Age Slider +++++++++++++++++ -->
+            
+            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label StyleClass="Big" Text="Altersspanne"></Label>
+                    <Label StyleClass="Medium" Grid.Row="1">
+                        <Label.Text>
+                            <Binding Path="Filter.MinAge" StringFormat="Minimum: {0}" />
+                        </Label.Text>
+                    </Label>
+                    <Slider Grid.Row="2" Minimum="0" Maximum="{Binding Filter.MaxAgeSlider}" IsEnabled="{Binding Filter.MinSliderEnabled}" IsTabStop="True" TabIndex="1" Value="{Binding Filter.MinAge, Mode=TwoWay}"></Slider>
+                    <Label StyleClass="Medium" Grid.Row="3">
+                        <Label.Text>
+                            <Binding Path="Filter.MaxAge" StringFormat="Maximum: {0}" />
+                        </Label.Text>
+                    </Label>
+                    <Slider Grid.Row="4" Minimum="{Binding Filter.MinAgeSlider}" Maximum="18" IsEnabled="{Binding Filter.MaxSliderEnabled}" IsTabStop="True" TabIndex="1" Value="{Binding Filter.MaxAge, Mode=TwoWay}"></Slider>
+                </Grid>
+            </Frame>
+            
+        </Grid>
+    </ContentView.Content>
 </ContentView>
