@@ -7,20 +7,7 @@ namespace FreiplatzApp.Models
     public class ParagraphEntry : ModelBase
     {
         public Enums.Paragraphs Paragraph { get; set; }
-
-        public string ParagraphName {
-            get
-            {
-                switch (Paragraph)
-                {
-                    case Enums.Paragraphs.MUTTER_VATER_KIND:
-                        return "Mutter / Vater / Kind";
-                    case Enums.Paragraphs.HEIMERZIEHUNG:
-                        return "Heimerziehung";
-                }
-                return "";
-            }
-        }
+        public string ParagraphName { get; set; }
 
         private bool _selected = true;
         public bool Selected { 

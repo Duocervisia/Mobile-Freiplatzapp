@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
+using FreiplatzApp.Models;
 
 namespace FreiplatzApp.Helper.Converter
 {
@@ -30,13 +31,14 @@ namespace FreiplatzApp.Helper.Converter
                 {
                     foreach (object item in enumerable)
                     {
-                        lO.Add(GetDescription((Enum)item));
+                        
+                        lO.Add(Enums.GetDescription((Enum)item));
                     }
                 }
                 return lO;
             }
 
-            return GetDescription((Enum)value);
+            return Enums.GetDescription((Enum)value);
         }
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -44,22 +46,7 @@ namespace FreiplatzApp.Helper.Converter
         }
         public object ProvideValue(IServiceProvider serviceProvider)
         {
-            return this;
-        }
-
-        public static string GetDescription(Enum en)
-        {
-            Type type = en.GetType();
-            MemberInfo[] memInfo = type.GetMember(en.ToString());
-            if (memInfo != null && memInfo.Length > 0)
-            {
-                object[] attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-                if (attrs != null && attrs.Length > 0)
-                {
-                    return ((DescriptionAttribute)attrs[0]).Description;
-                }
-            }
-            return en.ToString();
+            return null;
         }
     }
 }

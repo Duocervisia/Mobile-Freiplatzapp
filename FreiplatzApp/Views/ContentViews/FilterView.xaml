@@ -16,9 +16,38 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <!-- ++++++++++++++++ Basic Filter +++++++++++++++++ -->
+
+            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label StyleClass="Big" Margin="0, 10" Grid.ColumnSpan="2" Text="Plätze:" >
+                        <!--<Label.Text>
+                            <Binding Path="Filter.WritenSpace" StringFormat="Plätze: {0}" />
+                        </Label.Text>-->
+                    </Label>
+                    <Label HorizontalTextAlignment="Center" StyleClass="Big" Margin="0, 10" Grid.Column="1" Text="{Binding Filter.WritenSpace}" />
+                    <Button x:Name="minus" Text="-" Grid.Column="2" Margin="0" Clicked="AdaptSpace" IsEnabled="false"></Button>
+                    <Button x:Name="plus" Text="+" Grid.Column="3" Margin="0" Clicked="AdaptSpace"></Button>
+                    <Label StyleClass="Big" Margin="0, 10" Grid.ColumnSpan="2" Grid.Row="1" Text="Art des Trägers"></Label>
+                    <contentViews:CustomEnumPicker  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" ItemsSource="{Binding TypeOfCarrier}" SelectedItem="{Binding Filter.TypeOfCarrier, Mode=TwoWay}" />
+                </Grid>
+            </Frame>
+
             <!-- ++++++++++++++++ Age Slider +++++++++++++++++ -->
             
-            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5">
+            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -49,7 +78,7 @@
 
             <!-- ++++++++++++++++ Paragraph Slider +++++++++++++++++ -->
 
-            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="1">
+            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -82,33 +111,6 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate >
                     </StackLayout>
-                </Grid>
-            </Frame>
-
-            <!-- ++++++++++++++++ Age Slider +++++++++++++++++ -->
-
-            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="2">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-
-                    </Grid.ColumnDefinitions>
-
-                    <Label StyleClass="Big" Margin="0, 10" Grid.ColumnSpan="2">
-                        <Label.Text>
-                            <Binding Path="Filter.WritenSpace" StringFormat="Freie Plätze: {0}" />
-                        </Label.Text>
-                    </Label>
-                    <Button x:Name="minus" Text="-" Grid.Column="1" Margin="0" Clicked="AdaptSpace" IsEnabled="false"></Button>
-                    <Button x:Name="plus" Text="+" Grid.Column="2" Margin="0" Clicked="AdaptSpace"></Button>
-                    <Label StyleClass="Big" Margin="0, 10" Grid.ColumnSpan="2" Grid.Row="1" Text="Art des Trägers"></Label>
-                    <contentViews:CustomEnumPicker  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding TypeOfCarrier}" SelectedItem="{Binding Filter.TypeOfCarrier, Mode=TwoWay}" />
                 </Grid>
             </Frame>
         </Grid>

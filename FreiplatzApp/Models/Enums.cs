@@ -20,7 +20,9 @@ namespace FreiplatzApp.Models
 
         public enum Paragraphs
         {
+            [Description("Mutter / Vater / Kind")]
             MUTTER_VATER_KIND = 19,
+            [Description("Heimerziehung")]
             HEIMERZIEHUNG = 34
         }
 
@@ -35,15 +37,20 @@ namespace FreiplatzApp.Models
             RELIGIOUS
         }
 
-        public static string GetDescription(this Enum value)
+   
+        public static string GetDescription(this Enum en)
         {
-            FieldInfo field = value.GetType().GetField(value.ToString());
-
-            DescriptionAttribute attribute
-                    = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute))
-                        as DescriptionAttribute;
-
-            return attribute == null ? value.ToString() : attribute.Description;
+            Type type = en.GetType();
+            MemberInfo[] memInfo = type.GetMember(en.ToString());
+            if (memInfo != null && memInfo.Length > 0)
+            {
+                object[] attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                if (attrs != null && attrs.Length > 0)
+                {
+                    return ((DescriptionAttribute)attrs[0]).Description;
+                }
+            }
+            return en.ToString();
         }
     }
 }

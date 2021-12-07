@@ -4,6 +4,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+using FreiplatzApp.Helper.Converter;
 
 namespace FreiplatzApp.Models
 {
@@ -18,6 +19,7 @@ namespace FreiplatzApp.Models
             {
                 ParagraphEntry entry = new ParagraphEntry();
                 entry.Paragraph = e;
+                entry.ParagraphName = e.GetDescription();
                 paragraphs.Add(entry);
             }
             Paragraphs = paragraphs;
@@ -97,7 +99,7 @@ namespace FreiplatzApp.Models
             {
                 if(_space == 0)
                 {
-                    return "egal";
+                    return "beliebig";
                 }
                 return Convert.ToString(_space);
             }
