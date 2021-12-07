@@ -16,13 +16,16 @@
     <Compile Update="Views\ContentViews\CustomEntry.xaml.cs">
       <DependentUpon>CustomEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ContentViews\CustomEnumPicker.xaml.cs">
+      <DependentUpon>CustomEnumPicker.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Views\ContentViews\CustomEntry.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ContentViews\CustomSearchBar.xaml">
+    <EmbeddedResource Update="Views\ContentViews\CustomEnumPicker.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ContentViews\FilterView.xaml">
@@ -34,5 +37,9 @@
     <EmbeddedResource Update="Views\SearchPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\ContentViews\" />
   </ItemGroup>
 </Project>

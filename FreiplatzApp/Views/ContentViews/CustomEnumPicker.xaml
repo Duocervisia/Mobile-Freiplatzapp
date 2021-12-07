@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreiplatzApp.Views.ContentViews.CustomEnumPicker"
+             xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter">
+    <ContentView.Resources>
+        <converter:EnumConverter x:Key="EnumConverter" />
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid>
+            <!-- Kinda stolen from: https://dev.to/jefrypozo/creating-an-outlined-entry-in-xamarin-forms-48af -->
+            <Frame HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" />
+            <Picker Margin="5,0" ItemsSource="{Binding ItemsSource}" ItemDisplayBinding="{Binding ., Converter={StaticResource EnumConverter}}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

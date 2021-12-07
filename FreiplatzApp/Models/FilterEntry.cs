@@ -4,6 +4,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+
 namespace FreiplatzApp.Models
 {
     public class FilterEntry : ModelBase
@@ -115,8 +116,18 @@ namespace FreiplatzApp.Models
             }
         }
 
+        public Enums.TypeOfCarrier _typeOfCarrier = Enums.TypeOfCarrier.ALL;
+        public Enums.TypeOfCarrier TypeOfCarrier
+        {
+            get { return _typeOfCarrier; }
+            set
+            {
+                if (_typeOfCarrier == value) return;
+                _typeOfCarrier = value;
 
-        public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
+                OnPropertyChanged();
+            }
+        }
 
     }
 }

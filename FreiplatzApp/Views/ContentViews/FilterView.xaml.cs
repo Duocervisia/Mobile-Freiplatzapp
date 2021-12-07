@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using FreiplatzApp.Models;
+using System.ComponentModel;
 
 namespace FreiplatzApp.Views.ContentViews
 {
@@ -26,6 +27,22 @@ namespace FreiplatzApp.Views.ContentViews
         {
             get { return (FilterEntry)GetValue(FilterProperty); }
             set { SetValue(FilterProperty, value); }
+        }
+
+       
+        //public List<string> TypeOfCarrier
+        //{
+        //    get {
+        //        return Enum.GetValues(typeof(Enums.TypeOfCarrier)).Cast<Enums.TypeOfCarrier>().Select((e) => Enums.GetDescription(e)).ToList();
+        //    }
+        //}
+
+        public List<Enums.TypeOfCarrier> TypeOfCarrier
+        {
+            get
+            {
+                return Enum.GetValues(typeof(Enums.TypeOfCarrier)).Cast<Enums.TypeOfCarrier>().ToList();
+            }
         }
 
         private void ResetSelectedParagraphs(object sender, EventArgs e)
@@ -64,5 +81,6 @@ namespace FreiplatzApp.Views.ContentViews
                 }
             }
         }
+
     }
 }

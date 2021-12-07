@@ -25,7 +25,13 @@ namespace FreiplatzApp.Services
             institutionEntry.Id = GenerateSeededGuid().ToString();
             institutionEntry.Description = RandomString(50);
             institutionEntry.Name = RandomString(10);
-            for(int i = 0; i < random.Next(0,4); i++)
+
+            //random typeOfCarrier
+            Array values = Enum.GetValues(typeof(Enums.TypeOfCarrier));
+            Enums.TypeOfCarrier randomCarrier = (Enums.TypeOfCarrier)values.GetValue(random.Next(values.Length-1)+1);
+            institutionEntry.TypeOfCarrier = randomCarrier;
+
+            for (int i = 0; i < random.Next(0,4); i++)
             {
                 institutionEntry.Locations.Add(locationsStore.getRandomEntry());
             }

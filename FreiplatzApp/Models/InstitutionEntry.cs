@@ -23,6 +23,12 @@ namespace FreiplatzApp.Models
         {
             List<LocationEntry> entries = new List<LocationEntry>();
 
+            if(filter.TypeOfCarrier != Enums.TypeOfCarrier.ALL &&
+                TypeOfCarrier != filter.TypeOfCarrier)
+            {
+                return entries;
+            }
+
             Locations.ForEach(entry => {
                 if (entry.IsInSearch(searchText) &&
                    (entry.MinAge <= filter.MaxAge && entry.MaxAge >= filter.MinAge) &&
