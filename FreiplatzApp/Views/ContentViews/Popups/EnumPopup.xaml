@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreiplatzApp.Views.ContentViews.Popups.EnumPopup"
+             AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Frame CornerRadius="10" Padding="10" BorderColor="red" BackgroundColor="Gray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="70" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Orientation="Vertical"  >
+                        <ListView  SeparatorVisibility="None" ItemsSource="{Binding MyList}" VerticalScrollBarVisibility="Never">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding .}" />
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Schließen" Clicked="ButtonCancelClick"/>
+                        <Button Grid.Column="1"  Text="Übernehmen" Clicked="ButtonSaveClick"/>
+
+                    </Grid>
+                </Grid>
+
+            </Frame>
+        </StackLayout>
+</ContentView>

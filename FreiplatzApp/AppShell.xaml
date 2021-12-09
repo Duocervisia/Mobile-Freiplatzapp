@@ -35,6 +35,8 @@
         <ShellContent Title="Favoriten" Icon="icon_about.png" ContentTemplate="{DataTemplate local:SearchPage}" />
 
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Einrichtung Hinzufügen" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:LocationAddPage}" />
+
     </TabBar>
 
     <!--

@@ -82,5 +82,11 @@ namespace FreiplatzApp.Views.ContentViews
             }
         }
 
+        private void TappedCheckboxLabel(object sender, EventArgs e)
+        {
+            var d = (TappedEventArgs)e;
+            ParagraphEntry paragraphEntry = d.Parameter as ParagraphEntry;
+            paragraphEntry.Selected = !paragraphEntry.Selected;
+        }
     }
 }

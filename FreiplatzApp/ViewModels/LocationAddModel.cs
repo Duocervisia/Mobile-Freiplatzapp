@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Xamarin.Forms;
+using FreiplatzApp.Models;
+using System.Threading.Tasks;
+
+namespace FreiplatzApp.ViewModels
+{
+    class LocationAddModel : ViewModelBase
+    {
+        public Command CancelButtonPressedCommand { get; set; }
+        public Command SaveButtonPressedCommand { get; set; }
+        public Command EnumPopupButtonPressedCommand { get; set; }
+
+        public LocationEntry Location { get; set; }
+        private bool _enumPopupVisibility = false;
+        public bool EnumPopupVisibility
+        {
+            get { return _enumPopupVisibility; }
+            set { SetProperty(ref _enumPopupVisibility, value); }
+        }
+        public LocationAddModel()
+        {
+            EnumPopupVisibility = true;
+
+            Location = new LocationEntry();
+            CancelButtonPressedCommand = new Command(() => CancelButtonPressed());
+            SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
+            EnumPopupButtonPressedCommand = new Command(() => EnumPopupButtonPressed());
+        }
+
+        private void CancelButtonPressed()
+        {
+           
+        }
+
+        private void SaveButtonPressed()
+        {
+
+        }
+
+        private void EnumPopupButtonPressed()
+        {
+            EnumPopupVisibility = !EnumPopupVisibility;
+        }
+    }
+}

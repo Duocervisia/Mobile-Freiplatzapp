@@ -41,6 +41,11 @@
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="PlaceholderColor" Value="White"></Setter>
             </Style>
+            
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="PlaceholderColor" Value="White"></Setter>
+            </Style>
 
             <Style TargetType="Picker">
                 <Setter Property="TextColor" Value="White"></Setter>

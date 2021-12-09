@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FreiplatzApp.ViewModels"
+             xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
+              xmlns:contentViewsPopups="clr-namespace:FreiplatzApp.Views.ContentViews.Popups"
+
+             x:Class="FreiplatzApp.Views.LocationAddPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:LocationAddModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Primary}" ColumnSpacing="10" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+         
+            <!-- ++++++++++++++++ ScrollView with settable Entries +++++++++++++++++ -->
+
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid  ColumnSpacing="10" RowSpacing="0" Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label StyleClass="Big" Grid.Row="0" Text="Name der Einrichtung:" />
+                    <contentViews:CustomEntry Grid.Row="1" Placeholder="test" Margin="0,0,0,20" Text="{Binding Location.Name}"/>
+                    <Label StyleClass="Big" Grid.Row="2" Text="Beschreibung der Einrichtung:" />
+                    <contentViews:CustomEditor Grid.Row="3" Placeholder="test" Margin="0,0,0,20" Text="{Binding Location.Description}"/>
+
+                    <Label StyleClass="Big" Grid.Row="4" Text="Paragraphen:" />
+
+                    <Button Grid.Row="5" Text="Auswählen" Command="{Binding EnumPopupButtonPressedCommand}"/>
+              
+
+
+                </Grid>
+            </ScrollView>
+
+            <!-- ++++++++++++++++ Save / Cancel Buttons +++++++++++++++++ -->
+
+            <AbsoluteLayout Padding="0" Margin="20" Grid.ColumnSpan="2" IsVisible="{Binding EnumPopupVisibility}" >
+                <contentViewsPopups:EnumPopup OwnVisibility="{Binding EnumPopupVisibility, Mode=TwoWay}"/>
+            </AbsoluteLayout>
+
+
+            <!-- ++++++++++++++++ Save / Cancel Buttons +++++++++++++++++ -->
+            
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="red">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Abbrechen" Command="{Binding CancelButtonPressedCommand}" />
+                <Button Grid.Column="1" Text="Speichern"  Command="{Binding SaveButtonPressedCommand}" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
