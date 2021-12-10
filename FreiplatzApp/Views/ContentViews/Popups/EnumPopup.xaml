@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
              x:Class="FreiplatzApp.Views.ContentViews.Popups.EnumPopup"
              AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
-
+    <ContentView.Resources>
+        <converter:EnumConverter x:Key="EnumConverter" />
+    </ContentView.Resources>
+    
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Frame CornerRadius="10" Padding="10" BorderColor="red" BackgroundColor="Gray">
                 <Grid>
@@ -15,19 +19,29 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout Orientation="Vertical"  >
-                        <ListView  SeparatorVisibility="None" ItemsSource="{Binding MyList}" VerticalScrollBarVisibility="Never">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <Label Text="{Binding .}" />
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackLayout>
+                <ScrollView HeightRequest="200">
+                    <StackLayout BindableLayout.ItemsSource="{Binding ItemSource}" >
+                        <BindableLayout.ItemTemplate >
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Row="1">
+                                    <CheckBox  />
+                                    <Label StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" Grid.Column="1">
+                                    </Label>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TappedCheckGrid"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate >
+                    </StackLayout>
+                </ScrollView>
+
+                <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

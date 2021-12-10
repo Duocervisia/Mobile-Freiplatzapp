@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FreiplatzApp.Models;
 
 namespace FreiplatzApp.Views.ContentViews.Popups
 {
@@ -36,6 +37,35 @@ namespace FreiplatzApp.Views.ContentViews.Popups
         {
             get { return (bool)GetValue(OwnVisibilityProperty); }
             set { SetValue(OwnVisibilityProperty, value); }
+        }
+
+        public static readonly BindableProperty SelectedItemsProperty =
+           BindableProperty.Create(nameof(SelectedItems), typeof(object), typeof(EnumPopup), propertyChanged: SelectedItemsPropertyChanged);
+
+        public object SelectedItems
+        {
+            get { return (object)GetValue(SelectedItemsProperty); }
+            set { SetValue(SelectedItemsProperty, value); }
+        }
+
+        public static readonly BindableProperty ItemSourceProperty =
+          BindableProperty.Create(nameof(ItemSource), typeof(List<Enum>), typeof(EnumPopup));
+
+        public List<Enum> ItemSource
+        {
+            get { return (List<Enum>)GetValue(ItemSourceProperty); }
+            set { SetValue(ItemSourceProperty, value); }
+        }
+
+        public static void SelectedItemsPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            EnumPopup enumPopup = bindable as EnumPopup;
+            Type EnumType = newValue.GetType().GetGenericArguments().Single();
+            //Array list = Enum.GetValues(EnumType);
+            //enumPopup.ItemSource = list;
+
+            List<Enum> list = Enum.GetValues(EnumType).Cast<Enum>().ToList();
+            enumPopup.ItemSource = list;
         }
 
         private void ButtonCancelClick(object sender, EventArgs e)
@@ -93,6 +123,11 @@ namespace FreiplatzApp.Views.ContentViews.Popups
             {
                 command.Execute(null);
             }
+        }
+
+        private void TappedCheckGrid(object sender, EventArgs e)
+        {
+
         }
     }
 }

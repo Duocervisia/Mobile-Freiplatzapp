@@ -22,8 +22,6 @@ namespace FreiplatzApp.ViewModels
         }
         public LocationAddModel()
         {
-            EnumPopupVisibility = true;
-
             Location = new LocationEntry();
             CancelButtonPressedCommand = new Command(() => CancelButtonPressed());
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
