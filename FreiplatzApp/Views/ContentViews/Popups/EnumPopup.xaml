@@ -9,47 +9,49 @@
     </ContentView.Resources>
     
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Frame CornerRadius="10" Padding="10" BorderColor="red" BackgroundColor="Gray">
-                <Grid>
+            <Frame CornerRadius="10" Padding="0"  BackgroundColor="{StaticResource Background}">
+                <Grid Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="70" />
+                    <RowDefinition Height="3" />
+                    <RowDefinition Height="70" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                <ScrollView HeightRequest="200">
+                <ScrollView>
                     <StackLayout BindableLayout.ItemsSource="{Binding ItemSource}" >
                         <BindableLayout.ItemTemplate >
                             <DataTemplate>
-                                <Grid>
+                                <Grid x:Name="">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox  />
-                                    <Label StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" Grid.Column="1">
+                                    <CheckBox IsChecked="{Binding Selected, Mode=TwoWay}" />
+                                    <Label StyleClass="Medium" Margin="10" Text="{Binding EnumValue, Converter={StaticResource EnumConverter}}" Grid.Column="1">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TappedCheckboxLabel"/>
+                                        </Label.GestureRecognizers>
                                     </Label>
-                                    <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TappedCheckGrid"/>
-                                    </Grid.GestureRecognizers>
+                                
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate >
                     </StackLayout>
                 </ScrollView>
+                <Frame Grid.Row="1" BackgroundColor="{StaticResource Outline}"></Frame>
 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Button Text="Schließen" Clicked="ButtonCancelClick"/>
-                        <Button Grid.Column="1"  Text="Übernehmen" Clicked="ButtonSaveClick"/>
-
-                    </Grid>
+                    <Button Grid.Column="1"  Text="Übernehmen" Clicked="ButtonSaveClick"/>
+                </Grid>
                 </Grid>
 
             </Frame>

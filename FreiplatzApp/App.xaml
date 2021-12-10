@@ -10,10 +10,17 @@
         <ResourceDictionary>
             <sys:Int32 x:Key="Margin">10</sys:Int32>
 
-            <Color x:Key="Primary">#303030</Color>
-            <Color x:Key="PrimaryOverlay">#505050</Color>
+            <Color x:Key="Primary">#202020</Color>
+            <Color x:Key="Background">#474747</Color>
+            <Color x:Key="Shadow">#CC000000</Color>
+            <Color x:Key="Text">white</Color>
+            <Color x:Key="Placeholder">#AAA</Color>
             <Color x:Key="Button">#6969ff</Color>
             <Color x:Key="Outline">#6969ff</Color>
+
+            <Style TargetType="AbsoluteLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource Shadow}"></Setter>
+            </Style>
 
             <Style TargetType="Button">
                 <Setter Property="Margin" Value="{StaticResource Margin}"></Setter>
@@ -38,22 +45,22 @@
             </Style>
             
             <Style TargetType="Entry">
-                <Setter Property="TextColor" Value="White"></Setter>
-                <Setter Property="PlaceholderColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Text}"></Setter>
+                <Setter Property="PlaceholderColor" Value="{StaticResource Placeholder}"></Setter>
             </Style>
             
             <Style TargetType="Editor">
-                <Setter Property="TextColor" Value="White"></Setter>
-                <Setter Property="PlaceholderColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Text}"></Setter>
+                <Setter Property="PlaceholderColor" Value="{StaticResource Placeholder}"></Setter>
             </Style>
 
             <Style TargetType="Picker">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Text}"></Setter>
             </Style>
 
             <!--Label Styles-->
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Text}"></Setter>
             </Style>
             <Style TargetType="Label" Class="Small">
                 <Setter Property="FontSize" Value="10"></Setter>

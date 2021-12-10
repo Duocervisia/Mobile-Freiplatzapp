@@ -5,7 +5,7 @@
   <ContentView.Content>
         <Grid>
             <Frame HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" />
-            <Editor PlaceholderColor="Gray" Placeholder="{Binding Placeholder}" Margin="5,0" BackgroundColor="Transparent" Text="{Binding Text, Mode=TwoWay}"></Editor>
+            <Editor Placeholder="{Binding Placeholder}" Margin="5,0" BackgroundColor="Transparent" Text="{Binding Text, Mode=TwoWay}"></Editor>
         </Grid>
     </ContentView.Content>
 </ContentView>

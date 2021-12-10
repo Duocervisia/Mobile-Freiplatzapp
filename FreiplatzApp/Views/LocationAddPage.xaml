@@ -15,7 +15,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <Grid BackgroundColor="{StaticResource Primary}" ColumnSpacing="10" RowSpacing="0">
+        <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="70" />
@@ -35,7 +35,7 @@
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="40" />
                         <RowDefinition Height="150" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="*" />
 
                     </Grid.RowDefinitions>
@@ -51,7 +51,7 @@
                     <Grid Grid.Row="4">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -60,11 +60,11 @@
                         </Grid.ColumnDefinitions>
                         <Label StyleClass="Big" Text="Paragraphen:" VerticalOptions="Center" />
                         <Button Grid.Column="1" Text="Auswählen" Command="{Binding EnumPopupButtonPressedCommand}" Margin="0"/>
-                        <Label Grid.Row="1" StyleClass="Medium" Text="Ausgewählt:" VerticalOptions="Center" Margin="0"/>
+                        <Label Grid.Row="1" StyleClass="Medium" Text="Ausgewählt:" VerticalOptions="Center" Margin="0" />
                             <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding Location.Paragraphs}">
                             <BindableLayout.ItemTemplate >
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid >
                                         <Label StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" >
                                         </Label>
                                     </Grid>
@@ -79,23 +79,30 @@
                 </Grid>
             </ScrollView>
 
-            <!-- ++++++++++++++++ Save / Cancel Buttons +++++++++++++++++ -->
 
-            <AbsoluteLayout Padding="0" Margin="20" Grid.ColumnSpan="2" IsVisible="{Binding EnumPopupVisibility}" >
-                <contentViewsPopups:EnumPopup OwnVisibility="{Binding EnumPopupVisibility, Mode=TwoWay}" SelectedItems="{Binding Location.Paragraphs}"/>
-            </AbsoluteLayout>
 
 
             <!-- ++++++++++++++++ Save / Cancel Buttons +++++++++++++++++ -->
             
-            <Grid Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="red">
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Primary}" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button Text="Abbrechen" Command="{Binding CancelButtonPressedCommand}" />
                 <Button Grid.Column="1" Text="Speichern"  Command="{Binding SaveButtonPressedCommand}" />
+                <Frame Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Outline}"></Frame>
             </Grid>
+
+            <!-- ++++++++++++++++ Absolute Layout +++++++++++++++++ -->
+
+            <AbsoluteLayout Padding="0"  Grid.ColumnSpan="2" Grid.RowSpan="2" IsVisible="{Binding EnumPopupVisibility}" >
+                <contentViewsPopups:EnumPopup  Margin="20" OwnVisibility="{Binding EnumPopupVisibility, Mode=TwoWay}" SelectedItems="{Binding Location.Paragraphs}" EnumParsing="{Binding Location.ParsingParagraphs, Mode=TwoWay}"/>
+            </AbsoluteLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -31,7 +31,7 @@
 
             <!-- ++++++++++++++++ Found Locations +++++++++++++++++ -->
 
-            <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource PrimaryOverlay}" Padding="5">
+            <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource Background}" Padding="5">
                 <StackLayout BindableLayout.ItemsSource="{Binding ItemsSourceFoundLocations}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
@@ -43,7 +43,7 @@
 
             <!-- ++++++++++++++++ Found Postalcodes +++++++++++++++++ -->
 
-            <ListView HasUnevenRows="True" SeparatorColor="White" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}" BackgroundColor="{StaticResource PrimaryOverlay}" IsVisible="{Binding PostalListVisibility}">
+            <ListView HasUnevenRows="True" SeparatorColor="White" Grid.ColumnSpan="8" Grid.Row="1" ItemsSource="{Binding ItemsSourceSearchBar}" SelectedItem="{Binding SelectedItemSearchBar}" BackgroundColor="{StaticResource Background}" IsVisible="{Binding PostalListVisibility}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell TextColor="white" DetailColor="#75b6e7" Text="{Binding Code}" Detail="{Binding District}">
@@ -54,7 +54,7 @@
             
             <!-- ++++++++++++++++ Filter +++++++++++++++++ -->
 
-            <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource PrimaryOverlay}" Padding="5"  IsVisible="{Binding FilterVisibility}">
+            <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource Background}" Padding="5"  IsVisible="{Binding FilterVisibility}">
                 <contentViews:FilterView Filter="{Binding filter, Mode=TwoWay}" Margin="0"></contentViews:FilterView>
             </ScrollView>
         </Grid>

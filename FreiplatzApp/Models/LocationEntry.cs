@@ -15,6 +15,7 @@ namespace FreiplatzApp.Models
             get => _paragraphs;
             set {
                 _paragraphs = value;
+                OnPropertyChanged();
             } 
         }
         public int Space { get; set; }
@@ -26,6 +27,18 @@ namespace FreiplatzApp.Models
         public string EMail { get; set; }
         public bool showAvailableSpace { get; set; }
         public InstitutionEntry Institution { get; set; }
+
+        public List<Enum> ParsingParagraphs
+        {
+            set
+            {
+                List<Enums.Paragraphs> list = new List<Enums.Paragraphs>();
+                foreach (Enum test in value){
+                    list.Add((Enums.Paragraphs)test);
+                }
+                Paragraphs = list;
+            }
+        }
 
         public bool IsInSearch(string searchText)
         {
