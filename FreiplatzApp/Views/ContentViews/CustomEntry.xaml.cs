@@ -18,6 +18,15 @@ namespace FreiplatzApp.Views.ContentViews
             Content.BindingContext = this;
         }
 
+        public static readonly BindableProperty KeyboardProperty =
+                   BindableProperty.Create(nameof(Keyboard), typeof(Keyboard), typeof(CustomEntry), Keyboard.Default);
+
+        public Keyboard Keyboard
+        {
+            get { return (Keyboard)GetValue(KeyboardProperty); }
+            set { SetValue(KeyboardProperty, value); }
+        }
+
         public static readonly BindableProperty PlaceholderProperty =
                     BindableProperty.Create(nameof(Placeholder), typeof(string), typeof(CustomEntry), null);
 
@@ -33,7 +42,7 @@ namespace FreiplatzApp.Views.ContentViews
         public string Text
         {
             get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            set {SetValue(TextProperty, (string) value); }
         }
     }
 }

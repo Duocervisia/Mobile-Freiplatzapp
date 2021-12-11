@@ -7,7 +7,7 @@
         <Grid>
             <!-- Kinda stolen from: https://dev.to/jefrypozo/creating-an-outlined-entry-in-xamarin-forms-48af -->
             <Frame HasShadow="False" CornerRadius="3" BorderColor="{StaticResource Outline}" BackgroundColor="Transparent" />
-            <Entry Placeholder="{Binding Placeholder}" Margin="5,0" BackgroundColor="Transparent" Text="{Binding Text, Mode=TwoWay}"></Entry>
+            <Entry Placeholder="{Binding Placeholder}" Margin="5,0" BackgroundColor="Transparent" Text="{Binding Text, Mode=TwoWay}" Keyboard="{Binding Keyboard}"></Entry>
         </Grid>
     </ContentView.Content>
 </ContentView>
