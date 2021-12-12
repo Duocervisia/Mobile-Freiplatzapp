@@ -143,4 +143,49 @@
       <Name>FreiplatzApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\editwhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\editwhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\editwhite36%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoritewhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoritewhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoritewhite36%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filterwhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filterwhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filterwhite36%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homewhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homewhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homewhite36%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchwhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchwhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchwhite36%403x.png" />
+  </ItemGroup>
 </Project>
