@@ -34,7 +34,7 @@ namespace FreiplatzApp.Views.ContentViews
         public static void locationPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             LocationTile thisLocationTile = bindable as LocationTile;
-            thisLocationTile.checkFavText();
+            thisLocationTile.checkFavorite(null, true);
         }
 
         public LocationEntry Location
@@ -42,16 +42,7 @@ namespace FreiplatzApp.Views.ContentViews
             get { return (LocationEntry)GetValue(LocationProperty); }
             set { SetValue(LocationProperty, value); }
         }
-
-        public static readonly BindableProperty FavTextroperty =
-        BindableProperty.Create(nameof(FavText), typeof(string), typeof(LocationTile), null, BindingMode.TwoWay);
-
-        public string FavText
-        {
-            get { return (string)GetValue(FavTextroperty); }
-            set { SetValue(FavTextroperty, value); }
-        }
-
+     
         private void fav_Clicked(object sender, EventArgs e)
         {
             List<string> favs = LocalStorage.favoriteLocationIds;
@@ -63,23 +54,28 @@ namespace FreiplatzApp.Views.ContentViews
             {
                 favs.Add(Location.Id);
             }
-            checkFavText(favs);
+            checkFavorite(favs);
 
             LocalStorage.favoriteLocationIds = favs;
         }
 
-        public void checkFavText(List<string> favs = null)
+        public void checkFavorite(List<string> favs = null, bool init = false)
         {
+            Image image = this.FindByName<Image>("favoriteImage");
+
             favs = (favs == null) ? LocalStorage.favoriteLocationIds : favs;
 
-            if (favs.Contains(Location.Id))
+            string imageSource = favs.Contains(Location.Id) ? imageSource = "favoritewhite36.png" : "favoriteborderwhite36.png";
+       
+            if (!init)
             {
-                FavText = "-fav";
+                Animator.ImageTransition(image, imageSource);
             }
             else
             {
-                FavText = "+fav";
+                image.Source = imageSource;
             }
+
         }
     }
 }

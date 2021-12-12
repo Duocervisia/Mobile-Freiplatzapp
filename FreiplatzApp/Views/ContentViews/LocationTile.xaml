@@ -42,7 +42,20 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
-            <Button Grid.Column="1" Image="favoriteborderwhite36.png"  Clicked="fav_Clicked" />
+            <Image x:Name="favoriteImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoriteborderwhite36.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="fav_Clicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <!--<Image Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoritewhite36.png" IsVisible="{Binding IsFavorite}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="fav_Clicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>-->
         </Grid>
     </ContentView.Content>
 </ContentView>

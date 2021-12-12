@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using FreiplatzApp.Models;
 using FreiplatzApp.Services;
+using FreiplatzApp.Helper;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace FreiplatzApp.ViewModels
 
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
             SearchButtonPressedCommand = new Command(async () => await SearchButtonPressed());
-            FilterButtonPressedCommand = new Command(() => FilterButtonPressed());
+            FilterButtonPressedCommand = new Command((parameter) => FilterButtonPressed(parameter));
         }
 
         private string _searchText;
@@ -133,8 +134,9 @@ namespace FreiplatzApp.ViewModels
             }
         }
 
-        private void FilterButtonPressed()
+        private void FilterButtonPressed(object parameter)
         {
+            Animator.TapAnimation(parameter as Image);
             FilterVisibility = !FilterVisibility;
         }
 
