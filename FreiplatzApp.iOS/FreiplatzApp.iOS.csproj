@@ -188,4 +188,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\searchwhite36%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\addbusinesswhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\addbusinesswhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\addbusinesswhite36%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoriteborderwhite36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoriteborderwhite36%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favoriteborderwhite36%403x.png" />
+  </ItemGroup>
 </Project>
