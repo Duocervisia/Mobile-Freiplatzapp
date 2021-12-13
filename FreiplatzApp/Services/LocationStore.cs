@@ -36,9 +36,12 @@ namespace FreiplatzApp.Services
             locationEntry.TelephoneNumber = "01548408468";
             locationEntry.Website = RandomString(30);
             locationEntry.EMail = RandomString(15);
+            //locationEntry.CarrierName = ; irgendwie muss di eVerbindung zum Carrierr.Carriername rein
+
 
             return locationEntry;
         }
+
 
         public async Task<IEnumerable<LocationEntry>> GetItemsAsyncSearch(string searchText = null)
         {

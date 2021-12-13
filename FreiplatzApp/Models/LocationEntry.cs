@@ -67,7 +67,7 @@ namespace FreiplatzApp.Models
         public string Website { get; set; }
         public string EMail { get; set; }
         public bool ShowAvailableSpace { get; set; } = true;
-        public CarrierEntry Institution { get; set; }
+        public CarrierEntry CarrierName { get; set; }
 
         public List<Enum> ParsingParagraphs
         {

@@ -19,7 +19,7 @@ namespace FreiplatzApp.Services
             }
         }
 
-        private CarrierEntry getRandomEntry()
+        public CarrierEntry getRandomEntry()
         {
             CarrierEntry carrierEntry = new CarrierEntry();
             carrierEntry.Id = GenerateSeededGuid().ToString();
