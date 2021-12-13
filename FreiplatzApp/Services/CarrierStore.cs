@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace FreiplatzApp.Services
 {
-    class InstitutionStore : StoreBase<InstitutionStore, InstitutionEntry>
+    class CarrierStore : StoreBase<CarrierStore, CarrierEntry>
     {
         LocationStore locationsStore = LocationStore.GetInstance();
 
@@ -19,24 +19,24 @@ namespace FreiplatzApp.Services
             }
         }
 
-        private InstitutionEntry getRandomEntry()
+        private CarrierEntry getRandomEntry()
         {
-            InstitutionEntry institutionEntry = new InstitutionEntry();
-            institutionEntry.Id = GenerateSeededGuid().ToString();
-            institutionEntry.Description = RandomString(50);
-            institutionEntry.Name = RandomString(10);
+            CarrierEntry carrierEntry = new CarrierEntry();
+            carrierEntry.Id = GenerateSeededGuid().ToString();
+            carrierEntry.Description = RandomString(50);
+            carrierEntry.CarrierName = RandomString(10);
 
             //random typeOfCarrier
             Array values = Enum.GetValues(typeof(Enums.TypeOfCarrier));
             Enums.TypeOfCarrier randomCarrier = (Enums.TypeOfCarrier)values.GetValue(random.Next(values.Length-1)+1);
-            institutionEntry.TypeOfCarrier = randomCarrier;
+            carrierEntry.TypeOfCarrier = randomCarrier;
 
             for (int i = 0; i < random.Next(0,4); i++)
             {
-                institutionEntry.Locations.Add(locationsStore.getRandomEntry());
+                carrierEntry.Locations.Add(locationsStore.getRandomEntry());
             }
 
-            return institutionEntry;
+            return carrierEntry;
         }
 
         public async Task<List<LocationEntry>> GetAsyncFoundLocations(FilterEntry filter, string searchText = null)

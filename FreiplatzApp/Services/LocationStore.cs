@@ -22,7 +22,6 @@ namespace FreiplatzApp.Services
             LocationEntry locationEntry = new LocationEntry();
             locationEntry.Id = GenerateSeededGuid().ToString();
             locationEntry.HousingName = RandomString(5);
-            locationEntry.CarrierName = RandomString(5);
             locationEntry.Description = RandomString(50);
             locationEntry.MinAge = random.Next(1, 10);
             locationEntry.MaxAge = random.Next(11, 18);

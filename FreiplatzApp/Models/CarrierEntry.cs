@@ -4,9 +4,9 @@ using System.Text;
 
 namespace FreiplatzApp.Models
 {
-    public class InstitutionEntry : ModelBase
+    public class CarrierEntry : ModelBase
     {
-        public string Name { get; set; }
+        public string CarrierName { get; set; }
         public string Description { get; set; }
         public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
         private List<LocationEntry> locations = new List<LocationEntry>();

@@ -9,10 +9,10 @@ namespace FreiplatzApp.ViewModels
 {
     class ManageProfileModel: ViewModelBase
     {
-        public LocationEntry Location { get; set; }
+        public CarrierEntry Carrier { get; set; }
         public ManageProfileModel()
         {
-            Location = new LocationEntry();
+            Carrier = new CarrierEntry();
         }
     }
 }

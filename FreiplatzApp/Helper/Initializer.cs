@@ -11,7 +11,7 @@ namespace FreiplatzApp.Helper
        public static async void init()
        {
             await PostalCodeStore.GetInstance().init();
-            InstitutionStore.GetInstance().init();
+            CarrierStore.GetInstance().init();
         }
     }
 }
