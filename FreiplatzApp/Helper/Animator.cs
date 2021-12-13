@@ -28,12 +28,12 @@ namespace FreiplatzApp.Helper
 
         public static async void TapAnimation(Image image)
         {
-            uint transitionTime = 100;
+            uint transitionTime = 70;
 
-            await Task.WhenAll(image.ScaleTo(1.3, transitionTime, Easing.Linear));
-            await Task.WhenAll(image.ScaleTo(0.7, transitionTime, Easing.Linear));
-            await Task.WhenAll(image.ScaleTo(1.15, transitionTime, Easing.Linear));
-            await Task.WhenAll(image.ScaleTo(0.85, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(1.2, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(0.8, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(1.1, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(0.9, transitionTime, Easing.Linear));
             await Task.WhenAll(image.ScaleTo(1, transitionTime, Easing.Linear));
 
         }
