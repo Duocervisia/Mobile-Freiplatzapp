@@ -24,7 +24,113 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
+            <!-- ++++++++++++++++ ScrollView with settable Entries +++++++++++++++++ -->
+
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid  ColumnSpacing="10" RowSpacing="5" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- ++++++++++++++++ Name +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Label StyleClass="Big" Grid.Row="0" Text="Trägschaft:" Margin="0,0,0,5" />
+                            <contentViews:CustomEntry  Grid.Row="1" Placeholder="Trägschaftsname" Text="{Binding Location.CarrierName}"/>
+                            <Label StyleClass="Medium" Text="Einrichtung:" VerticalOptions="Center" />
+                            <contentViews:CustomEntry Placeholder="Einrichtungsname"  Grid.Column="1" Text="{Binding Location.HousingName}"></contentViews:CustomEntry>
+                        </Grid>
+                    </Frame>
+                    <!-- ++++++++++++++++ Description +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="1" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="150"/>
+                            </Grid.RowDefinitions>
+                            <Label StyleClass="Big" Text="Beschreibung der Trägschaft" Margin="0,0,0,5"/>
+                            <contentViews:CustomEditor Grid.Row="1" Placeholder="Ihre Einrichtungsbeschreibung" Text="{Binding Location.Description}"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- ++++++++++++++++ Adress +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="4" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Adresse" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Straße:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry Placeholder="Musterstraße"  Grid.Column="1" Text="{Binding Location.Street}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Postleitzahl:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="1"  Grid.Column="1" Keyboard="Numeric" Text="{Binding Location.TextPostalNumber}"></contentViews:CustomEntry>
+
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    <!-- ++++++++++++++++ Informations +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="5" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Informationen" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry  Grid.Column="1" Placeholder="+030..." Text="{Binding Location.TelephoneNumber}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="1" Placeholder="Ihre Webseite" Grid.Column="1" Text="{Binding Location.Website}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="2" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="2" Placeholder="Ihre E-Mailadresse"  Grid.Column="1" Text="{Binding Location.EMail}"></contentViews:CustomEntry>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
         </Grid>
-       
     </ContentPage.Content>
 </ContentPage>

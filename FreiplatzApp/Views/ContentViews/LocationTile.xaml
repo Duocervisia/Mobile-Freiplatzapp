@@ -21,12 +21,12 @@
             </Frame>
             <Label StyleClass="Big" Margin="5,5,5,0">
                 <Label.Text>
-                    <Binding Path="Location.Name" StringFormat="Einrichtungsname: {0}" />
+                    <Binding Path="Location.HousingName" StringFormat="Einrichtungsname: {0}" />
                 </Label.Text>
             </Label>
             <Label Grid.Row="1"  StyleClass="Medium" Margin="5,0,5,10">
                 <Label.Text>
-                    <Binding Path="Location.Name" StringFormat="Träger: {0}" />
+                    <Binding Path="Location.CarrierName" StringFormat="Träger: {0}" />
                 </Label.Text>
             </Label>
             <Label Grid.Row="2"  StyleClass="Medium" Margin="5,0">

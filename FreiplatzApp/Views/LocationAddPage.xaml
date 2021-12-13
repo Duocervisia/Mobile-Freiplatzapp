@@ -50,8 +50,10 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="50"/>
                             </Grid.RowDefinitions>
-                            <Label StyleClass="Big" Grid.Row="0" Text="Name der Einrichtung" Margin="0,0,0,5" />
-                            <contentViews:CustomEntry  Grid.Row="1" Placeholder="Ihr Einrichtungsname" Text="{Binding Location.Name}"/>
+                            <Label StyleClass="Big" Grid.Row="0" Text="Traegschaft" Margin="0,0,0,5" />
+                            <contentViews:CustomEntry  Grid.Row="1" Placeholder="Traegschaftsname" Text="{Binding Location.CarrierName}"/>
+                            <Label StyleClass="Big" Grid.Row="0" Text="Einrichtung:" Margin="0,0,0,5" />
+                            <contentViews:CustomEntry  Grid.Row="1" Placeholder="Einrichtungsname" Text="{Binding Location.HousingName}"/>
                         </Grid>
                     </Frame>
 
