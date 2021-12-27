@@ -33,7 +33,7 @@ namespace FreiplatzApp.Services
 
             for (int i = 0; i < random.Next(0,4); i++)
             {
-                carrierEntry.Locations.Add(locationsStore.getRandomEntry());
+                carrierEntry.Locations.Add(locationsStore.getRandomEntry(carrierEntry));
             }
 
             return carrierEntry;

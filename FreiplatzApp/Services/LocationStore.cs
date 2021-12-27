@@ -10,14 +10,14 @@ namespace FreiplatzApp.Services
     class LocationStore : StoreBase<LocationStore, LocationEntry>
     {
 
-        public void init() {
-            for (int i = 0; i< 500; i++)
-            {
-                _ = AddItemAsync(getRandomEntry());
-            }
-        }
+        //public void init() {
+        //    for (int i = 0; i< 500; i++)
+        //    {
+        //        _ = AddItemAsync(getRandomEntry());
+        //    }
+        //}
 
-        public LocationEntry getRandomEntry()
+        public LocationEntry getRandomEntry(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
             locationEntry.Id = GenerateSeededGuid().ToString();
@@ -36,7 +36,7 @@ namespace FreiplatzApp.Services
             locationEntry.TelephoneNumber = "01548408468";
             locationEntry.Website = RandomString(30);
             locationEntry.EMail = RandomString(15);
-            //locationEntry.CarrierName = ; irgendwie muss di eVerbindung zum Carrierr.Carriername rein
+            locationEntry.Carrierentry = carrierEntry;
 
 
             return locationEntry;
