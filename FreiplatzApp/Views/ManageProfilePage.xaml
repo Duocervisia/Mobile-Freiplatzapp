@@ -139,8 +139,23 @@
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label StyleClass="Big" Text="Meine Einrichtungen" Grid.Column="0" Margin="0,0,0,5" />
+                                <Image x:Name="addImage" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Source="addbusinesswhite36.png">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding AddButtonPressedCommand}"
+                                            CommandParameter="{x:Reference addImage}"
+                                            NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
 
-                            <Label StyleClass="Big" Text="Meine Einrichtungen" Margin="0,0,0,5" />
+                            
                             <ScrollView Grid.Row="1" BackgroundColor="{StaticResource Background}" Padding="5">
                                 <StackLayout BindableLayout.ItemsSource="{Binding Carrier.Locations}">
                                     <BindableLayout.ItemTemplate>
