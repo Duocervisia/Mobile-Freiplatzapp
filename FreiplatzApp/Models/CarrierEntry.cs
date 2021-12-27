@@ -8,7 +8,35 @@ namespace FreiplatzApp.Models
     {
         public string CarrierName { get; set; }
         public string Description { get; set; }
-        public Enums.TypeOfCarrier TypeOfCarrier { get; set; }
+        public string Street { get; set; }
+        public int PostalNumber { get; set; }
+        public string TextPostalNumber
+        {
+            get => Convert.ToString(PostalNumber);
+            set
+            {
+                if (value == "") PostalNumber = 0;
+                else PostalNumber = Convert.ToInt32(value);
+                OnPropertyChanged();
+            }
+        }
+        public string TelephoneNumber { get; set; }
+        public string Website { get; set; }
+        public string EMail { get; set; }
+
+        public Enums.TypeOfCarrier _typeOfCarrier = Enums.TypeOfCarrier.ALL;
+        public Enums.TypeOfCarrier TypeOfCarrier
+        {
+            get { return _typeOfCarrier; }
+            set
+            {
+                if (_typeOfCarrier == value) return;
+                _typeOfCarrier = value;
+
+                OnPropertyChanged();
+            }
+        }
+
         private List<LocationEntry> locations = new List<LocationEntry>();
         public List<LocationEntry> Locations
         {

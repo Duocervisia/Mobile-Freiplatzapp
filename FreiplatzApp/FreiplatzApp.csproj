@@ -25,6 +25,9 @@
     <Compile Update="Views\ContentViews\CustomEnumPicker.xaml.cs">
       <DependentUpon>CustomEnumPicker.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ContentViews\CarrierLocationTile.xaml.cs">
+      <DependentUpon>CarrierLocationTile.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

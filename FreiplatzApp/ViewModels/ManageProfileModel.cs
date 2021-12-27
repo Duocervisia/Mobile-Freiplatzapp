@@ -9,10 +9,16 @@ namespace FreiplatzApp.ViewModels
 {
     class ManageProfileModel: ViewModelBase
     {
+        public Command SaveButtonPressedCommand { get; set; }
         public CarrierEntry Carrier { get; set; }
         public ManageProfileModel()
         {
             Carrier = new CarrierEntry();
+            SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
+        }
+        private void SaveButtonPressed()
+        {
+
         }
     }
 }
