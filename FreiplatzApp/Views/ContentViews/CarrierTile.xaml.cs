@@ -19,7 +19,6 @@ namespace FreiplatzApp.Views.ContentViews
     public partial class CarrierTile : ContentView
     {
         public Command EditButtonPressedCommand { get; set; }
-        public LocationEntry Location { get; set; }
         public CarrierTile()
         {
             InitializeComponent();
@@ -38,11 +37,17 @@ namespace FreiplatzApp.Views.ContentViews
             CarrierTile thisCarrierTile = bindable as CarrierTile;
             //thisCarrierTile.checkFavorite(null, true);
         }
+        public LocationEntry Location
+        {
+            get { return (LocationEntry)GetValue(LocationProperty); }
+            set { SetValue(LocationProperty, value); }
+        }
 
-        private bool _editVisibility = false;
+        private bool EditVisibility = false;
         private void EditButtonPressed(object location)
         {
-            _editVisibility = true;
+            Animator.TapAnimation(editImage);
+            EditVisibility = true;
 
         }
     }

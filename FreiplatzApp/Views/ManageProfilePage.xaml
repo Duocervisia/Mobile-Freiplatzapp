@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:FreiplatzApp.ViewModels"
              xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
-             xmlns:contentViewsPopups="clr-namespace:FreiplatzApp.Views.ContentViews.Popups"
+             xmlns:local="clr-namespace:FreiplatzApp.Views"
              xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
              x:Class="FreiplatzApp.Views.ManageProfilePage"
              Shell.NavBarIsVisible="False">
@@ -185,6 +185,12 @@
                 <Button Grid.Row="1" Grid.ColumnSpan="2" Text="Speichern"  Command="{Binding SaveButtonPressedCommand}" />
                 <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Outline}"></Frame>
             </Grid>
+            
+            <!-- ++++++++++ Add Location +++++++++ -->
+            <ScrollView  Grid.Row="0"  BackgroundColor="{StaticResource Background}" Padding="5"  IsVisible="{Binding AddVisibility}">
+                <views: ContentTemplate="{DataTemplate local:LocationAddPage}"></views:<Unknown>>
+            </ScrollView>
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>
