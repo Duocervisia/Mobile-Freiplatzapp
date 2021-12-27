@@ -9,6 +9,7 @@ namespace FreiplatzApp.Models
         public string CarrierName { get; set; }
         public string Description { get; set; }
         public string Street { get; set; }
+        public PostalEntry PostalEntry { get; set; }
         public int PostalNumber { get; set; }
         public string TextPostalNumber
         {

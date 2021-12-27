@@ -52,7 +52,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label StyleClass="Big" Grid.Row="0" Text="Trägschaft:" Margin="0,0,0,5" />
-                            <contentViews:CustomEntry  Grid.Row="0" Grid.Column="1" Placeholder="Trägschaftsname" Text="{Binding Carrier.CarrierName}"/>
+                            <contentViews:CustomEntry  Grid.Row="0" Grid.Column="1" Text="{Binding Carrier.CarrierName}"/>
                             <Label StyleClass="Big" Grid.Row="1" Text="Art des Trägers:" Margin="0,0,0,5" />
                             <contentViews:CustomEnumPicker  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding TypeOfCarrier}" SelectedItem="{Binding Carrier.TypeOfCarrier, Mode=TwoWay}" />
                         </Grid>
@@ -160,7 +160,7 @@
                                 <StackLayout BindableLayout.ItemsSource="{Binding Carrier.Locations}">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
-                                            <contentViews:LocationTile Location="{Binding}" Margin="0"></contentViews:LocationTile>
+                                            <contentViews:CarrierTile Location="{Binding}" Margin="0"></contentViews:CarrierTile>
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </StackLayout>

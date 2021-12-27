@@ -25,6 +25,12 @@ namespace FreiplatzApp.Services
             carrierEntry.Id = GenerateSeededGuid().ToString();
             carrierEntry.Description = RandomString(50);
             carrierEntry.CarrierName = RandomString(10);
+            carrierEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            carrierEntry.TelephoneNumber = "015237446577";
+            carrierEntry.Website = RandomString(30);
+            carrierEntry.EMail = RandomString(15);
+            carrierEntry.Street = RandomString(20);
+
 
             //random typeOfCarrier
             Array values = Enum.GetValues(typeof(Enums.TypeOfCarrier));
