@@ -10,10 +10,8 @@ namespace FreiplatzApp.ViewModels
 {
     public class DetailsModel : ViewModelBase
     {
-        public DetailsModel(LocationEntry Location)
-        {
-
-        }
+        
+        public DetailsModel(LocationEntry location) { }
 
     }
 }

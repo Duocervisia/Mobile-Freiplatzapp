@@ -14,11 +14,10 @@ namespace FreiplatzApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage : ContentPage
     {
-        public DetailPage(LocationEntry Location)
+        public DetailPage(LocationEntry location)
         {
-            InitializeComponent(); 
-            Content.BindingContext = new DetailsModel(Location);
+            InitializeComponent();
+            Content.BindingContext = new DetailsModel(location);
         }
-
     }
 }

@@ -5,11 +5,11 @@
              xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
              xmlns:contentViewsPopups="clr-namespace:FreiplatzApp.Views.ContentViews.Popups"
              xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
-             x:Class="FreiplatzApp.Views.DetailPage"
+             x:Class="FreiplatzApp.Views.FavoritePage"
              Shell.NavBarIsVisible="False">
 
     <ContentPage.BindingContext>
-        <vm:/>
+        <vm:FavoriteModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <converter:EnumConverter x:Key="EnumConverter" />
