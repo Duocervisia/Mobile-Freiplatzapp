@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using FreiplatzApp.Models;
 using FreiplatzApp.Services;
 using FreiplatzApp.Helper;
+using FreiplatzApp.Views;
 using System.Threading.Tasks;
 
 namespace FreiplatzApp.ViewModels
@@ -25,17 +26,11 @@ namespace FreiplatzApp.ViewModels
         {
 
         }
-        private bool _addVisibility = false;
-        public bool AddVisibility
-        {
-            get { return _addVisibility; }
-            set { SetProperty(ref _addVisibility, value); }
-        }
-        private void AddButtonPressed(object parameter)
+       
+        private async void AddButtonPressed(object parameter)
         {
             Animator.TapAnimation(parameter as Image);
-            AddVisibility = !AddVisibility;
-
+            await Shell.Current.GoToAsync(nameof(LocationAddPage));
         }
     }
 }
