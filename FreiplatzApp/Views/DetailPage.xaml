@@ -77,25 +77,10 @@
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
 
                             <Label StyleClass="Big" Text="Belegung" Margin="0,0,0,5" />
-                            <StackLayout Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,5">
-                                <Label StyleClass="Medium" Text="Anzeigen:" VerticalOptions="Center"/>
-                                <Switch IsToggled="{Binding Location.ShowAvailableSpace}"></Switch>
-                            </StackLayout>
-                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-
-                                <Label StyleClass="Medium" Text="Freie Plätze:" VerticalOptions="Center" />
-                                <Label Text="{Binding Location.TextSpace}"/>
-                            </Grid>
+                            <Label StyleClass="Medium" Text="Freie Plätze:" VerticalOptions="Center" />
+                            <Label Text="{Binding Location.TextSpace}"/>
                         </Grid>
                     </Frame>
 
@@ -121,7 +106,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label StyleClass="Medium" Text="ALtersspanne:" VerticalOptions="Center" />
-                                <Slider Minimum="{Binding Location.TextMinAge}" Maximum="{Binding Location.TextMaxAge}"/>
+                                <Label Text="{Binding Location.TextMinAge}"/>
                             </Grid>
                         </Grid>
                     </Frame>
@@ -205,8 +190,6 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Label StyleClass="Big" Text="Paragraphen:" VerticalOptions="Center" />
-                            <Button Grid.Column="1" Text="Auswählen" Command="{Binding EnumPopupButtonPressedCommand}" Margin="0"/>
-                            <Label Grid.Row="1" StyleClass="Medium" Text="Ausgewählt:" VerticalOptions="Center" Margin="0" />
                             <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding Location.Paragraphs}">
                                 <BindableLayout.ItemTemplate >
                                     <DataTemplate>

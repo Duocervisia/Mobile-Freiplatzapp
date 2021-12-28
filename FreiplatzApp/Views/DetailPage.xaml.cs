@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FreiplatzApp.Models;
+using FreiplatzApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,11 @@ namespace FreiplatzApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage : ContentPage
     {
-        public DetailPage()
+        public DetailPage(LocationEntry Location)
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            Content.BindingContext = new DetailsModel(Location);
         }
+
     }
 }

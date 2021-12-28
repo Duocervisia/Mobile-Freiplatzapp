@@ -80,7 +80,7 @@ namespace FreiplatzApp.Views.ContentViews
 
         private async void loc_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new DetailPage());
+            await Navigation.PushAsync(new DetailPage(Location));
         }
     }
 }

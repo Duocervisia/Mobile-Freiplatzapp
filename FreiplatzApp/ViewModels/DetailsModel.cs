@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace FreiplatzApp.ViewModels
 {
-    class DetailsModel : ViewModelBase
+    public class DetailsModel : ViewModelBase
     {
+        public DetailsModel(LocationEntry Location)
+        {
+
+        }
 
     }
 }
