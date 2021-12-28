@@ -30,7 +30,7 @@ namespace FreiplatzApp.Views.ContentViews
             declaringType: typeof(LocationTile),
             propertyChanged: locationPropertyChanged);
 
-      
+
         public static void locationPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             LocationTile thisLocationTile = bindable as LocationTile;
@@ -76,6 +76,11 @@ namespace FreiplatzApp.Views.ContentViews
                 image.Source = imageSource;
             }
 
+        }
+
+        private async void loc_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DetailPage());
         }
     }
 }

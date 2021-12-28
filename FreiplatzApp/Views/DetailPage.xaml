@@ -8,22 +8,221 @@
              x:Class="FreiplatzApp.Views.DetailPage"
              Shell.NavBarIsVisible="False">
 
-    <<ContentPage.BindingContext>
-        <vm:DetailModel/>
-        </ContentPage.BindingContext>
+    <ContentPage.BindingContext>
+        <vm:DetailsModel/>
+    </ContentPage.BindingContext>
         <ContentPage.Resources>
             <converter:EnumConverter x:Key="EnumConverter" />
         </ContentPage.Resources>
 
         <ContentPage.Content>
-            <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="76" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-        </ContentPage.Content>
+        <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="76" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- ++++++++++++++++ ScrollView with settable Entries +++++++++++++++++ -->
+
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid  ColumnSpacing="10" RowSpacing="5" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    
+                    <!-- ++++++++++++++++ Name +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Label StyleClass="Big" Grid.Row="0" Text="Name der Einrichtung" Margin="0,0,0,5" />
+                            <Label Text="{Binding Location.Name}"/>
+                        </Grid>
+                    </Frame>
+
+                    
+                    <!-- ++++++++++++++++ Description +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="1" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="150"/>
+                            </Grid.RowDefinitions>
+                            <Label StyleClass="Big" Text="Beschreibung der Einrichtung" Margin="0,0,0,5"/>
+                            <Label Text="{Binding Location.Description}"/>
+                        </Grid>
+                    </Frame>
+                    
+
+                    <!-- ++++++++++++++++ Space +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="2" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label StyleClass="Big" Text="Belegung" Margin="0,0,0,5" />
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label StyleClass="Medium" Text="Anzeigen:" VerticalOptions="Center"/>
+                                <Switch IsToggled="{Binding Location.ShowAvailableSpace}"></Switch>
+                            </StackLayout>
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Freie Plätze:" VerticalOptions="Center" />
+                                <Label Text="{Binding Location.TextSpace}"/>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    
+                    <!-- ++++++++++++++++ Age +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="3" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Altersspanne" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="ALtersspanne:" VerticalOptions="Center" />
+                                <Slider Minimum="{Binding Location.TextMinAge}" Maximum="{Binding Location.TextMaxAge}"/>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    
+                    <!-- ++++++++++++++++ Adress +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="4" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Adresse" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Straße:" VerticalOptions="Center" />
+                                <Label Text="{Binding Location.Street}"/>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Postleitzahl:" VerticalOptions="Center"/>
+                                <Label Text="{Binding Location.TextPostalNumber}"/>
+
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    
+                    <!-- ++++++++++++++++ Informations +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="5" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Informationen" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
+                                <Label Text="{Binding Location.TelephoneNumber}"/>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
+                                <Label Text="{Binding Location.Website}"/>
+
+                                <Label Grid.Row="2" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
+                                <Label Text="{Binding Location.EMail}"/>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    
+                    <!-- ++++++++++++++++ Paragraphs +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="6" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label StyleClass="Big" Text="Paragraphen:" VerticalOptions="Center" />
+                            <Button Grid.Column="1" Text="Auswählen" Command="{Binding EnumPopupButtonPressedCommand}" Margin="0"/>
+                            <Label Grid.Row="1" StyleClass="Medium" Text="Ausgewählt:" VerticalOptions="Center" Margin="0" />
+                            <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding Location.Paragraphs}">
+                                <BindableLayout.ItemTemplate >
+                                    <DataTemplate>
+                                        <Grid >
+                                            <Label StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" >
+                                            </Label>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+       
+            
 </ContentPage>

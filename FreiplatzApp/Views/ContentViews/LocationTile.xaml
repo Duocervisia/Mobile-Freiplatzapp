@@ -56,6 +56,11 @@
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>-->
-        </Grid>
+        </Grid> 
     </ContentView.Content>
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer
+                Tapped="loc_Clicked"
+                NumberOfTapsRequired="1" />
+    </ContentView.GestureRecognizers>
 </ContentView>
