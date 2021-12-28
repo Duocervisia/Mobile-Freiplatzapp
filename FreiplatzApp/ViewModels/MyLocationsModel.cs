@@ -14,10 +14,9 @@ namespace FreiplatzApp.ViewModels
     {
         public Command AddButtonPressedCommand { get; set; }
         public CarrierEntry Carrier { get; set; }
-        public CarrierStore carrierStore = CarrierStore.GetInstance();
-        public MyLocationsModel()
+        public MyLocationsModel ()
         {
-            Carrier = carrierStore.getRandomEntry();
+            // Carrier = 
             AddButtonPressedCommand = new Command((parameter) => AddButtonPressed(parameter));
         }
         private async void AddButtonPressed(object parameter)

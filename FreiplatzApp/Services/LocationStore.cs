@@ -36,7 +36,7 @@ namespace FreiplatzApp.Services
             locationEntry.TelephoneNumber = "01548408468";
             locationEntry.Website = RandomString(30);
             locationEntry.EMail = RandomString(15);
-            locationEntry.Carrierentry = carrierEntry;
+            locationEntry.Carrierentry = carrierEntry; //hier ist Verbindung zum Carrier
 
 
             return locationEntry;
