@@ -8,6 +8,8 @@ using System.Runtime.CompilerServices;
 using FreiplatzApp.Models;
 using FreiplatzApp.Services;
 using FreiplatzApp.Helper;
+using FreiplatzApp.ViewModels;
+using FreiplatzApp.Views;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -23,7 +25,7 @@ namespace FreiplatzApp.Views.ContentViews
         {
             InitializeComponent();
             Content.BindingContext = this;
-            EditButtonPressedCommand = new Command((location) => EditButtonPressed(location));
+            EditButtonPressedCommand = new Command((parameter) => EditButtonPressed(parameter));
         }
 
         public static readonly BindableProperty LocationProperty =
@@ -42,13 +44,12 @@ namespace FreiplatzApp.Views.ContentViews
             get { return (LocationEntry)GetValue(LocationProperty); }
             set { SetValue(LocationProperty, value); }
         }
-
-        private bool EditVisibility = false;
-        private void EditButtonPressed(object location)
+        
+        private async void EditButtonPressed(object parameter)
         {
-            Animator.TapAnimation(editImage);
-            EditVisibility = true;
-
+            Animator.TapAnimation(parameter as Image);
+            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?{nameof(EditLocationPage.Location)}={Location}");
+            
         }
     }
 }

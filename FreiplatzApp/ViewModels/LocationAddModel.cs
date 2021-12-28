@@ -37,7 +37,7 @@ namespace FreiplatzApp.ViewModels
 
         private async void SaveButtonPressed()
         {
-         
+            await Shell.Current.GoToAsync("..");
         }
 
         private void EnumPopupButtonPressed()
