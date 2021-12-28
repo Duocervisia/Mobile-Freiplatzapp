@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace FreiplatzApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class MyLocationsPage : ContentPage
     {
-        public Page1()
+        public MyLocationsPage()
         {
             InitializeComponent();
         }
