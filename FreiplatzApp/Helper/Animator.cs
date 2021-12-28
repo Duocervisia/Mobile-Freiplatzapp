@@ -13,17 +13,23 @@ namespace FreiplatzApp.Helper
             uint transitionTime = 100;
             double displacement = image.Width;
 
-            await Task.WhenAll(
-                image.FadeTo(0, transitionTime, Easing.Linear),
-                image.TranslateTo(-displacement, image.Y, transitionTime, Easing.CubicInOut));
+            await Task.WhenAll(image.ScaleTo(1.3, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(0.7, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(1.15, transitionTime, Easing.Linear));
+
+            //await Task.WhenAll(
+              //  image.FadeTo(0, transitionTime, Easing.Linear),
+                //image.TranslateTo(-displacement, image.Y, transitionTime, Easing.CubicInOut));
 
             // Changes image source.
             image.Source = ImageSource.FromFile(icon);
 
-            await image.TranslateTo(displacement, 0, 0);
-            await Task.WhenAll(
-                image.FadeTo(1, transitionTime, Easing.Linear),
-                image.TranslateTo(0, image.Y, transitionTime, Easing.CubicInOut));
+            //await image.TranslateTo(displacement, 0, 0);
+            await Task.WhenAll(image.ScaleTo(0.85, transitionTime, Easing.Linear));
+            await Task.WhenAll(image.ScaleTo(1, transitionTime, Easing.Linear));
+            //await Task.WhenAll(
+              //  image.FadeTo(1, transitionTime, Easing.Linear),
+                //image.TranslateTo(0, image.Y, transitionTime, Easing.CubicInOut));
         }
 
         public static async void TapAnimation(Image image)

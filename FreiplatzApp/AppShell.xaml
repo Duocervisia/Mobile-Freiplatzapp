@@ -30,10 +30,10 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Icon="searchwhite36.png" Route="AboutPage" ContentTemplate="{DataTemplate local:SearchPage}" />
-        <ShellContent Icon="favoritewhite36.png" ContentTemplate="{DataTemplate local:SearchPage}" />
-        <ShellContent Title="Profil" Icon="homewhite36.png" ContentTemplate="{DataTemplate local:SearchPage}" />
-        <ShellContent Title="Hinzufügen" Icon="addbusinesswhite36.png" ContentTemplate="{DataTemplate local:LocationAddPage}" />
+        <ShellContent Title="Suche" Icon="searchwhite36.png" Route="AboutPage" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Favoriten" Icon="favoritewhite36.png" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Profil" Icon="homewhite36.png" ContentTemplate="{DataTemplate local:ManageProfilePage}" />
+        <ShellContent Title="Meine Einrichtungen" Icon="mylocationswhite36.png" ContentTemplate="{DataTemplate local:MyLocationsPage}" />
 
     </TabBar>
 
