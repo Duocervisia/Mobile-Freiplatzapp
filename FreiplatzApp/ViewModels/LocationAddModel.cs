@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using FreiplatzApp.Models;
+using FreiplatzApp.Views;
 using System.Threading.Tasks;
 
 namespace FreiplatzApp.ViewModels
@@ -29,14 +30,14 @@ namespace FreiplatzApp.ViewModels
             EnumPopupButtonPressedCommand = new Command(() => EnumPopupButtonPressed());
         }
 
-        private void CancelButtonPressed()
+        private async void CancelButtonPressed()
         {
-           
+            await Shell.Current.GoToAsync("..");
         }
 
-        private void SaveButtonPressed()
+        private async void SaveButtonPressed()
         {
-
+         
         }
 
         private void EnumPopupButtonPressed()
