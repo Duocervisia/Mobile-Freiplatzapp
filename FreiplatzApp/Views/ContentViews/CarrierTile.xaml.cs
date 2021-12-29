@@ -38,7 +38,6 @@ namespace FreiplatzApp.Views.ContentViews
         public static void locationPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             CarrierTile thisCarrierTile = bindable as CarrierTile;
-            //thisCarrierTile.checkFavorite(null, true);
         }
         public LocationEntry Location
         {
@@ -51,8 +50,7 @@ namespace FreiplatzApp.Views.ContentViews
             Routing.RegisterRoute(nameof(EditLocationPage), typeof(EditLocationPage));
             var jsonStr = JsonConvert.SerializeObject((Location),new JsonSerializerSettings()
             {ReferenceLoopHandling = ReferenceLoopHandling.Ignore,});
-            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?Content={jsonStr}");
-            //await Shell.Current.GoToAsync(nameof(EditLocationPage));
+            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?LocationEntry={jsonStr}");
         }
     }
 }
