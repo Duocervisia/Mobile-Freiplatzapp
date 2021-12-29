@@ -25,6 +25,17 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            
+            <ScrollView  Grid.ColumnSpan="8" Grid.Row="1"  BackgroundColor="{StaticResource Background}" Padding="5">
+                <StackLayout BindableLayout.ItemsSource="{Binding ItemsSourceFoundLocations}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <contentViews:LocationTile Location="{Binding}" Margin="0"></contentViews:LocationTile>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

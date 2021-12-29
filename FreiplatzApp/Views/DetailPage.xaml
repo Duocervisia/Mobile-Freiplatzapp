@@ -17,17 +17,13 @@
         <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="76" />
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
 
             <!-- ++++++++++++++++ ScrollView with settable Entries +++++++++++++++++ -->
 
-            <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
-                <Grid  ColumnSpacing="10" RowSpacing="5" Margin="5">
+            <ScrollView Grid.Row="0" >
+                <Grid  ColumnSpacing="5" RowSpacing="5" Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
@@ -60,10 +56,10 @@
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
-                                <RowDefinition Height="150"/>
+                                <RowDefinition Height="100"/>
                             </Grid.RowDefinitions>
                             <Label StyleClass="Big" Text="Beschreibung der Einrichtung" Margin="0,0,0,5"/>
-                            <Label Text="{Binding Location.Description}"/>
+                            <Label Grid.Row="1" Text="{Binding Location.Description}"/>
                         </Grid>
                     </Frame>
 
@@ -77,8 +73,8 @@
                             </Grid.RowDefinitions>
 
                             <Label StyleClass="Big" Text="Belegung" Margin="0,0,0,5" />
-                            <Label StyleClass="Medium" Text="Freie Plätze:" VerticalOptions="Center" />
-                            <Label Text="{Binding Location.TextSpace}"/>
+                            <Label Grid.Row="1" StyleClass="Medium" Text="Freie Plätze:" VerticalOptions="Center" />
+                            <Label Grid.Row="1"  Grid.Column="1" Text="{Binding Location.TextSpace}"/>
                         </Grid>
                     </Frame>
 
@@ -90,22 +86,22 @@
                                 <RowDefinition Height="auto" />
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-
-                            <Label StyleClass="Big" Text="Altersspanne" Margin="0,0,0,5" />
-
-                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label StyleClass="Medium" Text="ALtersspanne:" VerticalOptions="Center" />
-                                <Label Text="{Binding Location.TextMinAge}"/>
-                            </Grid>
+                            <Label StyleClass="Big" Text="Alter" Margin="0,0,0,5" />
+                            
+                            <Label Grid.Row="1" Grid.Column="0" >
+                                    <Label.Text>
+                                       <MultiBinding StringFormat="Altersspanne: {0} - {1}">
+                                            <Binding Path="Location.MinAge" />
+                                            <Binding Path="Location.MaxAge" />
+                                        </MultiBinding>
+                                    </Label.Text>
+                            </Label>
+
                         </Grid>
                     </Frame>
 
@@ -131,10 +127,10 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label StyleClass="Medium" Text="Straße:" VerticalOptions="Center" />
-                                <Label Text="{Binding Location.Street}"/>
+                                <Label Grid.Column="1" Text="{Binding Location.Street}"/>
 
                                 <Label Grid.Row="1" StyleClass="Medium" Text="Postleitzahl:" VerticalOptions="Center"/>
-                                <Label Text="{Binding Location.TextPostalNumber}"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location.TextPostalNumber}"/>
 
                             </Grid>
                         </Grid>
@@ -162,14 +158,14 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
-                                <Label Text="{Binding Location.TelephoneNumber}"/>
+                                <Label Grid.Row="0" Grid.Column="0" StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Text="{Binding Location.TelephoneNumber}"/>
 
-                                <Label Grid.Row="1" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
-                                <Label Text="{Binding Location.Website}"/>
+                                <Label Grid.Row="1" Grid.Column="0" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location.Website}"/>
 
-                                <Label Grid.Row="2" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
-                                <Label Text="{Binding Location.EMail}"/>
+                                <Label Grid.Row="2" Grid.Column="0" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Location.EMail}"/>
                             </Grid>
                         </Grid>
                     </Frame>
@@ -179,20 +175,16 @@
                     <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="6" >
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                            
                             <Label StyleClass="Big" Text="Paragraphen:" VerticalOptions="Center" />
-                            <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding Location.Paragraphs}">
+                            <StackLayout  Grid.Row="2" BindableLayout.ItemsSource="{Binding Location.Paragraphs}">
                                 <BindableLayout.ItemTemplate >
                                     <DataTemplate>
                                         <Grid >
-                                            <Label StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" >
+                                            <Label Grid.Row="0" StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" >
                                             </Label>
                                         </Grid>
                                     </DataTemplate>
@@ -202,6 +194,7 @@
                     </Frame>
                 </Grid>
             </ScrollView>
+
         </Grid>
     </ContentPage.Content>
        
