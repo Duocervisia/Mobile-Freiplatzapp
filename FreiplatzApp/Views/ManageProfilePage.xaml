@@ -145,14 +145,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Label StyleClass="Big" Text="Meine Einrichtungen" Grid.Column="0" Margin="0,0,0,5" />
-                                <Image x:Name="addImage" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Source="addlocationwhite36.png">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            Command="{Binding AddButtonPressedCommand}"
-                                            CommandParameter="{x:Reference addImage}"
-                                            NumberOfTapsRequired="1" />
-                                    </Image.GestureRecognizers>
-                                </Image>
+                                <Button Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Image="addlocationwhite36.png" Command="{Binding AddButtonPressedCommand}"></Button>
                             </Grid>
 
                             <ScrollView Grid.Row="1" BackgroundColor="{StaticResource Background}" Padding="5">
