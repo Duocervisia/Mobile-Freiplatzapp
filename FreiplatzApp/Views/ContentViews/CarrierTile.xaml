@@ -36,8 +36,7 @@
             <Image x:Name="editImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="editwhite36.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
-                        Command="{Binding EditButtonPressedCommand}"
-                        CommandParameter="{x:Reference editImage}"
+                        Tapped="edit_Clicked"
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>

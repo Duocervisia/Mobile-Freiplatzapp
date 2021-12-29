@@ -20,12 +20,12 @@ namespace FreiplatzApp.Views.ContentViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CarrierTile : ContentView
     {
-        public Command EditButtonPressedCommand { get; set; }
+        //public Command EditButtonPressedCommand { get; set; }
         public CarrierTile()
         {
             InitializeComponent();
             Content.BindingContext = this;
-            EditButtonPressedCommand = new Command((parameter) => EditButtonPressed(parameter));
+            //EditButtonPressedCommand = new Command((parameter) => EditButtonPressed(parameter));
         }
 
         public static readonly BindableProperty LocationProperty =
@@ -44,12 +44,16 @@ namespace FreiplatzApp.Views.ContentViews
             get { return (LocationEntry)GetValue(LocationProperty); }
             set { SetValue(LocationProperty, value); }
         }
-        
-        private async void EditButtonPressed(object parameter)
+        private void edit_Clicked(object sender, EventArgs e)
         {
-            Animator.TapAnimation(parameter as Image);
-            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?{nameof(EditLocationPage.Location)}={Location}");
-            
+            Animator.TapAnimation(editImage);
         }
+
+        //private async void EditButtonPressed(object parameter)
+        //{
+        //    Animator.TapAnimation(parameter as Image);
+        //    await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?{nameof(EditLocationPage.Location)}={Location}");
+            
+        //}
     }
 }

@@ -20,7 +20,7 @@ namespace FreiplatzApp.ViewModels
         {
             Carrier = carrierStore.getExampleEntry();
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
-            AddButtonPressedCommand = new Command((parameter) => AddButtonPressed(parameter));
+            AddButtonPressedCommand = new Command(async () => await AddButtonPressed());
         }
         public CarrierEntry transferLocations ()
         {
@@ -32,9 +32,8 @@ namespace FreiplatzApp.ViewModels
 
         }
        
-        private async void AddButtonPressed(object parameter)
+        private async Task AddButtonPressed()
         {
-            Animator.TapAnimation(parameter as Image);
             await Shell.Current.GoToAsync(nameof(LocationAddPage));
         }
     }
