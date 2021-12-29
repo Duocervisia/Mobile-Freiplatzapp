@@ -14,6 +14,7 @@ using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.Forms.Xaml;
+using Newtonsoft.Json;
 
 namespace FreiplatzApp.Views.ContentViews
 {
@@ -44,16 +45,14 @@ namespace FreiplatzApp.Views.ContentViews
             get { return (LocationEntry)GetValue(LocationProperty); }
             set { SetValue(LocationProperty, value); }
         }
-        private void edit_Clicked(object sender, EventArgs e)
+        private async void edit_Clicked(object sender, EventArgs e)
         {
             Animator.TapAnimation(editImage);
+            Routing.RegisterRoute(nameof(EditLocationPage), typeof(EditLocationPage));
+            var jsonStr = JsonConvert.SerializeObject((Location),new JsonSerializerSettings()
+            {ReferenceLoopHandling = ReferenceLoopHandling.Ignore,});
+            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?Content={jsonStr}");
+            //await Shell.Current.GoToAsync(nameof(EditLocationPage));
         }
-
-        //private async void EditButtonPressed(object parameter)
-        //{
-        //    Animator.TapAnimation(parameter as Image);
-        //    await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?{nameof(EditLocationPage.Location)}={Location}");
-            
-        //}
     }
 }

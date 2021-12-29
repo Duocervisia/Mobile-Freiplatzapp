@@ -22,10 +22,6 @@ namespace FreiplatzApp.ViewModels
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
             AddButtonPressedCommand = new Command(async () => await AddButtonPressed());
         }
-        public CarrierEntry transferLocations ()
-        {
-            return Carrier;
-        }
         
         private void SaveButtonPressed()
         {
