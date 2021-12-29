@@ -235,9 +235,9 @@
                 <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Outline}"></Frame>
             </Grid>
             <!-- ++++++++++++++++ Absolute Layout +++++++++++++++++ -->
-          <!--  <AbsoluteLayout Padding="0"  Grid.ColumnSpan="2" Grid.RowSpan="2" IsVisible="{Binding EnumPopupVisibility}" >
-                <contentViewsPopups:EnumPopup  Margin="20" OwnVisibility="{Binding EnumPopupVisibility, Mode=TwoWay}" SelectedItems="{Binding Location.Paragraphs}" EnumParsing="{Binding Location.ParsingParagraphs, Mode=TwoWay}"/>
-            </AbsoluteLayout> -->
+            <AbsoluteLayout Padding="0"  Grid.ColumnSpan="2" Grid.RowSpan="2" IsVisible="{Binding EnumPopupVisibility}" >
+                <contentViewsPopups:EnumPopup  Margin="20" OwnVisibility="{Binding EnumPopupVisibility, Mode=TwoWay}" SelectedItems="{Binding Paragraphs}" EnumParsing="{Binding ParsingParagraphs, Mode=TwoWay}"/>
+            </AbsoluteLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

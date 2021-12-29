@@ -48,6 +48,18 @@ namespace FreiplatzApp.ViewModels
         private List<Enums.Paragraphs> _paragraphs = new List<Enums.Paragraphs>();
         public List<Enums.Paragraphs> Paragraphs
         {get { return _paragraphs; } set {_paragraphs = value;OnPropertyChanged("Paragraphs");}}
+        public List<Enum> ParsingParagraphs
+        {
+            set
+            {
+                List<Enums.Paragraphs> list = new List<Enums.Paragraphs>();
+                foreach (Enum test in value)
+                {
+                    list.Add((Enums.Paragraphs)test);
+                }
+                Paragraphs = list;
+            }
+        }
         public bool ShowAvailableSpace { get; set; } = true;
         private string textSpace { get; set; }
         public string TextSpace
@@ -57,7 +69,7 @@ namespace FreiplatzApp.ViewModels
         { get { return street; } set { street = value; OnPropertyChanged("Street"); } }
         private string textPostalNumber { get; set; }
         public string TextPostalNumber
-        { get { return textPostalNumber; } set { textPostalNumber = value; OnPropertyChanged("PostalNumber"); } }
+        { get { return textPostalNumber; } set { textPostalNumber = value; OnPropertyChanged("TextPostalNumber"); } }
         private string telephoneNumber { get; set; }
         public string TelephoneNumber
         { get { return telephoneNumber; } set { telephoneNumber = value; OnPropertyChanged("TelephoneNumber"); } }
