@@ -24,7 +24,6 @@ namespace FreiplatzApp.ViewModels
         public LocationAddModel()
         {
             Location = new LocationEntry();
-            Location.Paragraphs.Add(Enums.Paragraphs.CRISIS_FACILITY_ANDEMERGENCY_SERVICE);
             CancelButtonPressedCommand = new Command(() => CancelButtonPressed());
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
             EnumPopupButtonPressedCommand = new Command(() => EnumPopupButtonPressed());

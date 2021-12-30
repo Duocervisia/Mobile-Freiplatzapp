@@ -152,7 +152,7 @@
                                 <StackLayout BindableLayout.ItemsSource="{Binding Carrier.Locations}">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
-                                            <contentViews:CarrierTile Location="{Binding}" Margin="0"></contentViews:CarrierTile>
+                                            <contentViews:LocationTile Location="{Binding}" Margin="0" Editable="true"></contentViews:LocationTile>
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </StackLayout>

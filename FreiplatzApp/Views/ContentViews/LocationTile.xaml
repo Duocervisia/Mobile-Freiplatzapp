@@ -42,10 +42,17 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
-            <Image x:Name="favoriteImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoriteborderwhite36.png">
+            <Image x:Name="favoriteImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoriteborderwhite36.png" IsVisible="{Binding Favoritable}">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="fav_Clicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="editImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="editwhite36.png" IsVisible="{Binding Editable}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="edit_Clicked"
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
