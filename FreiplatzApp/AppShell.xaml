@@ -31,7 +31,7 @@
 
     <TabBar>
         <ShellContent Icon="searchwhite36.png" Route="AboutPage" ContentTemplate="{DataTemplate local:SearchPage}" />
-        <ShellContent Icon="favoritewhite36.png" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Icon="favoritewhite36.png" ContentTemplate="{DataTemplate local:FavoritePage}" />
         <ShellContent Title="Profil" Icon="homewhite36.png" ContentTemplate="{DataTemplate local:SearchPage}" />
         <ShellContent Title="Hinzufügen" Icon="addbusinesswhite36.png" ContentTemplate="{DataTemplate local:LocationAddPage}" />
 

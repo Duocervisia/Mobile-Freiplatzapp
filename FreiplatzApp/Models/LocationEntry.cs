@@ -6,7 +6,6 @@ namespace FreiplatzApp.Models
 {
     public class LocationEntry : ModelBase
     {
-    
         public string Name { get; set; }
         public string Description { get; set; }
         public int MinAge { get; set; } = 0;

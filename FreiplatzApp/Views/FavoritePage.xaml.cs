@@ -1,6 +1,5 @@
 ﻿using FreiplatzApp.ViewModels;
 using FreiplatzApp.Models;
-using FreiplatzApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +13,9 @@ namespace FreiplatzApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FavoritePage : ContentPage
     {
-        public FavoritePage(LocationEntry Location)
+        public FavoritePage()
         {
             InitializeComponent();
-            Content.BindingContext = new FavoriteModel(Location);
         }
     }
 }

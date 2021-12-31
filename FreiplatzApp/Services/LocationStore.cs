@@ -9,7 +9,6 @@ namespace FreiplatzApp.Services
 {
     class LocationStore : StoreBase<LocationStore, LocationEntry>
     {
-
         public void init() {
             for (int i = 0; i< 500; i++)
             {

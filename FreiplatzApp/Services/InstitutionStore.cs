@@ -53,5 +53,24 @@ namespace FreiplatzApp.Services
 
             return await Task.FromResult(foundLocationEntries);
         }
+
+        public async Task<List<LocationEntry>> GetLocationsByLocationIDs(List<string> ids)
+        {
+            List<LocationEntry> foundLocations = new List<LocationEntry>();
+            foreach (string id in ids)
+            {
+                foreach (InstitutionEntry entry in entries)
+                {
+                    foreach(LocationEntry locationEntry in entry.Locations)
+                    {
+                        if(locationEntry.Id == id) 
+                        { 
+                           foundLocations.Add(locationEntry);
+                        }
+                    }
+                }
+            }
+            return await Task.FromResult(foundLocations);
+        }
     }
 }

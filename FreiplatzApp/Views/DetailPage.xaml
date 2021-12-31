@@ -56,7 +56,7 @@
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
-                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Label StyleClass="Big" Text="Beschreibung der Einrichtung" Margin="0,0,0,5"/>
                             <Label Grid.Row="1" Text="{Binding Location.Description}"/>
