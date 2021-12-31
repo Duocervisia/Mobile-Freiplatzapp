@@ -62,7 +62,8 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.CHILD_PROTECTION_AND_CLEARING);
             locationEntry.Paragraphs.Add(Enums.Paragraphs.CRISIS_FACILITY_ANDEMERGENCY_SERVICE);
             locationEntry.Space = 2;
-            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.Street = "Neue Str.2";
+            locationEntry.PostalNumber = 12305;
             locationEntry.TelephoneNumber = "030 20215080";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/elternaktivierende-kurzzeitunterbringung";
             locationEntry.EMail = "e.wiesenthal@kjhv.de";
@@ -80,7 +81,8 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.CHILD_PROTECTION_AND_CLEARING);
             locationEntry.Paragraphs.Add(Enums.Paragraphs.EDUCATIONAL_ASSISTANCE_AND_CAREGIVER);
             locationEntry.Space = 1;
-            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.Street = "Breite Str.16";
+            locationEntry.PostalNumber = 10175;
             locationEntry.TelephoneNumber = "030 39404830";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/begleiteter-umgang";
             locationEntry.EMail = "h.vierck@kjhv.de";
@@ -99,7 +101,8 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.FATHER_MOTHER_CHILD_FACILITY);
             locationEntry.Paragraphs.Add(Enums.Paragraphs.SOCIAL_PEDAGOGUE_ACCOMPANIED_HOUSING);
             locationEntry.Space = 3;
-            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.Street = "Lange Str.20";
+            locationEntry.PostalNumber = 10069;
             locationEntry.TelephoneNumber = "030 4174960";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/aufsuchende-familienunterbringung";
             locationEntry.EMail = "s.koch-dames@kjhv.de";
@@ -117,7 +120,8 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.FULL_TIME_CARE_AND_FOSTER_FAMILY);
             locationEntry.Paragraphs.Add(Enums.Paragraphs.HOUSEHOLD_ORGANIZATION_TRAINING);
             locationEntry.Space = 1;
-            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.Street = "Dunckerstr.64";
+            locationEntry.PostalNumber = 10439;
             locationEntry.TelephoneNumber = "030 61390718";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/erziehungsbeistand";
             locationEntry.EMail = "n.engelmann@kjhv.de";

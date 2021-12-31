@@ -7,6 +7,7 @@ using FreiplatzApp.Services;
 using FreiplatzApp.Helper;
 using FreiplatzApp.Views;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace FreiplatzApp.ViewModels
 {
@@ -16,15 +17,18 @@ namespace FreiplatzApp.ViewModels
         public Command AddButtonPressedCommand { get; set; }
         public CarrierEntry Carrier { get; set; }
         public CarrierStore carrierStore = CarrierStore.GetInstance();
+        public List<Enums.TypeOfCarrier> TypeOfCarrier
+        {
+            get
+            {
+                return Enum.GetValues(typeof(Enums.TypeOfCarrier)).Cast<Enums.TypeOfCarrier>().ToList();
+            }
+        }
         public ManageProfileModel()
         {
             Carrier = carrierStore.getExampleEntry();
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
-            AddButtonPressedCommand = new Command((parameter) => AddButtonPressed(parameter));
-        }
-        public CarrierEntry transferLocations ()
-        {
-            return Carrier;
+            AddButtonPressedCommand = new Command(async () => await AddButtonPressed());
         }
         
         private void SaveButtonPressed()
@@ -32,9 +36,8 @@ namespace FreiplatzApp.ViewModels
 
         }
        
-        private async void AddButtonPressed(object parameter)
+        private async Task AddButtonPressed()
         {
-            Animator.TapAnimation(parameter as Image);
             await Shell.Current.GoToAsync(nameof(LocationAddPage));
         }
     }

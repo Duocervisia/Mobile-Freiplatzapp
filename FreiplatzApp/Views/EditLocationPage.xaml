@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FreiplatzApp.ViewModels"
+             xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
+             xmlns:contentViewsPopups="clr-namespace:FreiplatzApp.Views.ContentViews.Popups"
+             xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
+             x:Class="FreiplatzApp.Views.EditLocationPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <converter:EnumConverter x:Key="EnumConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="76" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- ++++++++++++++++ ScrollView with settable Entries +++++++++++++++++ -->
+
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid  ColumnSpacing="10" RowSpacing="5" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!-- ++++++++++++++++ Name +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" >
+                        <Grid Grid.ColumnSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label StyleClass="Big" Grid.Row="0" Text="Trägschaft:" Margin="0,0,0,5" />
+                            <contentViews:CustomEntry  Grid.Row="0" Grid.Column="1" Text="{Binding CarrierName}"/>
+                            <Label StyleClass="Medium" Grid.Row="1" Text="Einrichtung:" VerticalOptions="Center" />
+                            <contentViews:CustomEntry Grid.Row="1" Grid.Column="1" Text="{Binding HousingName}"></contentViews:CustomEntry>
+                        </Grid>
+                    </Frame>
+
+                    <!-- ++++++++++++++++ Description +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="1" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="150"/>
+                            </Grid.RowDefinitions>
+                            <Label StyleClass="Big" Text="Beschreibung der Einrichtung" Margin="0,0,0,5"/>
+                            <contentViews:CustomEditor Grid.Row="1" Text="{Binding Description}"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- ++++++++++++++++ Space +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="2" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label StyleClass="Big" Text="Belegung" Margin="0,0,0,5" />
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,5">
+                                <Label StyleClass="Medium" Text="Anzeigen:" VerticalOptions="Center"/>
+                                <Switch IsToggled="{Binding ShowAvailableSpace}"></Switch>
+                            </StackLayout>
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Freie Plätze:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry  Grid.Column="1" Keyboard="Numeric" Text="{Binding TextSpace}"></contentViews:CustomEntry>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    <!-- ++++++++++++++++ Age +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="3" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Altersspanne" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Mindestalter:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry  Grid.Column="1" Keyboard="Numeric" Text="{Binding TextMinAge}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Höchstalter:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="1"  Grid.Column="1" Keyboard="Numeric" Text="{Binding TextMaxAge}"></contentViews:CustomEntry>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                    <!-- ++++++++++++++++ Adress +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="4" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Adresse" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label StyleClass="Medium" Text="Straße:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry Grid.Column="1" Text="{Binding Street}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Postleitzahl:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="1"  Grid.Column="1" Keyboard="Numeric" Text="{Binding TextPostalNumber}"></contentViews:CustomEntry>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+                    <!-- ++++++++++++++++ Informations +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="5" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label StyleClass="Big" Text="Informationen" Margin="0,0,0,5" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry  Grid.Column="1" Text="{Binding TelephoneNumber}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="1" Grid.Column="1" Text="{Binding Website}"></contentViews:CustomEntry>
+
+                                <Label Grid.Row="2" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="2" Grid.Column="1" Text="{Binding EMail}"></contentViews:CustomEntry>
+                                
+                            </Grid>
+                        </Grid>
+                    </Frame>
+
+
+                    <!-- ++++++++++++++++ Paragraphs +++++++++++++++++ -->
+                    <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="6" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label StyleClass="Big" Text="Paragraphen:" VerticalOptions="Center" />
+                            <Button Grid.Column="1" Text="Auswählen" Command="{Binding EnumPopupButtonPressedCommand}" Margin="0"/>
+                            <Label Grid.Row="1" StyleClass="Medium" Text="Ausgewählt:" VerticalOptions="Center" Margin="0" />
+                            <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" BindableLayout.ItemsSource="{Binding Paragraphs}">
+                                <BindableLayout.ItemTemplate >
+                                    <DataTemplate>
+                                        <Grid >
+                                            <Label StyleClass="Medium" Margin="10" Text="{Binding ., Converter={StaticResource EnumConverter}}" >
+                                            </Label>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+            <!-- ++++++++++++++++ Save / Cancel Buttons +++++++++++++++++ -->
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Primary}" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Outline}"></Frame>
+
+                <Button Grid.Row="1" Text="Abbrechen" Command="{Binding CancelButtonPressedCommand}" />
+                <Button Grid.Row="1" Grid.Column="1" Text="Speichern"  Command="{Binding SaveButtonPressedCommand}" />
+                <Frame Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Outline}"></Frame>
+            </Grid>
+            <!-- ++++++++++++++++ Absolute Layout +++++++++++++++++ -->
+            <AbsoluteLayout Padding="0"  Grid.ColumnSpan="2" Grid.RowSpan="2" IsVisible="{Binding EnumPopupVisibility}" >
+                <contentViewsPopups:EnumPopup  Margin="20" OwnVisibility="{Binding EnumPopupVisibility, Mode=TwoWay}" SelectedItems="{Binding Paragraphs}" EnumParsing="{Binding ParsingParagraphs, Mode=TwoWay}"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

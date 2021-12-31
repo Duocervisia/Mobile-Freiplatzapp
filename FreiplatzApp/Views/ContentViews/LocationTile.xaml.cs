@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,11 +31,35 @@ namespace FreiplatzApp.Views.ContentViews
             declaringType: typeof(LocationTile),
             propertyChanged: locationPropertyChanged);
 
+        public static readonly BindableProperty EditableProperty =
+        BindableProperty.Create(
+            propertyName: nameof(Editable),
+            returnType: typeof(bool),
+            declaringType: typeof(LocationTile),
+            defaultValue: false,
+            propertyChanged: editablePropertyChanged);
+
+        public bool Editable
+        {
+            get { return (bool)GetValue(EditableProperty); }
+            set { SetValue(EditableProperty, value); }
+        }
+
+        public bool Favoritable
+        {
+            get { return !(bool)GetValue(EditableProperty); }
+        }
 
         public static void locationPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             LocationTile thisLocationTile = bindable as LocationTile;
             thisLocationTile.checkFavorite(null, true);
+        }
+
+        public static void editablePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            LocationTile thisLocationTile = bindable as LocationTile;
+            thisLocationTile.OnPropertyChanged("Favoritable");
         }
 
         public LocationEntry Location
@@ -76,6 +101,16 @@ namespace FreiplatzApp.Views.ContentViews
                 image.Source = imageSource;
             }
 
+        }
+
+        private async void edit_Clicked(object sender, EventArgs e)
+        {
+            Image image = this.FindByName<Image>("editImage");
+            Animator.TapAnimation(image);
+            Routing.RegisterRoute(nameof(EditLocationPage), typeof(EditLocationPage));
+            var jsonStr = JsonConvert.SerializeObject((Location), new JsonSerializerSettings()
+            { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
+            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?LocationEntry={jsonStr}");
         }
 
         private async void loc_Clicked(object sender, EventArgs e)
