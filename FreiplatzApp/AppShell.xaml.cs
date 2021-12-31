@@ -11,6 +11,7 @@ namespace FreiplatzApp
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(LocationAddPage), typeof(LocationAddPage));
          
         }
 

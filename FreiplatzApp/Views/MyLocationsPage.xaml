@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FreiplatzApp.ViewModels"
+             xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
+             xmlns:local="clr-namespace:FreiplatzApp.Views"
+             xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
+             x:Class="FreiplatzApp.Views.MyLocationsPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:MyLocationsModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converter:EnumConverter x:Key="EnumConverter"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="4">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label StyleClass="Big" Text="Meine Einrichtungen" Grid.Column="0" Margin="0,0,0,5" />
+                    <Image x:Name="addImage" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Source="addlocationwhite36.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                            Command="{Binding AddButtonPressedCommand}"
+                                            CommandParameter="{x:Reference addImage}"
+                                            NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                <ScrollView Grid.Row="1" BackgroundColor="{StaticResource Background}" Padding="5">
+                    <StackLayout BindableLayout.ItemsSource="{Binding Carrier.Locations}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <contentViews:CarrierTile Location="{Binding}" Margin="0"></contentViews:CarrierTile>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

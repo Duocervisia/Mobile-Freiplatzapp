@@ -15,7 +15,7 @@ namespace FreiplatzApp.ViewModels
     class SearchPageModel : ViewModelBase
     {
         private PostalCodeStore postalCodeStore = PostalCodeStore.GetInstance();
-        private InstitutionStore institutionStore = InstitutionStore.GetInstance();
+        private CarrierStore institutionStore = CarrierStore.GetInstance();
 
         public Command SearchBarTextChangedCommand { get; set; }
         public Command SearchButtonPressedCommand { get; set; }

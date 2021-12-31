@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using FreiplatzApp.Models;
 
 namespace FreiplatzApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LocationAddPage : ContentPage
+    public partial class MyLocationsPage : ContentPage
     {
-        public LocationAddPage()
+        public MyLocationsPage()
         {
             InitializeComponent();
         }

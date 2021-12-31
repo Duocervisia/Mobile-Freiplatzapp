@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FreiplatzApp.Views.ContentViews.LocationTile"
->
-
+             x:Class="FreiplatzApp.Views.ContentViews.CarrierTile">
     <ContentView.Content>
         <Grid ColumnSpacing="0" RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -24,17 +20,12 @@
                     <Binding Path="Location.HousingName" StringFormat="Einrichtungsname: {0}" />
                 </Label.Text>
             </Label>
-            <Label Grid.Row="1"  StyleClass="Medium" Margin="5,0,5,10">
-                <Label.Text>
-                    <Binding Path="Location.Carrierentry.CarrierName" StringFormat="Träger: {0}" />
-                </Label.Text>
-            </Label>
-            <Label Grid.Row="2"  StyleClass="Medium" Margin="5,0">
+            <Label Grid.Row="1"  StyleClass="Medium" Margin="5,0">
                 <Label.Text>
                     <Binding Path="Location.Space" StringFormat="Freie Plätze: {0}" />
                 </Label.Text>
             </Label>
-            <Label Grid.Row="3"  StyleClass="Medium" Margin="5,0,5,5">
+            <Label Grid.Row="2"  StyleClass="Medium" Margin="5,0,5,5">
                 <Label.Text>
                     <MultiBinding StringFormat="Altersspanne: {0} - {1}">
                         <Binding Path="Location.MinAge" />
@@ -42,25 +33,14 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
-            <Image x:Name="favoriteImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoriteborderwhite36.png">
+            <Image x:Name="editImage" Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="editwhite36.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
-                        Tapped="fav_Clicked"
+                        Command="{Binding EditButtonPressedCommand}"
+                        CommandParameter="{x:Reference editImage}"
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-            <!--<Image Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoritewhite36.png" IsVisible="{Binding IsFavorite}">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Tapped="fav_Clicked"
-                        NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>-->
-        </Grid> 
+        </Grid>
     </ContentView.Content>
-    <ContentView.GestureRecognizers>
-        <TapGestureRecognizer
-                Tapped="loc_Clicked"
-                NumberOfTapsRequired="1" />
-    </ContentView.GestureRecognizers>
 </ContentView>

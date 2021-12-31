@@ -6,7 +6,8 @@ namespace FreiplatzApp.Models
 {
     public class LocationEntry : ModelBase
     {
-        public string Name { get; set; }
+    
+        public string HousingName { get; set; }
         public string Description { get; set; }
         public int MinAge { get; set; } = 0;
         public string TextMinAge
@@ -66,7 +67,7 @@ namespace FreiplatzApp.Models
         public string Website { get; set; }
         public string EMail { get; set; }
         public bool ShowAvailableSpace { get; set; } = true;
-        public InstitutionEntry Institution { get; set; }
+        public CarrierEntry Carrierentry { get; set; }
 
         public List<Enum> ParsingParagraphs
         {
