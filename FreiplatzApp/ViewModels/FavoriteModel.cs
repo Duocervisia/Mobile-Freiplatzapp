@@ -13,7 +13,7 @@ namespace FreiplatzApp.ViewModels
 {
     public class FavoriteModel : ViewModelBase
     {
-        private InstitutionStore institutionStore = InstitutionStore.GetInstance();
+        private CarrierStore carrierStore = CarrierStore.GetInstance();
         public ObservableCollection<LocationEntry> foundLocations { get; set; }
         
 
@@ -24,12 +24,11 @@ namespace FreiplatzApp.ViewModels
             _=initFavorite();
         }
 
-
         async Task initFavorite()
         {
             try
             {
-                var items = await institutionStore.GetLocationsByLocationIDs(LocalStorage.favoriteLocationIds);
+                var items = await carrierStore.GetLocationsByLocationIDs(LocalStorage.favoriteLocationIds);
 
                 foreach (var item in items)
                 {

@@ -30,7 +30,7 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Suche" Icon="searchwhite36.png" Route="AboutPage" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Suche" Icon="searchwhite36.png" Route="AboutPage" ContentTemplate="{DataTemplate local:SearchPage}"/>
         <ShellContent Title="Favoriten" Icon="favoritewhite36.png" ContentTemplate="{DataTemplate local:FavoritePage}" />
         <ShellContent Title="Profil" Icon="homewhite36.png" ContentTemplate="{DataTemplate local:ManageProfilePage}" />
         <ShellContent Title="Meine Einrichtungen" Icon="mylocationswhite36.png" ContentTemplate="{DataTemplate local:MyLocationsPage}" />
