@@ -108,9 +108,10 @@ namespace FreiplatzApp.Views.ContentViews
             Image image = this.FindByName<Image>("editImage");
             Animator.TapAnimation(image);
             Routing.RegisterRoute(nameof(EditLocationPage), typeof(EditLocationPage));
-            var jsonStr = JsonConvert.SerializeObject((Location), new JsonSerializerSettings()
-            { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
-            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?LocationEntry={jsonStr}");
+            //var jsonStr = JsonConvert.SerializeObject((Location), new JsonSerializerSettings()
+            //{ ReferenceLoopHandling = ReferenceLoopHandling.Ignore, });
+            string locationId = Location.Id;
+            await Shell.Current.GoToAsync($"{nameof(EditLocationPage)}?LocationID={locationId}");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace FreiplatzApp.ViewModels
         }
         public ManageProfileModel()
         {
-            Carrier = carrierStore.getExampleEntry();
+            Carrier = carrierStore.entries.First();
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
             AddButtonPressedCommand = new Command(async () => await AddButtonPressed());
         }

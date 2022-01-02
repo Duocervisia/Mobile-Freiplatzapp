@@ -7,6 +7,7 @@ using FreiplatzApp.Services;
 using FreiplatzApp.Helper;
 using FreiplatzApp.Views;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace FreiplatzApp.ViewModels
 {
@@ -17,7 +18,7 @@ namespace FreiplatzApp.ViewModels
         public CarrierStore carrierStore = CarrierStore.GetInstance();
         public MyLocationsModel ()
         {
-            Carrier = carrierStore.getExampleEntry();
+            Carrier = carrierStore.entries.First();
             AddButtonPressedCommand = new Command(async () => await AddButtonPressed());
         }
         private async Task AddButtonPressed()

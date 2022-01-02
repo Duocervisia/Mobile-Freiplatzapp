@@ -70,7 +70,6 @@ namespace FreiplatzApp.Services
             carrierEntry.Locations.Add(locationsStore.getExampleLocationFour(carrierEntry));
             return carrierEntry;
         }
-
         public async Task<List<LocationEntry>> GetAsyncFoundLocations(FilterEntry filter, string searchText = null)
         {
             List<LocationEntry> foundLocationEntries = new List<LocationEntry>();
