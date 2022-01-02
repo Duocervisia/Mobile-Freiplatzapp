@@ -18,7 +18,16 @@ namespace FreiplatzApp.ViewModels
         public Command EnumPopupButtonPressedCommand { get; set; }
         public CarrierStore carrierStore = CarrierStore.GetInstance();
         public CarrierEntry Carrier { get; set; }
-        public LocationEntry Location { get; set; }
+        private LocationEntry location;
+        public LocationEntry Location
+        {
+            get { return location; }
+            set
+            {
+                location = value;
+                OnPropertyChanged();
+            }
+        }
         private bool _enumPopupVisibility = false;
         public bool _editableLocation = false;
         public string LocationID
