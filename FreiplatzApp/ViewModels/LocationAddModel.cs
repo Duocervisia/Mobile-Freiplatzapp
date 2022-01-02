@@ -20,10 +20,12 @@ namespace FreiplatzApp.ViewModels
         public CarrierEntry Carrier { get; set; }
         public LocationEntry Location { get; set; }
         private bool _enumPopupVisibility = false;
+        public bool _editableLocation = false;
         public string LocationID
         {
             set
             {
+                _editableLocation = true;
                 LoadLocation(value);
             }
         }
@@ -34,15 +36,18 @@ namespace FreiplatzApp.ViewModels
         }
         public LocationAddModel()
         {
-            Location = new LocationEntry();
+            if (_editableLocation == false)
+            {
+                Location = new LocationEntry();
+            }
             CancelButtonPressedCommand = new Command(() => CancelButtonPressed());
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
             EnumPopupButtonPressedCommand = new Command(() => EnumPopupButtonPressed());
         }
         private void LoadLocation(string id)
-        {
+        {   
             Carrier = carrierStore.entries.First();
-            LocationEntry Location = Carrier.Locations.Find(x => x.Id == id);
+            Location = Carrier.Locations.Find(x => x.Id == id);
         }
 
         private async void CancelButtonPressed()
