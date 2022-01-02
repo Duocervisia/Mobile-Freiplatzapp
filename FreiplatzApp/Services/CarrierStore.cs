@@ -15,9 +15,12 @@ namespace FreiplatzApp.Services
         {
             for (int i = 0; i < 500; i++)
             {
+                if (i == 0)
+                {
+                    _ = AddItemAsync(getExampleEntry()); //neu um Beispieleintrag zu holen
+                }
                 _ = AddItemAsync(getRandomEntry());
             }
-            
         }
 
         public CarrierEntry getRandomEntry()
