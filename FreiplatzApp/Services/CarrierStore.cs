@@ -17,6 +17,7 @@ namespace FreiplatzApp.Services
             {
                 _ = AddItemAsync(getRandomEntry());
             }
+            
         }
 
         public CarrierEntry getRandomEntry()
@@ -48,7 +49,7 @@ namespace FreiplatzApp.Services
         public CarrierEntry getExampleEntry()
         {
             CarrierEntry carrierEntry = new CarrierEntry();
-            carrierEntry.Id = GenerateSeededGuid().ToString();
+            carrierEntry.Id = "1";
             carrierEntry.Description = "Seit mehr als zwanzig Jahren sind wir als gemeinnütziger und nach § 75 SGB VIII anerkannter Träger der freien Jugendhilfe in Berlin und Brandenburg erfolgreich engagiert.Die Hilfeangebote sind nach den Grundsätzen einer sozialräumlichen Orientierung organisiert und strukturiert. Dabei wird ein hohes Maß an Flexibilität bei der Planung und Durchführung der Hilfen gewährleistet, dies geschieht in enger Kooperation mit dem Jugendamt.";
             carrierEntry.CarrierName = "KJHV Berlin-Brandenburg";
             carrierEntry.PostalNumber = 13125;

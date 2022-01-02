@@ -54,7 +54,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationOne(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "1";
             locationEntry.HousingName = "Kriseneinrichtung KIWI";
             locationEntry.Description = "Die Elternaktivierende Wohngruppe nach § 34 SGB VIII dient der befristeten Unterbringung von Kindern im Alter von null bis sechs Jahren in Krisensituationen. Dabei wird gleichzeitig Krisenclearing mit intensiver Elternarbeit zur Einschätzung der Gefährdungslage des Kindes/der Kinder, ggf. auch aufsuchend im elterlichen Umfeld durchgeführt.";
             locationEntry.MinAge = 12;
@@ -73,7 +73,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationTwo(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "2";
             locationEntry.HousingName = "2-er BEW in Berlin Mitte, Gesundbrunnen";
             locationEntry.Description = "Unbegleitete minderjährige Flüchtlinge, Verselbstständigung. Nur Jungen und Männer";
             locationEntry.MinAge = 15;
@@ -82,7 +82,7 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.EDUCATIONAL_ASSISTANCE_AND_CAREGIVER);
             locationEntry.Space = 1;
             locationEntry.Street = "Breite Str.16";
-            locationEntry.PostalNumber = 10175;
+            locationEntry.PostalNumber = 10245;
             locationEntry.TelephoneNumber = "030 39404830";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/begleiteter-umgang";
             locationEntry.EMail = "h.vierck@kjhv.de";
@@ -92,7 +92,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationThree(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "3";
             locationEntry.HousingName = "Gemeinsame Wohnform für Mütter/Väter und Kinder";
             locationEntry.Description = "Alleinerziehend, Bezugsbetreuersystem, Frühförderung, Interkultureller Ansatz, Individuelle Förderung, Mutter / Vater-Kind, Stärkung Erziehungskompetenz. Nur Familien. Aufnahme von Geschwistern möglich. ";
             locationEntry.MinAge = 0;
@@ -102,7 +102,7 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.SOCIAL_PEDAGOGUE_ACCOMPANIED_HOUSING);
             locationEntry.Space = 3;
             locationEntry.Street = "Lange Str.20";
-            locationEntry.PostalNumber = 10069;
+            locationEntry.PostalNumber = 10119;
             locationEntry.TelephoneNumber = "030 4174960";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/aufsuchende-familienunterbringung";
             locationEntry.EMail = "s.koch-dames@kjhv.de";
@@ -112,7 +112,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationFour(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "4";
             locationEntry.HousingName = "Kinderwohngruppe Eisbären";
             locationEntry.Description = "Begleitende Elternarbeit, Familientherapie, Intensivgruppe / Intensivwohnform, Individuelle Förderung, Kinderschutz / Kindeswohlgefährdung, Mutter- / Vater-Kindbindung, Stärkung Erziehungskompetenz, Verhaltensauffälligkeit. Gemischt, keine Einschränkungen.";
             locationEntry.MinAge = 4;
