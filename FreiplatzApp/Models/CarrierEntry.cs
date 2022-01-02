@@ -45,6 +45,7 @@ namespace FreiplatzApp.Models
             set
             {
                 locations = value;
+                OnPropertyChanged();
             }
         }
 

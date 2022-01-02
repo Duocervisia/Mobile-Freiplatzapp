@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:FreiplatzApp.Views"
              xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
              x:Class="FreiplatzApp.Views.ManageProfilePage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
         <vm:ManageProfileModel/>
@@ -13,7 +14,12 @@
     <ContentPage.Resources>
         <converter:EnumConverter x:Key="EnumConverter"/>
     </ContentPage.Resources>
-    
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+                EventName="Appearing"
+                Command="{Binding PageAppearingCommand}" />
+    </ContentPage.Behaviors>
+
     <ContentPage.Content>
         <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">
             <Grid.RowDefinitions>

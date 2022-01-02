@@ -53,9 +53,9 @@ namespace FreiplatzApp.ViewModels
             SaveButtonPressedCommand = new Command(() => SaveButtonPressed());
             EnumPopupButtonPressedCommand = new Command(() => EnumPopupButtonPressed());
         }
-        private void LoadLocation(string id)
-        {   
-            Carrier = carrierStore.entries.First();
+        private async void LoadLocation(string id)
+        {
+            Carrier = await carrierStore.GetItemAsync("1");
             Location = Carrier.Locations.Find(x => x.Id == id);
         }
 
@@ -66,6 +66,38 @@ namespace FreiplatzApp.ViewModels
 
         private async void SaveButtonPressed()
         {
+            if (!_editableLocation)
+            {
+                Carrier = await carrierStore.GetItemAsync("1");
+                Location.Id = LocationStore.GetInstance().GenerateSeededGuid().ToString();
+                Location.Carrierentry = Carrier;
+                List<LocationEntry> newLocations = new List<LocationEntry>();
+                foreach (LocationEntry location in Carrier.Locations)
+                {
+                   newLocations.Add(location);
+                }
+                newLocations.Add(Location);
+                Carrier.Locations = newLocations;
+                await carrierStore.UpdateItemAsync(Carrier);
+            }
+            else
+            {
+                Carrier = Location.Carrierentry;
+                List<LocationEntry> newLocations = new List<LocationEntry>();
+                foreach (LocationEntry location in Carrier.Locations)
+                {
+                    if(Location.Id == location.Id)
+                    {
+                        newLocations.Add(Location);
+                    }
+                    else
+                    {
+                        newLocations.Add(location);
+                    }
+                }
+                Carrier.Locations = newLocations;
+                await carrierStore.UpdateItemAsync(Carrier);
+            }
             await Shell.Current.GoToAsync("..");
         }
 

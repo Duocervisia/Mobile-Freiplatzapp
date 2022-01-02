@@ -66,18 +66,20 @@ namespace FreiplatzApp.Views.ContentViews.Popups
 
         public static void SelectedItemsPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-          
-            EnumPopup enumPopup = bindable as EnumPopup;
-            enumPopup.ListType = newValue.GetType();
-            enumPopup.EnumType = enumPopup.ListType.GetGenericArguments().Single();
-            //Array list = Enum.GetValues(EnumType);
-            //enumPopup.ItemSource = list;
-            //might solve: https://stackoverflow.com/questions/32935297/how-to-use-local-variable-as-a-type-compiler-says-it-is-a-variable-but-is-used
-            //List<object> newValueList = newValue as EnumType;
-            //List<object> myAnythingList = (newValue as IEnumerable<object>).Cast<object>().ToList();
-            //enumPopup.CopySelectedItems = new List<object>(newValueList);
-            enumPopup.CopySelectedItems = ((ICollection)newValue).Cast<Enum>().ToList();
-            enumPopup.init();
+            if(newValue != null)
+            {
+                EnumPopup enumPopup = bindable as EnumPopup;
+                enumPopup.ListType = newValue.GetType();
+                enumPopup.EnumType = enumPopup.ListType.GetGenericArguments().Single();
+                //Array list = Enum.GetValues(EnumType);
+                //enumPopup.ItemSource = list;
+                //might solve: https://stackoverflow.com/questions/32935297/how-to-use-local-variable-as-a-type-compiler-says-it-is-a-variable-but-is-used
+                //List<object> newValueList = newValue as EnumType;
+                //List<object> myAnythingList = (newValue as IEnumerable<object>).Cast<object>().ToList();
+                //enumPopup.CopySelectedItems = new List<object>(newValueList);
+                enumPopup.CopySelectedItems = ((ICollection)newValue).Cast<Enum>().ToList();
+                enumPopup.init();
+            }
         }
 
         private void init() {

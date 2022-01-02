@@ -54,7 +54,7 @@ namespace FreiplatzApp.Services
         {
             return await Task.FromResult(entries);
         }
-        protected Guid GenerateSeededGuid()
+        public Guid GenerateSeededGuid()
         {
             var guid = new byte[16];
             random.NextBytes(guid);
