@@ -14,21 +14,31 @@ namespace FreiplatzApp.ViewModels
     public class FavoriteModel : ViewModelBase
     {
         private CarrierStore carrierStore = CarrierStore.GetInstance();
+        public static List<string> favoriteList = LocalStorage.favoriteLocationIds;
         public ObservableCollection<LocationEntry> foundLocations { get; set; }
-        
 
         public FavoriteModel()
         {
             foundLocations = new ObservableCollection<LocationEntry>();
+            _ = initFavorite();
+        }
 
-            _=initFavorite();
+        public void callback()
+        {
+            List<string> newfavoriteList = LocalStorage.favoriteLocationIds;
+            if (!favoriteList.Equals(newfavoriteList))
+            {
+                favoriteList = newfavoriteList;
+                _ = initFavorite();
+            }
+            
         }
 
         async Task initFavorite()
         {
             try
             {
-                var items = await carrierStore.GetLocationsByLocationIDs(LocalStorage.favoriteLocationIds);
+                var items = await carrierStore.GetLocationsByLocationIDs(favoriteList);
 
                 foreach (var item in items)
                 {
