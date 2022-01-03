@@ -5,6 +5,7 @@
              xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
              xmlns:local="clr-namespace:FreiplatzApp.Views"
              xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="FreiplatzApp.Views.MyLocationsPage"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
@@ -13,6 +14,11 @@
     <ContentPage.Resources>
         <converter:EnumConverter x:Key="EnumConverter"/>
     </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+                EventName="Appearing"
+                Command="{Binding PageAppearingCommand}" />
+    </ContentPage.Behaviors>
     <ContentPage.Content>
         <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" Grid.Row="4">
             <Grid>

@@ -15,6 +15,10 @@ namespace FreiplatzApp.Services
         {
             for (int i = 0; i < 500; i++)
             {
+                if (i == 0)
+                {
+                    _ = AddItemAsync(getExampleEntry()); //neu um Beispieleintrag zu holen
+                }
                 _ = AddItemAsync(getRandomEntry());
             }
         }
@@ -48,10 +52,13 @@ namespace FreiplatzApp.Services
         public CarrierEntry getExampleEntry()
         {
             CarrierEntry carrierEntry = new CarrierEntry();
-            carrierEntry.Id = GenerateSeededGuid().ToString();
+            carrierEntry.Id = "1";
             carrierEntry.Description = "Seit mehr als zwanzig Jahren sind wir als gemeinnütziger und nach § 75 SGB VIII anerkannter Träger der freien Jugendhilfe in Berlin und Brandenburg erfolgreich engagiert.Die Hilfeangebote sind nach den Grundsätzen einer sozialräumlichen Orientierung organisiert und strukturiert. Dabei wird ein hohes Maß an Flexibilität bei der Planung und Durchführung der Hilfen gewährleistet, dies geschieht in enger Kooperation mit dem Jugendamt.";
             carrierEntry.CarrierName = "KJHV Berlin-Brandenburg";
-            carrierEntry.PostalNumber = 13125;
+            carrierEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            carrierEntry.PostalEntry.Code = 10559;
+            carrierEntry.PostalEntry.District = "Moabit";
+            carrierEntry.PostalNumber = carrierEntry.PostalEntry.Code;
             carrierEntry.TelephoneNumber = "03061390725";
             carrierEntry.Website = "www.kjhv-bb.de";
             carrierEntry.EMail = "info@kjhv-bb.de";
@@ -63,7 +70,6 @@ namespace FreiplatzApp.Services
             carrierEntry.Locations.Add(locationsStore.getExampleLocationFour(carrierEntry));
             return carrierEntry;
         }
-
         public async Task<List<LocationEntry>> GetAsyncFoundLocations(FilterEntry filter, string searchText = null)
         {
             List<LocationEntry> foundLocationEntries = new List<LocationEntry>();

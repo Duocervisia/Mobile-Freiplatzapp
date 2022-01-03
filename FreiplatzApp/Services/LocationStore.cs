@@ -9,14 +9,6 @@ namespace FreiplatzApp.Services
 {
     class LocationStore : StoreBase<LocationStore, LocationEntry>
     {
-
-        //public void init() {
-        //    for (int i = 0; i< 500; i++)
-        //    {
-        //        _ = AddItemAsync(getRandomEntry());
-        //    }
-        //}
-
         public LocationEntry getRandomEntry(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
@@ -54,7 +46,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationOne(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "1";
             locationEntry.HousingName = "Kriseneinrichtung KIWI";
             locationEntry.Description = "Die Elternaktivierende Wohngruppe nach § 34 SGB VIII dient der befristeten Unterbringung von Kindern im Alter von null bis sechs Jahren in Krisensituationen. Dabei wird gleichzeitig Krisenclearing mit intensiver Elternarbeit zur Einschätzung der Gefährdungslage des Kindes/der Kinder, ggf. auch aufsuchend im elterlichen Umfeld durchgeführt.";
             locationEntry.MinAge = 12;
@@ -63,7 +55,10 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.CRISIS_FACILITY_ANDEMERGENCY_SERVICE);
             locationEntry.Space = 2;
             locationEntry.Street = "Neue Str.2";
-            locationEntry.PostalNumber = 12305;
+            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.PostalEntry.District = "Karow";
+            locationEntry.PostalEntry.Code = 13125;
+            locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
             locationEntry.TelephoneNumber = "030 20215080";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/elternaktivierende-kurzzeitunterbringung";
             locationEntry.EMail = "e.wiesenthal@kjhv.de";
@@ -73,7 +68,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationTwo(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "2";
             locationEntry.HousingName = "2-er BEW in Berlin Mitte, Gesundbrunnen";
             locationEntry.Description = "Unbegleitete minderjährige Flüchtlinge, Verselbstständigung. Nur Jungen und Männer";
             locationEntry.MinAge = 15;
@@ -82,7 +77,9 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.EDUCATIONAL_ASSISTANCE_AND_CAREGIVER);
             locationEntry.Space = 1;
             locationEntry.Street = "Breite Str.16";
-            locationEntry.PostalNumber = 10175;
+            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.PostalEntry.Code = 10245;
+            locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
             locationEntry.TelephoneNumber = "030 39404830";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/begleiteter-umgang";
             locationEntry.EMail = "h.vierck@kjhv.de";
@@ -92,7 +89,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationThree(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "3";
             locationEntry.HousingName = "Gemeinsame Wohnform für Mütter/Väter und Kinder";
             locationEntry.Description = "Alleinerziehend, Bezugsbetreuersystem, Frühförderung, Interkultureller Ansatz, Individuelle Förderung, Mutter / Vater-Kind, Stärkung Erziehungskompetenz. Nur Familien. Aufnahme von Geschwistern möglich. ";
             locationEntry.MinAge = 0;
@@ -102,7 +99,9 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.SOCIAL_PEDAGOGUE_ACCOMPANIED_HOUSING);
             locationEntry.Space = 3;
             locationEntry.Street = "Lange Str.20";
-            locationEntry.PostalNumber = 10069;
+            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.PostalEntry.Code = 10119;
+            locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
             locationEntry.TelephoneNumber = "030 4174960";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/aufsuchende-familienunterbringung";
             locationEntry.EMail = "s.koch-dames@kjhv.de";
@@ -112,7 +111,7 @@ namespace FreiplatzApp.Services
         public LocationEntry getExampleLocationFour(CarrierEntry carrierEntry)
         {
             LocationEntry locationEntry = new LocationEntry();
-            locationEntry.Id = GenerateSeededGuid().ToString();
+            locationEntry.Id = "4";
             locationEntry.HousingName = "Kinderwohngruppe Eisbären";
             locationEntry.Description = "Begleitende Elternarbeit, Familientherapie, Intensivgruppe / Intensivwohnform, Individuelle Förderung, Kinderschutz / Kindeswohlgefährdung, Mutter- / Vater-Kindbindung, Stärkung Erziehungskompetenz, Verhaltensauffälligkeit. Gemischt, keine Einschränkungen.";
             locationEntry.MinAge = 4;
@@ -121,7 +120,10 @@ namespace FreiplatzApp.Services
             locationEntry.Paragraphs.Add(Enums.Paragraphs.HOUSEHOLD_ORGANIZATION_TRAINING);
             locationEntry.Space = 1;
             locationEntry.Street = "Dunckerstr.64";
-            locationEntry.PostalNumber = 10439;
+            locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.PostalEntry.Code = 10439;
+            locationEntry.PostalEntry.District = "Prenzlauer Berg";
+            locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
             locationEntry.TelephoneNumber = "030 61390718";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/erziehungsbeistand";
             locationEntry.EMail = "n.engelmann@kjhv.de";

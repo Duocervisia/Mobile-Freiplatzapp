@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using FreiplatzApp.Models;
+using FreiplatzApp.ViewModels;
 
 namespace FreiplatzApp.Views
 {
@@ -16,6 +17,7 @@ namespace FreiplatzApp.Views
         public LocationAddPage()
         {
             InitializeComponent();
+            BindingContext = new LocationAddModel();
         }
     }
 }
