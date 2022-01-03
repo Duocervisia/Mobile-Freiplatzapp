@@ -45,19 +45,13 @@
 
                     <!-- ++++++++++++++++ Name +++++++++++++++++ -->
                     <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="5" >
-                        <Grid Grid.ColumnSpan="2">
+                        <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="auto" />
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="50"/>
                             </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label StyleClass="Big" Grid.Row="0" Text="Trägschaft:" Margin="0,0,0,5" />
-                            <contentViews:CustomEntry  Grid.Row="0" Grid.Column="1" Placeholder="Trägschaftsname" Text="{Binding Location.Carrierentry.CarrierName}"/>
-                            <Label StyleClass="Medium" Grid.Row="1" Text="Einrichtung:" VerticalOptions="Center" />
-                            <contentViews:CustomEntry Placeholder="Einrichtungsname" Grid.Row="1" Grid.Column="1" Text="{Binding Location.HousingName}"></contentViews:CustomEntry>
+                            <Label StyleClass="Big" Grid.Row="0" Text="Name der Einrichtung" Margin="0,0,0,5" />
+                            <contentViews:CustomEntry  Grid.Row="1" Placeholder="Ihr Einrichtungsname" Text="{Binding Location.HousingName}"/>
                         </Grid>
                     </Frame>
 
