@@ -120,9 +120,18 @@ namespace FreiplatzApp.Views.ContentViews
         {
             Image image = this.FindByName<Image>("deleteImage");
             Animator.TapAnimation(image);
-            Carrier = await carrierStore.GetItemAsync("1");
-            var locationId = Carrier.Locations.Find(x => x.Id == Location.Id);
-            Carrier.Locations.Remove(locationId);
+            Carrier = Location.Carrierentry;
+
+            List<LocationEntry> newLocations = new List<LocationEntry>();
+
+            foreach (LocationEntry location in Carrier.Locations)
+            {
+                if (location.Id != Location.Id)
+                {
+                    newLocations.Add(location);
+                }
+            }
+            Carrier.Locations = newLocations;
             await carrierStore.UpdateItemAsync(Carrier);
         }
 

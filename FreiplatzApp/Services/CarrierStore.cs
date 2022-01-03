@@ -4,6 +4,7 @@ using System.Text;
 using FreiplatzApp.Models;
 using System.Threading.Tasks;
 using System.Linq;
+using FreiplatzApp.Helper;
 
 namespace FreiplatzApp.Services
 {
@@ -34,7 +35,6 @@ namespace FreiplatzApp.Services
             carrierEntry.Website = RandomString(30);
             carrierEntry.EMail = RandomString(15);
             carrierEntry.Street = RandomString(20);
-
 
             //random typeOfCarrier
             Array values = Enum.GetValues(typeof(Enums.TypeOfCarrier));
