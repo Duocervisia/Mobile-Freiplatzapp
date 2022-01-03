@@ -25,7 +25,7 @@ namespace FreiplatzApp.ViewModels
             _ = initFavorite();
         }
 
-        private async void OnAppearing()
+        private void OnAppearing()
         {
             List<string> newfavoriteList = LocalStorage.favoriteLocationIds;
             if(favoriteList != newfavoriteList) 

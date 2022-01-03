@@ -20,6 +20,8 @@ namespace FreiplatzApp.ViewModels
         public Command SearchBarTextChangedCommand { get; set; }
         public Command SearchButtonPressedCommand { get; set; }
         public Command FilterButtonPressedCommand { get; set; }
+        public Command PageAppearingCommand { get; set; }
+
         public FilterEntry filter { get; set; }
         public ObservableCollection<PostalEntry> ItemsSourceSearchBar { get; set; }
         public ObservableCollection<LocationEntry> ItemsSourceFoundLocations { get; set; }
@@ -34,6 +36,7 @@ namespace FreiplatzApp.ViewModels
             SearchBarTextChangedCommand = new Command(async () => await SearchBarTextChanged());
             SearchButtonPressedCommand = new Command(async () => await SearchButtonPressed());
             FilterButtonPressedCommand = new Command((parameter) => FilterButtonPressed(parameter));
+            PageAppearingCommand = new Command(() => OnAppearing());
         }
 
         private string _searchText;
@@ -142,6 +145,14 @@ namespace FreiplatzApp.ViewModels
 
         private void checkPostalListVisibility(){
             PostalListVisibility = ItemsSourceSearchBar.Count == 0 || SelectedItemSearchBar != null ? false : true;
+        }
+
+        private async void OnAppearing()
+        {
+            if(ItemsSourceFoundLocations.Count != 0)
+            {
+                await SearchButtonPressed();
+            }
         }
     }
 }
