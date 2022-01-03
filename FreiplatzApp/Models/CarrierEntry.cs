@@ -6,7 +6,19 @@ namespace FreiplatzApp.Models
 {
     public class CarrierEntry : ModelBase
     {
-        public string CarrierName { get; set; }
+        private string carrierName;
+        public string CarrierName
+        {
+            get
+            {
+                return carrierName;
+            }
+            set
+            {
+                carrierName = value;
+                OnPropertyChanged();
+            }
+        }
         public string Description { get; set; }
         public string Street { get; set; }
         public PostalEntry PostalEntry { get; set; }

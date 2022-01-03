@@ -38,11 +38,12 @@ namespace FreiplatzApp.ViewModels
             PageAppearingCommand = new Command(() => OnAppearing());
         }
 
-        private void SaveButtonPressed()
+        private async void SaveButtonPressed()
         {
-
+            await carrierStore.UpdateItemAsync(Carrier);
+            await Application.Current.MainPage.DisplayAlert("Information", "Profil aktualisiert", "Ok");
         }
-       
+
         private async Task AddButtonPressed()
         {
             await Shell.Current.GoToAsync(nameof(LocationAddPage));
