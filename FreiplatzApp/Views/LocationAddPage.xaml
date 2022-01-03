@@ -177,20 +177,24 @@
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
+                                
+                                <Label Grid.Row="0" StyleClass="Medium" Text="AnsprechpartnerIn:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="0" Placeholder="Ihre AnsprechpartnerIN"  Grid.Column="1" Text="{Binding Location.ContactPerson}"></contentViews:CustomEntry>
+                                
+                                <Label Grid.Row="1" StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
+                                <contentViews:CustomEntry Grid.Row="1"  Grid.Column="1" Placeholder="+030..." Text="{Binding Location.TelephoneNumber}"></contentViews:CustomEntry>
 
-                                <Label StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
-                                <contentViews:CustomEntry  Grid.Column="1" Placeholder="+030..." Text="{Binding Location.TelephoneNumber}"></contentViews:CustomEntry>
+                                <Label Grid.Row="2" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="2" Placeholder="Ihre Webseite" Grid.Column="1" Text="{Binding Location.Website}"></contentViews:CustomEntry>
 
-                                <Label Grid.Row="1" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
-                                <contentViews:CustomEntry Grid.Row="1" Placeholder="Ihre Webseite" Grid.Column="1" Text="{Binding Location.Website}"></contentViews:CustomEntry>
-
-                                <Label Grid.Row="2" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
-                                <contentViews:CustomEntry Grid.Row="2" Placeholder="Ihre E-Mailadresse"  Grid.Column="1" Text="{Binding Location.EMail}"></contentViews:CustomEntry>
+                                <Label Grid.Row="3" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
+                                <contentViews:CustomEntry Grid.Row="3" Placeholder="Ihre E-Mailadresse"  Grid.Column="1" Text="{Binding Location.EMail}"></contentViews:CustomEntry>
                             </Grid>
                         </Grid>
                     </Frame>

@@ -31,7 +31,7 @@
             </Label>
             <Label Grid.Row="2"  StyleClass="Medium" Margin="5,0">
                 <Label.Text>
-                    <Binding Path="Location.Space" StringFormat="Freie Plätze: {0}" />
+                    <Binding Path="Location.SpaceBinding" StringFormat="Freie Plätze: {0}" />
                 </Label.Text>
             </Label>
             <Label Grid.Row="3"  StyleClass="Medium" Margin="5,0,5,5">

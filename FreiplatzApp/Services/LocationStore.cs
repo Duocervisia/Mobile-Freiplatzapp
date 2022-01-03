@@ -25,6 +25,9 @@ namespace FreiplatzApp.Services
 
             locationEntry.Space = random.Next(1, 6);
             locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
+            locationEntry.Street = RandomString(15) + " " + "23";
+            locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
+            locationEntry.ContactPerson = RandomString(15);
             locationEntry.TelephoneNumber = "01548408468";
             locationEntry.Website = RandomString(30);
             locationEntry.EMail = RandomString(15);
@@ -59,6 +62,7 @@ namespace FreiplatzApp.Services
             locationEntry.PostalEntry.District = "Karow";
             locationEntry.PostalEntry.Code = 13125;
             locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
+            locationEntry.ContactPerson = "Frau Martinez";
             locationEntry.TelephoneNumber = "030 20215080";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/elternaktivierende-kurzzeitunterbringung";
             locationEntry.EMail = "e.wiesenthal@kjhv.de";
@@ -80,6 +84,7 @@ namespace FreiplatzApp.Services
             locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
             locationEntry.PostalEntry.Code = 10245;
             locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
+            locationEntry.ContactPerson = "Frau Grunert";
             locationEntry.TelephoneNumber = "030 39404830";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/begleiteter-umgang";
             locationEntry.EMail = "h.vierck@kjhv.de";
@@ -102,6 +107,7 @@ namespace FreiplatzApp.Services
             locationEntry.PostalEntry = PostalCodeStore.GetInstance().entries[random.Next(PostalCodeStore.GetInstance().entries.Count)];
             locationEntry.PostalEntry.Code = 10119;
             locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
+            locationEntry.ContactPerson = "Frau Grunert";
             locationEntry.TelephoneNumber = "030 4174960";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/aufsuchende-familienunterbringung";
             locationEntry.EMail = "s.koch-dames@kjhv.de";
@@ -124,6 +130,7 @@ namespace FreiplatzApp.Services
             locationEntry.PostalEntry.Code = 10439;
             locationEntry.PostalEntry.District = "Prenzlauer Berg";
             locationEntry.PostalNumber = locationEntry.PostalEntry.Code;
+            locationEntry.ContactPerson = "Frau Martinez";
             locationEntry.TelephoneNumber = "030 61390718";
             locationEntry.Website = "www.kjhv-bb.de/hilfsangebote/erziehungsbeistand";
             locationEntry.EMail = "n.engelmann@kjhv.de";

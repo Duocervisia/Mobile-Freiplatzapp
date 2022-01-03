@@ -94,10 +94,10 @@
                             <Label StyleClass="Big" Text="Alter" Margin="0,0,0,5" />
                             
                          
-                            <Label Grid.Row="1" Text="Altersspanne"></Label>
+                            <Label Grid.Row="1" Text="Altersspanne:"></Label>
                             <Label Grid.Row="1" Grid.Column="1" >
                                 <Label.Text>
-                                    <MultiBinding StringFormat=" {0} - {1}">
+                                    <MultiBinding StringFormat="{}{0} - {1}">
                                         <Binding Path="Location.MinAge" />
                                         <Binding Path="Location.MaxAge" />
                                     </MultiBinding>
@@ -153,20 +153,25 @@
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
-                                <Label Grid.Column="1" VerticalTextAlignment="Center" Text="{Binding Location.TelephoneNumber}"/>
+                                <Label Grid.Row="0" Grid.Column="0" StyleClass="Medium" Text="AnsprechpartnerIn:" VerticalOptions="Center" />
+                                <Label Grid.Column="1" VerticalTextAlignment="Center" Text="{Binding Location.ContactPerson}"/>
+                                
+                                <Label Grid.Row="1" Grid.Column="0" StyleClass="Medium" Text="Telefonnummer:" VerticalOptions="Center" />
+                                <Label Grid.Column="1" Grid.Row="1" VerticalTextAlignment="Center" Text="{Binding Location.TelephoneNumber}"/>
 
-                                <Label Grid.Row="1" Grid.Column="0" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
-                                <Label Grid.Row="1" VerticalTextAlignment="Center" Grid.Column="1" Text="{Binding Location.Website}"/>
+                                <Label Grid.Row="2" Grid.Column="0" StyleClass="Medium" Text="Webseite:" VerticalOptions="Center"/>
+                                <Label Grid.Row="2" VerticalTextAlignment="Center" Grid.Column="1" Text="{Binding Location.Website}"/>
 
-                                <Label Grid.Row="2" Grid.Column="0" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
-                                <Label Grid.Row="2" VerticalTextAlignment="Center" Grid.Column="1" Text="{Binding Location.EMail}"/>
+                                <Label Grid.Row="3" Grid.Column="0" StyleClass="Medium" Text="E-Mail Adresse:" VerticalOptions="Center"/>
+                                <Label Grid.Row="3" VerticalTextAlignment="Center" Grid.Column="1" Text="{Binding Location.EMail}"/>
                             </Grid>
                         </Grid>
                     </Frame>

@@ -28,10 +28,10 @@
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
-                    <Label StyleClass="Big" Text="Meine Einrichtungen" Grid.Column="0" Margin="0,0,0,5" />
+                    <Label StyleClass="Big" VerticalTextAlignment="Center" Text="Meine Einrichtungen" Grid.Column="0" Margin="0,0,0,5" />
                     <Button Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" Image="addlocationwhite36.png" Command="{Binding AddButtonPressedCommand}"></Button>
                 </Grid>
 

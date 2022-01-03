@@ -40,6 +40,16 @@ namespace FreiplatzApp.Models
             } 
         }
         public int Space { get; set; }
+        public string SpaceBinding { 
+            get {
+                if (ShowAvailableSpace)
+                {
+                    return Space.ToString();
+                }
+                return "Keine Angabe";
+            } 
+        }
+
         public string TextSpace {
             get => Convert.ToString(Space);
             set
@@ -63,6 +73,7 @@ namespace FreiplatzApp.Models
             }
         }
         public PostalEntry PostalEntry { get; set; }
+        public string ContactPerson { get; set; }
         public string TelephoneNumber { get; set; }
         public string Website { get; set; }
         public string EMail { get; set; }
