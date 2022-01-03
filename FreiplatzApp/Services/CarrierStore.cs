@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace FreiplatzApp.Services
 {
-    class CarrierStore : StoreBase<CarrierStore, CarrierEntry>
+   class CarrierStore : StoreBase<CarrierStore, CarrierEntry>
     {
         LocationStore locationsStore = LocationStore.GetInstance();
 

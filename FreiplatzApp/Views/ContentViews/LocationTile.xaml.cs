@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using FreiplatzApp.Models;
 using FreiplatzApp.Helper;
+using FreiplatzApp.Services;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -23,7 +24,7 @@ namespace FreiplatzApp.Views.ContentViews
             Content.BindingContext = this;
         }
 
-
+        
         public static readonly BindableProperty LocationProperty =
         BindableProperty.Create(
             propertyName: nameof(Location),
@@ -61,7 +62,6 @@ namespace FreiplatzApp.Views.ContentViews
             LocationTile thisLocationTile = bindable as LocationTile;
             thisLocationTile.OnPropertyChanged("Favoritable");
         }
-
         public LocationEntry Location
         {
             get { return (LocationEntry)GetValue(LocationProperty); }
@@ -109,6 +109,21 @@ namespace FreiplatzApp.Views.ContentViews
             Animator.TapAnimation(image);
             string locationId = Location.Id;
             await Shell.Current.GoToAsync($"{nameof(LocationAddPage)}?LocationID={locationId}");
+        }
+        CarrierStore carrierStore = CarrierStore.GetInstance();
+        private async void OnAppearing()
+        {
+            Carrier = await carrierStore.GetItemAsync("1");
+        }
+        public CarrierEntry Carrier;
+        private async void delete_Clicked(object sender, EventArgs e)
+        {
+            Image image = this.FindByName<Image>("deleteImage");
+            Animator.TapAnimation(image);
+            Carrier = await carrierStore.GetItemAsync("1");
+            var locationId = Carrier.Locations.Find(x => x.Id == Location.Id);
+            Carrier.Locations.Remove(locationId);
+            await carrierStore.UpdateItemAsync(Carrier);
         }
 
         private async void loc_Clicked(object sender, EventArgs e)

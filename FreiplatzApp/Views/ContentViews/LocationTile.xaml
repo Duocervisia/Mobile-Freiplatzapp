@@ -56,6 +56,13 @@
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
+            <Image x:Name="deleteImage" Grid.Column="1" Grid.Row="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="deletewhite36.png" IsVisible="{Binding Editable}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="delete_Clicked"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
             <!--<Image Grid.Column="1" HeightRequest="40" Margin="5" HorizontalOptions="End"  Source="favoritewhite36.png" IsVisible="{Binding IsFavorite}">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
