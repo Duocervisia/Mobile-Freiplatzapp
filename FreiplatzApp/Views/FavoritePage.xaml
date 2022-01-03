@@ -4,7 +4,8 @@
              xmlns:vm="clr-namespace:FreiplatzApp.ViewModels"
              xmlns:contentViews="clr-namespace:FreiplatzApp.Views.ContentViews"
              xmlns:contentViewsPopups="clr-namespace:FreiplatzApp.Views.ContentViews.Popups"
-             xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter"
+             xmlns:converter="clr-namespace:FreiplatzApp.Helper.Converter" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="FreiplatzApp.Views.FavoritePage"
              Shell.NavBarIsVisible="False">
 
@@ -14,6 +15,11 @@
     <ContentPage.Resources>
         <converter:EnumConverter x:Key="EnumConverter" />
     </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+                EventName="Appearing"
+                Command="{Binding PageAppearingCommand}" />
+    </ContentPage.Behaviors>
 
     <ContentPage.Content>
         <Grid BackgroundColor="#474747" ColumnSpacing="10" RowSpacing="0">

@@ -13,25 +13,27 @@ namespace FreiplatzApp.ViewModels
 {
     public class FavoriteModel : ViewModelBase
     {
+        public Command PageAppearingCommand { get; set; }
         private CarrierStore carrierStore = CarrierStore.GetInstance();
         public static List<string> favoriteList = LocalStorage.favoriteLocationIds;
         public ObservableCollection<LocationEntry> foundLocations { get; set; }
 
         public FavoriteModel()
         {
+            PageAppearingCommand = new Command(() => OnAppearing());
             foundLocations = new ObservableCollection<LocationEntry>();
             _ = initFavorite();
         }
 
-        public void callback()
+        private async void OnAppearing()
         {
             List<string> newfavoriteList = LocalStorage.favoriteLocationIds;
-            if (!favoriteList.Equals(newfavoriteList))
+            if(favoriteList != newfavoriteList) 
             {
                 favoriteList = newfavoriteList;
-                _ = initFavorite();
+                foundLocations.Clear();
+                _ =initFavorite();
             }
-            
         }
 
         async Task initFavorite()

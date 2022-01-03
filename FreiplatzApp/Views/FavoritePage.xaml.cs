@@ -18,16 +18,6 @@ namespace FreiplatzApp.Views
         public FavoritePage()
         {
             InitializeComponent();
-            _favoriteModel = new FavoriteModel();
-            Device.StartTimer(new TimeSpan(0, 0, 1), () =>
-            {
-                // do something every 60 seconds
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    _favoriteModel.callback(); 
-                });
-                return true; // runs again, or false to stop
-            });
         }
     }
 }
